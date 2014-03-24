@@ -11,6 +11,7 @@
         android:layout_alignParentLeft="true"
         android:layout_centerVertical="true"
         android:gravity="center_vertical|center_horizontal"
+        android:onClick="onCreateSessionButtonClick"
         android:text="Create Session" />
 
     <Button
@@ -19,6 +20,7 @@
         android:layout_height="wrap_content"
         android:layout_above="@+id/button1"
         android:layout_centerHorizontal="true"
+        android:onClick="onViewSessionButtonClick"
         android:text="View Sessions" />
 
 </RelativeLayout>

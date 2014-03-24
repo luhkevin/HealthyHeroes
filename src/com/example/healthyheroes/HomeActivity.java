@@ -27,10 +27,10 @@ public class HomeActivity extends Activity {
     	startActivityForResult(i, IngredientActivity_ID);
     }
     
-    /*
+    
     public void onViewSessionButton(View v) {
-    	Intent i = new Intent(this, ViewSessionActivity.class);
-    	startActivityForResult(i, ViewSessionActivity_ID);
+    	//Intent i = new Intent(this, ViewSessionActivity.class);
+    	//startActivityForResult(i, ViewSessionActivity_ID);
     }
-    */
+    
 }

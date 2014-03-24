@@ -4,14 +4,14 @@ import android.content.Context;
 import android.util.AttributeSet;
 import android.view.View;
 
-public class HomeScreenView extends View{
+public class IngredientView extends View {
 
-	public HomeScreenView(Context context) {
+	public IngredientView(Context context) {
 		super(context);
 		init();
 	}
 
-	public HomeScreenView(Context context, AttributeSet as) {
+	public IngredientView(Context context, AttributeSet as) {
 		super(context, as);
 		init();
 	}

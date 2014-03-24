@@ -4,5 +4,7 @@
     <string name="app_name">HealthyHeroes</string>
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
+    <string name="title_activity_ingredient">IngredientActivity</string>
+    <string name="title_activity_product">ProductActivity</string>
 
 </resources>

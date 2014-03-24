@@ -1,10 +1,14 @@
 package com.example.healthyheroes;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
+import android.view.View;
 
 public class IngredientActivity extends Activity {
+
+	private static final int ProductActivity_ID = 0;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -20,4 +24,12 @@ public class IngredientActivity extends Activity {
 		return true;
 	}
 
+    public void onAddButton(View v) {
+    	/* Add to data structure */
+    }
+
+    public void onFinishedButton(View v) {
+    	Intent i = new Intent(this, ProductActivity.class);
+    	startActivityForResult(i, ProductActivity_ID);
+    }
 }

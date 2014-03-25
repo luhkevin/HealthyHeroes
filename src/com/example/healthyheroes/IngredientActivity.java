@@ -30,6 +30,9 @@ public class IngredientActivity extends Activity {
 
     public void onFinishedButton(View v) {
     	Intent i = new Intent(this, ProductActivity.class);
+    	
+    	// TODO: add form fields to session instance
+    	
     	startActivityForResult(i, ProductActivity_ID);
     }
 }

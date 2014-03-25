@@ -6,8 +6,12 @@ import android.content.Intent;
 import android.view.Menu;
 import android.view.View;
 
-public class HomeActivity extends Activity {
+public class HomeActivity extends Activity {	
 	public static final int IngredientActivity_ID = 1;
+	
+	// private instance of session object
+	private static Session session;
+	
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,4 +37,33 @@ public class HomeActivity extends Activity {
     	//startActivityForResult(i, ViewSessionActivity_ID);
     }
     
+    // STATIC METHODS TO BE USED TO UPDATE THE SESSION INFO
+    
+    /**
+     * Adds the ingredient to the session
+     * @param name
+     * @param price
+     * @param quantity
+     */
+    public static void addIngredient(String name, double price, int quantity){
+    	session.addIngredient(name, price, quantity); 
+    }
+    
+    /**
+     * Adds the product to the session
+     * @param name
+     * @param price
+     * @param quantity
+     */
+    public static void addProduct(String name, double price, int quantity){
+    	session.addProduct(name, price, quantity); 
+    }
+    
+    /**
+     * Adjusts the cashbox, and items sold in the session
+     * @param item_name
+     */
+    public void purchaseProduct(String item_name){
+    	session.purchaseProduct(item_name);
+    }    
 }

@@ -1,8 +1,10 @@
 package com.example.healthyheroes;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
+import android.view.View;
 
 public class ProductActivity extends Activity {
 
@@ -19,4 +21,13 @@ public class ProductActivity extends Activity {
 		getMenuInflater().inflate(R.menu.product, menu);
 		return true;
 	}
+
+    public void onAddButton(View v) {
+    	/* Add to data structure */
+    }
+
+    public void onFinishedButton(View v) {
+//    	Intent i = new Intent(this, ProductActivity.class);
+//   	startActivityForResult(i, );
+    }
 }

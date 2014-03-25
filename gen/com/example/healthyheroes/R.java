@@ -46,11 +46,13 @@ public final class R {
         public static final int activity_home=0x7f030000;
         public static final int activity_ingredient=0x7f030001;
         public static final int activity_product=0x7f030002;
+        public static final int activity_selling=0x7f030003;
     }
     public static final class menu {
         public static final int home=0x7f070000;
         public static final int ingredient=0x7f070001;
         public static final int product=0x7f070002;
+        public static final int selling=0x7f070003;
     }
     public static final class string {
         public static final int action_settings=0x7f050001;

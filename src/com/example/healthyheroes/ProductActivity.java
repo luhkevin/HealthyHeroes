@@ -7,7 +7,7 @@ import android.view.Menu;
 import android.view.View;
 
 public class ProductActivity extends Activity {
-
+	public static final int SellingActivity_ID = 1;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -27,7 +27,7 @@ public class ProductActivity extends Activity {
     }
 
     public void onFinishedButton(View v) {
-//    	Intent i = new Intent(this, ProductActivity.class);
-//   	startActivityForResult(i, );
+    	Intent i = new Intent(this, ProductActivity.class); //goto SellingActivity
+    	startActivityForResult(i, SellingActivity_ID);
     }
 }

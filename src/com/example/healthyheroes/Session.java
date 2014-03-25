@@ -8,8 +8,7 @@ import java.util.Date;
 import java.util.HashMap;
 
 /**
- * The session class stores information about a given session
- *
+ * The session class stores information about a given session.
  */
 public class Session {
 	private final String	filename;		

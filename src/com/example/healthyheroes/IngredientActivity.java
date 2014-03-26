@@ -4,14 +4,14 @@ package com.example.healthyheroes;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.widget.EditText;
 
 public class IngredientActivity extends Activity {
 
-	private static final int ProductActivity_ID = 1;
-	private static final int HomeActivity_ID= 1;
+	private static final int ProductActivity_ID = 0;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +28,7 @@ public class IngredientActivity extends Activity {
 	}
 
     public void onAddButton(View v) {
+    	Log.v("IngredientActivity", "onAddButton() -- Add button pressed");
     	// Grabbing the View elements
     	EditText name_view 		= (EditText) findViewById(R.id.name_field);
 		EditText price_view 	= (EditText) findViewById(R.id.price_field);
@@ -39,8 +40,14 @@ public class IngredientActivity extends Activity {
 		double 	price 	 = Double.parseDouble(price_view.getText().toString());	
 		int 	quantity = Integer.parseInt(quantity_view.getText().toString());
 		
+		Log.v("IngredientActivity", "onAddButton() -- name, price and quantity gotten from view.");
+		Log.v("IngredientActivity", "onAddButton() -- name = " + name);
+		Log.v("IngredientActivity", "onAddButton() -- price = " + String.valueOf(price));
+		Log.v("IngredientActivity", "onAddButton() -- quantity = " + String.valueOf(quantity));
+		
 		// Storing the values
 		HomeActivity.addIngredient(name, price, quantity);
+		Log.v("IngredientActivity", "onAddButton() -- ingredient added to currentSession.");
 		
 		// Clearing the fields
 		name_view.setText("");
@@ -49,12 +56,14 @@ public class IngredientActivity extends Activity {
     }
 
     public void onFinishedButton(View v) {
+    	Log.v("IngredientActivity", "onFinishedButton() --Finished button pressed.");
+    	// Saving the currentSession
+    	// TODO: implement HomeActivity.saveCurrentSession()
+    	
+    	
+    	
+    	// Starting the new Activity
     	Intent i = new Intent(this, ProductActivity.class);
     	startActivityForResult(i, ProductActivity_ID);
-    }
-
-    public void onBackButton(View v) {
-    	Intent i = new Intent(this, HomeActivity.class);
-    	startActivityForResult(i, HomeActivity_ID);
     }
 }

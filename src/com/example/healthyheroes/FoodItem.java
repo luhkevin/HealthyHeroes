@@ -1,5 +1,7 @@
 package com.example.healthyheroes;
 
+import android.util.Log;
+
 /**
  * The FoodItem class is a class which stores information about a given ingredient or 
  * product.
@@ -13,6 +15,7 @@ public class FoodItem {
 	private int	number_sold;	// only used for products
 	
 	public FoodItem(String type, String name, double price, int quantity){
+		Log.v("FoodItem", "new FoodItem created - "+name);
 		this.type 		= type;
 		this.name 		= name;
 		this.price 		= price;

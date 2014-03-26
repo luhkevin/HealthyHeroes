@@ -1,74 +1,85 @@
-/**
- * 
- */
 package com.example.healthyheroes;
 
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 
+import android.util.Log;
+
 /**
  * The session class stores information about a given session.
  */
 public class Session {
-	private final String	filename;		
-	private final String[] 	participants;
-	private final Date 	 	date;
-	private final double 	initial_cash;
-	private double 	  		cashbox;
+	private Date 	 					date;
+	private String						filename;	
 	
-	private HashMap<String, FoodItem> ingredients;
-	private HashMap<String, FoodItem> products;
+	private ArrayList<String> 			participants;
+	private double 						initial_cash;
+	private double 	  					cashbox;
+	private HashMap<String, FoodItem> 	ingredients;
+	private HashMap<String, FoodItem> 	products;
 	
-	/**
-	 * Constructor to be used for new sessions 
-	 * @param participants
-	 * @param cashbox
-	 */
-	public Session(String[] participants, double initial_cash){
-		this.participants = participants;
+	/** Constructor */
+	public Session(){
+		Log.v("Session", "new Session created with empty constructor.");
 		this.date 		  = new Date();
-		this.initial_cash = initial_cash;
-		this.cashbox 	  = initial_cash;
-		this.filename 	  = "CurrentSession.session";
+		this.filename 	  = "CurrentSession.session";	//TODO: File format
 		
-		this.ingredients = new HashMap<String, FoodItem>();
-		this.products 	 = new HashMap<String, FoodItem>();
+		this.participants = new ArrayList<String>();
+		this.initial_cash = -1;
+		this.cashbox 	  = -1;
+		this.ingredients  = new HashMap<String, FoodItem>();
+		this.products 	  = new HashMap<String, FoodItem>();
 	}
 	
-	/**
-	 * Constructor for loading from a csv file
-	 * @param filename
-	 */
+	/** Constructor for loading from a csv file */
 	public Session(String filename){
+		Log.v("Session", "new Session created with filename constructor.");
 		// TODO: IMPLEMENT READING -- all of these need to be set appropriately 
 		this.participants = null;
 		this.date 		  = new Date();
-		this.initial_cash = 0;
-		this.cashbox 	  = 0;
+		this.initial_cash = -1;
+		this.cashbox 	  = -1;
 		this.filename 	  = filename;
 		
 		this.ingredients = null;
 		this.products 	 = null;
 	}
 	
-	public void addIngredient(String name, double price, int quantity){
-		ingredients.put(name,new FoodItem("Ingredient", name, price, quantity));
+	//TODO: implement addParticipant()
+	/** Adds a participant to the session */
+	
+	//TODO: implement setInitialCash()
+	/** Sets the initial cash balance of the session */
+	
+	/** Adds an ingredient to the session */
+	public void addIngredient(String item_name, double price, int quantity){
+		ingredients.put(item_name,new FoodItem("Ingredient", item_name, price, quantity));
+		Log.v("Session", "addIngredient() -- " + item_name + " was added.");
+		for (String ingredient: ingredients.keySet()){
+			Log.v("Session", "INGREDIENT: " + ingredient);
+		}
 	}
 	
-	public void addProduct(String name, double price, int quantity){
-		products.put(name, new FoodItem("Product", name, price, quantity));
-	}
-	
-	/**
-	 * Increments the number sold of the item item_name and increments the cashbox
-	 * @param item_name
-	 */
-	public void purchaseProduct(String item_name){
-		FoodItem item = products.get(item_name);
+	/** Adds a product to the session */
+	public void addProduct(String item_name, double price, int quantity){
+		products.put(item_name, new FoodItem("Product", item_name, price, quantity));
+		Log.v("Session", "addProduct() -- " + item_name + " was added.");
 		
-		item.incrementNumberSold();
-		cashbox += item.getPrice();
+		for (String product: products.keySet()){
+			Log.v("Session", "PRODUCT: " + product);
+		}
+	}
+	
+	/** Increments the number sold of the item item_name and increments the cashbox */
+	public void purchaseProduct(String item_name){
+		if (initial_cash < 0){
+			Log.e("Session", "purchaseProduct() - initial cash was never set.");
+		} else {
+			FoodItem item = products.get(item_name);
+			item.incrementNumberSold();
+			cashbox += item.getPrice();
+		}
 	}
 	
 	/**
@@ -102,6 +113,5 @@ public class Session {
 		
 		
 	}
-	
 	
 }

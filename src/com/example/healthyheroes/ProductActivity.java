@@ -61,7 +61,7 @@ public class ProductActivity extends Activity {
     }
 
     /** Called when [Finish] button is clicked */
-    public void onFinishedButton(View v) {
+    public void onFinishButton(View v) {
     	Intent i = new Intent(this, ProductActivity.class); //goto SellingActivity
     	startActivityForResult(i, SellingActivity_ID);
     }

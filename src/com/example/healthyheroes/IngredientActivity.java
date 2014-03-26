@@ -39,9 +39,9 @@ public class IngredientActivity extends Activity {
     public void onAddButton(View v) {
     	Log.v("IngredientActivity", "onAddButton() -- Add button pressed");
     	// Grabbing the View elements
-    	EditText name_view 		= (EditText) findViewById(R.id.name_field);
-		EditText price_view 	= (EditText) findViewById(R.id.price_field);
-		EditText quantity_view 	= (EditText) findViewById(R.id.quantity_field); 
+    	EditText name_view 		= (EditText) findViewById(R.id.ingredient_name);
+		EditText price_view 	= (EditText) findViewById(R.id.ingredient_price);
+		EditText quantity_view 	= (EditText) findViewById(R.id.ingredient_quantity); 
 		
 		// Grabbing the values
 		//TODO: Some VALIDATION for the fields
@@ -65,7 +65,7 @@ public class IngredientActivity extends Activity {
     }
 
     /** Called when [Finish] button is clicked */
-    public void onFinishedButton(View v) {
+    public void onFinishButton(View v) {
     	Log.v("IngredientActivity", "onFinishedButton() --Finished button pressed.");
     	// Saving the currentSession
     	// TODO: implement HomeActivity.saveCurrentSession()

@@ -1,4 +1,105 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+    <TableLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+		android:layout_weight="1">
+		
+	    <!-- NAME -->
+		<TableRow
+	        android:layout_height="wrap_content"
+	        android:layout_width="match_parent">
+	        
+		    <TextView
+		        android:layout_width="match_parent"
+		        android:layout_height="wrap_content"
+		        android:layout_weight="1"
+		        android:text="@string/ingredient_name" />
+		    
+		    <EditText
+		        android:id="@+id/ingredient_name"
+		        android:layout_width="match_parent"
+		        android:layout_height="wrap_content"
+		        android:layout_weight="2" />
+
+	 	</TableRow>
+	 	
+		<!-- PRICE -->
+		<TableRow
+	        android:layout_height="wrap_content"
+	        android:layout_width="match_parent">
+	        
+		    <TextView
+		        android:layout_width="match_parent"
+		        android:layout_height="wrap_content"
+		        android:layout_weight="1"
+		        android:text="@string/ingredient_price" />
+		    
+		    <EditText
+		        android:id="@+id/ingredient_price"
+		        android:layout_width="match_parent"
+		        android:layout_height="wrap_content"
+		        android:layout_weight="2" />
+
+	 	</TableRow>
+	 	
+		<!-- QUANTITY -->
+		<TableRow
+	        android:layout_height="wrap_content"
+	        android:layout_width="match_parent">
+	        
+		    <TextView
+		        android:layout_width="match_parent"
+		        android:layout_height="wrap_content"
+		        android:layout_weight="1"
+		        android:text="@string/ingredient_quantity" />
+		    
+		    <EditText
+		        android:id="@+id/ingredient_quantity"
+		        android:layout_width="match_parent"
+		        android:layout_height="wrap_content"
+		        android:layout_weight="2" />
+
+	 	</TableRow>
+	</TableLayout>
+	
+	<!-- BOTTOM BUTTONS -->
+	<LinearLayout
+	    android:orientation="horizontal"
+	    android:layout_width="fill_parent" 
+		android:layout_height="wrap_content">
+		
+	    <Button
+	        android:id="@+id/ingredient_back_button"
+	        android:layout_width="match_parent"
+	        android:layout_height="match_parent"
+	        android:layout_weight="1"
+	        android:onClick="onBackButton"
+	        android:text="@string/ingredient_back_button" />
+	    
+	    <Button
+	        android:id="@+id/ingredeint_add_button"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_weight="1"
+	        android:onClick="onAddButton"
+	        android:text="@string/ingredient_add_button" />
+	    
+	    <Button
+	        android:id="@+id/ingredient_finish_button"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_weight="1"
+	        android:onClick="onFinishButton"
+	        android:text="@string/ingredient_finish_button" />
+		
+	</LinearLayout>
+</LinearLayout>
+
+<!-- <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/container"
     android:layout_width="match_parent"
@@ -110,4 +211,4 @@
         android:onClick="onFinishedButton"
         android:text="Finish" />
 
-</RelativeLayout>
+</RelativeLayout> -->

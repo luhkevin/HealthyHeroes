@@ -5,10 +5,13 @@
     <string name="title_activity_ingredient">Add Ingredients</string>
     <string name="title_activity_product">Add Products</string>
     
-    
-    
-    
-    <string name="product_heading">Add Product</string>
+    <string name="ingredient_name">Name</string>
+    <string name="ingredient_price">Price</string>
+    <string name="ingredient_quantity">Quantity</string>
+    <string name="ingredient_add_button">Add</string>
+    <string name="ingredient_finish_button">Finish</string>
+    <string name="ingredient_back_button">Back</string>
+  
     <string name="product_name">Name</string>
     <string name="product_price">Price</string>
     <string name="product_quantity">Quantity</string>

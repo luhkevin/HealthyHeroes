@@ -8,19 +8,6 @@
         android:layout_height="wrap_content"
 		android:layout_weight="1">
 		
-	    <!-- HEADING -->
-	    <TableRow
-	        android:layout_height="wrap_content"
-	        android:layout_width="match_parent">
-	
-	        <TextView
-	            android:layout_width="fill_parent" 
-	            android:layout_height="wrap_content"
-	            android:gravity="center"
-	            android:layout_weight="3"
-	            android:text="@string/product_heading"/>
-	    </TableRow>
-	    
 	    <!-- NAME -->
 		<TableRow
 	        android:layout_height="wrap_content"

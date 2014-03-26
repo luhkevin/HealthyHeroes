@@ -29,7 +29,6 @@ public class HomeActivity extends Activity {
     /** Called when [Create Session] button is clicked */
     public void onCreateSessionButton(View v) {
     	Log.v("HomeActivity", "onCreateSessionButton() -- [Create Session] button pressed");
-    	
     	// Create a new session and set current_session
     	current_session = new Session();
     	
@@ -40,6 +39,7 @@ public class HomeActivity extends Activity {
     
     /** Called when [View Sessions] button is clicked */
     public void onViewSessionButton(View v) {
+    	Log.v("HomeActivity", "onViewSessionButton() -- [View Session] button pressed");
     	//Intent i = new Intent(this, ViewSessionActivity.class);
     	//startActivityForResult(i, ViewSessionActivity_ID);
     }
@@ -48,27 +48,37 @@ public class HomeActivity extends Activity {
     
     /** Sets the initial cash balance of the session */
     public static void setInitialCashBalance(double initial_cash){
-    	//TODO: implement setInitialCashBalance()
+    	Log.v("HomeActivity", "setInitialCashBalance() -- "+initial_cash+" was set as initial cash balance.");
+    	//TODO: implement setInitialCashBalance() in HomeActivity
     }
     
     /** Adds a new participant to the session */
     public static void addParticipant(String participant_name){
-    	//TODO: implement addParticipant()
+    	Log.v("HomeActivity", "addParticipant() -- "+participant_name+" was added.");
+    	//TODO: implement addParticipant() in HomeActivity
     }
     
     /** Adds the ingredient to the session */
     public static void addIngredient(String item_name, double price, int quantity){
+    	Log.v("HomeActivity", "addIngredient() -- "+item_name+" was added.");
     	current_session.addIngredient(item_name, price, quantity); 
     }
     
     /** Adds the product to the session */
     public static void addProduct(String item_name, double price, int quantity){
-    	Log.v("HomeActivity", "addProduct() -- adding the product " + item_name);
+    	Log.v("HomeActivity", "addProduct() -- "+item_name+" was added.");
     	current_session.addProduct(item_name, price, quantity); 
     }
     
     /** Adjusts the cashbox, and items sold in the session */
-    public void purchaseProduct(String item_name){
+    public static void purchaseProduct(String item_name){
+    	Log.v("HomeActivity", "purchaseProduct() -- "+item_name+" was purchased.");
     	current_session.purchaseProduct(item_name);
     }    
+    
+    /** Saves the current session to a file */
+    public static void saveSession(){
+    	Log.v("HomeActivity", "saveSession() -- session is being saved.");
+    	//TODO: implement saveSession() in HomeActivity
+    }
 }

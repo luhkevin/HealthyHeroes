@@ -79,6 +79,6 @@ public class HomeActivity extends Activity {
     /** Saves the current session to a file */
     public static void saveSession(){
     	Log.v("HomeActivity", "saveSession() -- session is being saved.");
-    	//TODO: implement saveSession() in HomeActivity
+    	current_session.writeToFile();
     }
 }

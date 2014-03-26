@@ -27,6 +27,12 @@ public class ProductActivity extends Activity {
 
 	/** Called when [Back] button is clicked */
     public void onBackButton(View v) {
+    	Log.v("ProductActivity","onBackButton() -- Back button pressed.");
+    	
+    	// Saving the currentSession
+    	HomeActivity.saveSession();
+    	
+    	// Starting the new Activity
     	Intent i = new Intent(this, IngredientActivity.class);
     	startActivity(i);
     }

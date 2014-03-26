@@ -30,6 +30,9 @@ public class IngredientActivity extends Activity {
 	public void onBackButton(View v){
 		Log.v("IngredientActivity","onBackButton() -- Back button pressed.");
 		
+		// Saving the currentSession
+    	HomeActivity.saveSession();
+		
 		// Starting the new Activity
     	Intent i = new Intent(this, HomeActivity.class);
     	startActivity(i);
@@ -67,10 +70,9 @@ public class IngredientActivity extends Activity {
     /** Called when [Finish] button is clicked */
     public void onFinishButton(View v) {
     	Log.v("IngredientActivity", "onFinishedButton() --Finished button pressed.");
+    	
     	// Saving the currentSession
-    	// TODO: implement HomeActivity.saveCurrentSession()
-    	
-    	
+    	HomeActivity.saveSession();
     	
     	// Starting the new Activity
     	Intent i = new Intent(this, ProductActivity.class);

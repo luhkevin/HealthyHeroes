@@ -40,11 +40,13 @@ public class FoodItem {
 	 * written to a file.
 	 * The string will be of the form:
 	 * 		type, name, price, quantity, [number_sold]
-	 * @return
 	 */
 	public String getFileString(){
-		
-		return "WORKING ON IT... UGH";
+		return	type + "," + 
+				name + "," + 
+				String.valueOf(price) + "," + 
+				String.valueOf(quantity) + "," + 
+				String.valueOf(number_sold) + "\n";
 	}
 	
 	// METHODS ONLY USED FOR PRODUCTS

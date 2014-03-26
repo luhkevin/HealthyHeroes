@@ -1,5 +1,11 @@
 package com.example.healthyheroes;
 
+import java.io.BufferedWriter;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStreamWriter;
+import java.text.Format;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
@@ -86,32 +92,47 @@ public class Session {
 	 * Writes all the information to files
 	 */
 	public void writeToFile(){
-		// TODO: IMPLEMENT WRITING
+		Log.v("Session","writeToFile() -- writing to file " + filename);
+		BufferedWriter bw = null;
+		try {
+			// Create Writer
+			bw = new BufferedWriter(
+					new OutputStreamWriter(new FileOutputStream(filename), "utf-8"));
+			
+			// DATE 
+			Format formatter  	= new SimpleDateFormat("MM-dd-yyyy HH:mm:ss");
+			String date_string 	= formatter.format(date);
+			bw.write("Date, "+ date_string + "\n");
+			
+			// INITIAL CASH BALANCE
+			String i_cash = String.valueOf(initial_cash);
+			bw.write("Cash initial,"+ i_cash + "\n");
+			
+			// FINAL CASH BALANCE
+			String f_cash = String.valueOf(cashbox);
+			bw.write("Cash final,"+ f_cash + "\n");
+			
+			// PARTICIPANTS
+			for (String participant : participants){
+				bw.write("Participant," + participant + "\n");
+			}
+						
+			// INGREDIENTS
+			for (FoodItem ingredient : ingredients.values()){
+				bw.write(ingredient.getFileString());
+			}
+			
+			// PRODUCTS
+			for (FoodItem product : products.values()){
+				bw.write(product.getFileString());
+			}
 		
-		// DATE and CASHBOX
-		// Date, 26, 3, 2014
-		// Cash, initial, 10.00
-		// Cash, final, 20.00
-		
-		// PARTICIPANTS
-		for (String name : this.participants){
-			// Participant, Alex
-
+		} catch (IOException e){
+			Log.e("Session", "writeToFile() -- " + e.getMessage());
+			//TODO: handle exception
+		} finally {
+			try {bw.close();} catch (Exception e){}
 		}
-		
-		// INGREDIENTS
-		for (FoodItem i : this.ingredients.values()){
-			// Ingredient, apples, 1.00, 3, 0 \n 
-			// call some getFileString() method in FoodItem class
-		}
-		
-		// PRODUCTS
-		for (FoodItem p : this.products.values()){
-			// Product, apple juice, 4.00, 5, 1 \n
-			// call some getFileString() method in FoodItem class
-		}
-		
-		
 	}
 	
 }

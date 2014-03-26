@@ -12,21 +12,30 @@ import android.widget.EditText;
 public class IngredientActivity extends Activity {
 
 	private static final int ProductActivity_ID = 0;
-
+	
+	/** Called when Application is started */
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_ingredient);
 	}
-
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
-
 		// Inflate the menu; this adds items to the action bar if it is present.
 		getMenuInflater().inflate(R.menu.ingredient, menu);
 		return true;
 	}
+	
+	/** Called when [Back] button is clicked */
+	public void onBackButton(View v){
+		Log.v("IngredientActivity","onBackButton() -- Back button pressed.");
+		
+		// Starting the new Activity
+    	Intent i = new Intent(this, HomeActivity.class);
+    	startActivity(i);
+	}
 
+	/** Called when [Add] button is clicked */
     public void onAddButton(View v) {
     	Log.v("IngredientActivity", "onAddButton() -- Add button pressed");
     	// Grabbing the View elements
@@ -55,6 +64,7 @@ public class IngredientActivity extends Activity {
 		quantity_view.setText("");
     }
 
+    /** Called when [Finish] button is clicked */
     public void onFinishedButton(View v) {
     	Log.v("IngredientActivity", "onFinishedButton() --Finished button pressed.");
     	// Saving the currentSession

@@ -1,85 +1,113 @@
-<TableLayout 
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
-    
-    <!-- HEADING -->
-    <TableRow
+    <TableLayout
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_width="match_parent">
+		android:layout_weight="1">
+		
+	    <!-- HEADING -->
+	    <TableRow
+	        android:layout_height="wrap_content"
+	        android:layout_width="match_parent">
+	
+	        <TextView
+	            android:layout_width="fill_parent" 
+	            android:layout_height="wrap_content"
+	            android:gravity="center"
+	            android:layout_weight="3"
+	            android:text="@string/product_heading"/>
+	    </TableRow>
+	    
+	    <!-- NAME -->
+		<TableRow
+	        android:layout_height="wrap_content"
+	        android:layout_width="match_parent">
+	        
+		    <TextView
+		        android:layout_width="match_parent"
+		        android:layout_height="wrap_content"
+		        android:layout_weight="1"
+		        android:text="@string/product_name" />
+		    
+		    <EditText
+		        android:id="@+id/product_name"
+		        android:layout_width="match_parent"
+		        android:layout_height="wrap_content"
+		        android:layout_weight="2" />
 
-        <TextView
-            android:layout_width="fill_parent" 
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:layout_weight="3"
-            android:text="@string/product_heading"/>
-    </TableRow>
-    
-    <!-- NAME -->
-	<TableRow
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent">
-        
-	    <TextView 
-            android:layout_weight="1"
-            android:text="@string/product_name"/>
-	    
-	    <EditText
-            android:id="@+id/product_name"
-            android:layout_weight="2"/>
- 	</TableRow>
- 	
-	<!-- PRICE -->
-	<TableRow
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent">
-        
-	    <TextView 
-            android:layout_weight="1"
-            android:text="@string/product_price"/>
-	    
-	    <EditText
-            android:id="@+id/product_price"
-            android:layout_weight="2"/>
- 	</TableRow>
- 	
-	<!-- QUANTITY -->
-	<TableRow
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent">
-        
-	    <TextView 
-            android:layout_weight="1"
-            android:text="@string/product_quantity"/>
-	    
-	    <EditText
-            android:id="@+id/product_quantity"
-            android:layout_weight="2"/>
- 	</TableRow>
-    
+	 	</TableRow>
+	 	
+		<!-- PRICE -->
+		<TableRow
+	        android:layout_height="wrap_content"
+	        android:layout_width="match_parent">
+	        
+		    <TextView
+		        android:layout_width="match_parent"
+		        android:layout_height="wrap_content"
+		        android:layout_weight="1"
+		        android:text="@string/product_price" />
+		    
+		    <EditText
+		        android:id="@+id/product_price"
+		        android:layout_width="match_parent"
+		        android:layout_height="wrap_content"
+		        android:layout_weight="2" />
+
+	 	</TableRow>
+	 	
+		<!-- QUANTITY -->
+		<TableRow
+	        android:layout_height="wrap_content"
+	        android:layout_width="match_parent">
+	        
+		    <TextView
+		        android:layout_width="match_parent"
+		        android:layout_height="wrap_content"
+		        android:layout_weight="1"
+		        android:text="@string/product_quantity" />
+		    
+		    <EditText
+		        android:id="@+id/product_quantity"
+		        android:layout_width="match_parent"
+		        android:layout_height="wrap_content"
+		        android:layout_weight="2" />
+
+	 	</TableRow>
+	</TableLayout>
+	
 	<!-- BOTTOM BUTTONS -->
-	<TableRow
-	    android:layout_height="wrap_content"
-	    android:layout_width="match_parent">
-	    
+	<LinearLayout
+	    android:orientation="horizontal"
+	    android:layout_width="fill_parent" 
+		android:layout_height="wrap_content">
+		
 	    <Button
 	        android:id="@+id/product_back_button"
+	        android:layout_width="match_parent"
+	        android:layout_height="match_parent"
 	        android:layout_weight="1"
-	        android:text="@string/product_back_button"
-	        android:onClick="onBackButton"/>
+	        android:onClick="onBackButton"
+	        android:text="@string/product_back_button" />
 	    
 	    <Button
 	        android:id="@+id/product_add_button"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
 	        android:layout_weight="1"
-	        android:text="@string/product_add_button"
-	        android:onClick="onAddButton"/>
+	        android:onClick="onAddButton"
+	        android:text="@string/product_add_button" />
 	    
 	    <Button
 	        android:id="@+id/product_finish_button"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
 	        android:layout_weight="1"
-	        android:text="@string/product_finish_button"
-	        android:onClick="onFinishButton"/>
-	</TableRow>
-</TableLayout>
+	        android:onClick="onFinishButton"
+	        android:text="@string/product_finish_button" />
+		
+	</LinearLayout>
+</LinearLayout>

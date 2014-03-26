@@ -8,7 +8,7 @@ import android.view.Menu;
 import android.view.View;
 
 public class HomeActivity extends Activity {	
-	public static final int IngredientActivity_ID = 1;
+	public static final int IngredientActivity_ID = 1; // I don't think we have to use startActivityforResult()
 	
 	// private instance of session object
 	private static Session current_session;
@@ -44,7 +44,8 @@ public class HomeActivity extends Activity {
     	//startActivityForResult(i, ViewSessionActivity_ID);
     }
     
-    // STATIC METHODS TO BE USED TO UPDATE THE SESSION INFO
+// STATIC METHODS TO BE USED TO UPDATE THE SESSION INFO
+    
     /** Sets the initial cash balance of the session */
     public static void setInitialCashBalance(double initial_cash){
     	//TODO: implement setInitialCashBalance()
@@ -62,6 +63,7 @@ public class HomeActivity extends Activity {
     
     /** Adds the product to the session */
     public static void addProduct(String item_name, double price, int quantity){
+    	Log.v("HomeActivity", "addProduct() -- adding the product " + item_name);
     	current_session.addProduct(item_name, price, quantity); 
     }
     

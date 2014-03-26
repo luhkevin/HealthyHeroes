@@ -15,6 +15,8 @@ public class HomeActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        String [] participants = {"Rob", "Bob"};
+        session = new Session(participants, 100.0);
         setContentView(R.layout.activity_home);
     }
 

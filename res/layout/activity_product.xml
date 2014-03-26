@@ -15,22 +15,33 @@
         android:text="Products" />
 
     <Button
-        android:id="@+id/button1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_toLeftOf="@+id/textView1"
-        android:onClick="onAddButton"
-        android:text="Add" />
-
-    <Button
         android:id="@+id/button2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_toRightOf="@+id/textView1"
+        android:layout_marginLeft="28dp"
+        android:layout_toRightOf="@+id/button1"
         android:onClick="onFinishButton"
         android:text="Finish" />
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/textView1"
+        android:onClick="onAddButton"
+        android:text="Add" />
+
+    <Button
+        android:id="@+id/backbutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginRight="28dp"
+        android:layout_toLeftOf="@+id/button1"
+        android:onClick="onBackButton"
+        android:text="Back" />
 
 </RelativeLayout>
 

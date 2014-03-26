@@ -9,6 +9,7 @@ import android.widget.EditText;
 
 public class ProductActivity extends Activity {
 	public static final int SellingActivity_ID = 1;
+	public static final int IngredientActivity_ID = 1;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -47,5 +48,10 @@ public class ProductActivity extends Activity {
     public void onFinishedButton(View v) {
     	Intent i = new Intent(this, ProductActivity.class); //goto SellingActivity
     	startActivityForResult(i, SellingActivity_ID);
+    }
+    
+    public void onBackButton(View v) {
+    	Intent i = new Intent(this, IngredientActivity.class);
+    	startActivityForResult(i, IngredientActivity_ID);
     }
 }

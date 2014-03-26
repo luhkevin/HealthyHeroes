@@ -1,13 +1,13 @@
 package com.example.healthyheroes;
 
 import java.io.BufferedWriter;
-import java.io.FileOutputStream;
+import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
-import java.io.OutputStreamWriter;
-import java.text.Format;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.HashMap;
 
 import android.util.Log;
@@ -20,6 +20,7 @@ public class Session {
 	private String						filename;	
 	
 	private ArrayList<String> 			participants;
+//	private ArrayList<Customer>			customers; //TODO: implement customers 
 	private double 						initial_cash;
 	private double 	  					cashbox;
 	private HashMap<String, FoodItem> 	ingredients;
@@ -51,6 +52,8 @@ public class Session {
 		this.ingredients = null;
 		this.products 	 = null;
 	}
+	//TODO: implement addCustomer()
+	/** Adds a customer to the session */
 	
 	//TODO: implement addParticipant()
 	/** Adds a participant to the session */
@@ -88,51 +91,64 @@ public class Session {
 		}
 	}
 	
-	/**
-	 * Writes all the information to files
-	 */
-	public void writeToFile(){
-		Log.v("Session","writeToFile() -- writing to file " + filename);
-		BufferedWriter bw = null;
-		try {
-			// Create Writer
-			bw = new BufferedWriter(
-					new OutputStreamWriter(new FileOutputStream(filename), "utf-8"));
-			
-			// DATE 
-			Format formatter  	= new SimpleDateFormat("MM-dd-yyyy HH:mm:ss");
-			String date_string 	= formatter.format(date);
-			bw.write("Date, "+ date_string + "\n");
-			
-			// INITIAL CASH BALANCE
-			String i_cash = String.valueOf(initial_cash);
-			bw.write("Cash initial,"+ i_cash + "\n");
-			
-			// FINAL CASH BALANCE
-			String f_cash = String.valueOf(cashbox);
-			bw.write("Cash final,"+ f_cash + "\n");
-			
-			// PARTICIPANTS
-			for (String participant : participants){
-				bw.write("Participant," + participant + "\n");
-			}
-						
-			// INGREDIENTS
-			for (FoodItem ingredient : ingredients.values()){
-				bw.write(ingredient.getFileString());
-			}
-			
-			// PRODUCTS
-			for (FoodItem product : products.values()){
-				bw.write(product.getFileString());
-			}
+	/** Returns the filename of the session*/
+	public String getFilename() {
+		return filename;
+	}
+	
+	public void writeSessionToFile(){
+		Log.v("Session", "writeSessionToFile() -- writting session to file.");
+		File files_directory = HomeActivity.getFilesDirectory();
 		
+		try {
+			BufferedWriter bw = 
+					new BufferedWriter(new FileWriter(files_directory + filename));
+			
+			bw.write(this.getFileString());
+			
+			bw.close();
 		} catch (IOException e){
-			Log.e("Session", "writeToFile() -- " + e.getMessage());
-			//TODO: handle exception
-		} finally {
-			try {bw.close();} catch (Exception e){}
+			Log.e("Session", "writeSessionToFile() -- " + e.getMessage());
 		}
 	}
 	
+	/** HELPER METHOD: returns a string to be written to a file */
+	private String getFileString(){
+		Log.v("Session","getFileStringBytes() -- creating content for file " + filename);
+		
+		// Initializing string
+		String 				output_string = "";
+		
+		// Building File String
+		output_string += "Date," 			+ this.getDateFileString() 	   	+ "\n";
+		output_string += "Initial Cash," 	+ String.valueOf(initial_cash) 	+ "\n";
+		output_string += "Final Cash," 		+ String.valueOf(cashbox) 		+ "\n";
+		for (String participant : participants){
+			output_string += "Participant," + participant + "\n";
+		}
+		for (FoodItem ingredient : ingredients.values()){
+			output_string += ingredient.getFileString();
+		} 
+		for (FoodItem product : products.values()){
+			output_string += product.getFileString();
+		}
+		
+		return output_string;
+	}
+	
+	/** Returns a string of the date DAY, MONTH, YEAR */
+	private String getDateFileString(){
+		GregorianCalendar cal 	= new GregorianCalendar();
+		cal.setTime(date);
+		
+		// generating date string
+		String date_string = 	Integer.valueOf(cal.get(Calendar.YEAR))  + "," + 
+								Integer.valueOf(cal.get(Calendar.DATE))  + "," + 
+								Integer.valueOf(cal.get(Calendar.MONTH)) + "\n";
+		
+		return date_string;
+	}
+
+	
+
 }

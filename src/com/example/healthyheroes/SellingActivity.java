@@ -21,7 +21,6 @@ public class SellingActivity extends Activity {
         init();
     }
 
-
 	@Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -36,6 +35,7 @@ public class SellingActivity extends Activity {
 		ArrayList<FoodItem> foods = new ArrayList<FoodItem>();
 		list.setAdapter(new FoodItemAdapter(SellingActivity.this, R.layout.selling_list_item, foods)); // create itemAdapater
 		list.setOnClickListener(null); //TODO set as appropriate?
+		//TODO figure out how to update cashbox onClick
 	}
     
     public void onFinishButton(View v) {

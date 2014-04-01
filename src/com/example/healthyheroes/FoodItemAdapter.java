@@ -32,26 +32,26 @@ public class FoodItemAdapter extends ArrayAdapter<FoodItem> {
 		View row = convertView;
 		FoodItemHolder holder = null;
 
-		if(row == null) {
+		if(row == null) { //make new data holder for the row
 			LayoutInflater inflater = ((Activity) context).getLayoutInflater();
 			row = inflater.inflate(layoutResourceId, parent, false);
 			holder = new FoodItemHolder();
 			holder.minus = (Button) row.findViewById(R.id.minusButton);
-			holder.minus.setTag(holder);
+			holder.minus.setTag(holder); //add holder to button tag
 			holder.plus = (Button) row.findViewById(R.id.plusButton);
-			holder.plus.setTag(holder);
+			holder.plus.setTag(holder); //add holder to button tag
 			holder.name = (TextView) row.findViewById(R.id.productName);
 			holder.numberSoldLabel = (TextView) row.findViewById(R.id.numberSoldLabel);
 			holder.numberSold = (TextView) row.findViewById(R.id.numberSold);
 			holder.food = items.get(position);
-			row.setTag(holder);
-		} else {
+			row.setTag(holder); //store it in tag
+		} else { //else load the data holder
 			holder = (FoodItemHolder) row.getTag();
 		}
 		
 		FoodItem food = holder.food;
 		holder.name.setText(food.getName()); //set Name
-		holder.numberSold.setText(Integer.toString(food.getNumberSold()));
+		holder.numberSold.setText(Integer.toString(food.getNumberSold())); //set # sold
 		
 		
 		
@@ -63,7 +63,7 @@ public class FoodItemAdapter extends ArrayAdapter<FoodItem> {
 				FoodItemHolder holder = (FoodItemHolder) v.getTag(); //finds holder set earlier
 				FoodItem food = holder.food;
 				food.decrementNumberSold();
-				holder.numberSold.setText(Integer.toString(food.getNumberSold()));
+				holder.numberSold.setText(Integer.toString(food.getNumberSold())); //update # sold
 			}
 		}); 
 		
@@ -72,10 +72,10 @@ public class FoodItemAdapter extends ArrayAdapter<FoodItem> {
 		
 			@Override
 			public void onClick(View v) {
-				FoodItemHolder holder = (FoodItemHolder) v.getTag();
+				FoodItemHolder holder = (FoodItemHolder) v.getTag(); //finds holder set earlier
 				FoodItem food = holder.food;
 				food.incrementNumberSold();
-				holder.numberSold.setText(Integer.toString(food.getNumberSold()));
+				holder.numberSold.setText(Integer.toString(food.getNumberSold())); //update # sold
 				
 			}
 		}); 

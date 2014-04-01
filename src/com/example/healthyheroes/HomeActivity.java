@@ -14,7 +14,9 @@ public class HomeActivity extends Activity {
 	
 	// private instance of session object
 	private static Session current_session;
-	private static File files_directory;
+	
+	private static File 		files_directory;
+	
 	
 	/** Called when Application is started */
     @Override
@@ -23,6 +25,7 @@ public class HomeActivity extends Activity {
         setContentView(R.layout.activity_home);
         
         files_directory = getFilesDir();
+        
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -36,6 +39,8 @@ public class HomeActivity extends Activity {
     	Log.v("HomeActivity", "onCreateSessionButton() -- [Create Session] button pressed");
     	// Create a new session and set current_session
     	current_session = new Session();
+    	
+    	Session.getAllSessions();
     	
     	// Starting the new Activity
     	Intent i = new Intent(this, IngredientActivity.class);

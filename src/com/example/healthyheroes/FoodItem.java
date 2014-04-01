@@ -7,20 +7,29 @@ import android.util.Log;
  * product.
  */
 public class FoodItem {
-	private final String	type;
 	private final String 	name;
 	private final double 	price;
 	private final int 		quantity;
 	
 	private int	number_sold;	// only used for products
 	
-	public FoodItem(String type, String name, double price, int quantity){
+	public FoodItem(String name, double price, int quantity){
 		Log.v("FoodItem", "new FoodItem created - "+name);
-		this.type 		= type;
+		
 		this.name 		= name;
 		this.price 		= price;
 		this.quantity 	= quantity;
 		this.number_sold= 0;
+	}
+	
+	/** Constructor used when you want to set the number_sold */
+	public FoodItem(String name, double price, int quantity, int number_sold){
+		Log.v("FoodItem", "new FoodItem created - "+name);
+		
+		this.name 		= name;
+		this.price 		= price;
+		this.quantity 	= quantity;
+		this.number_sold= number_sold;
 	}
 	
 	public String getName(){
@@ -42,25 +51,19 @@ public class FoodItem {
 	 * 		type, name, price, quantity, [number_sold]
 	 */
 	public String getFileString(){
-		return	type + "," + 
-				name + "," + 
+		return	name + "," + 
 				String.valueOf(price) + "," + 
 				String.valueOf(quantity) + "," + 
-				String.valueOf(number_sold) + "\n";
+				String.valueOf(number_sold);
 	}
 	
 	// METHODS ONLY USED FOR PRODUCTS
-	public int getNumberSold(){
-		if (type.equals("Product")){
-			return number_sold;
-		} else {
-			return -1;
-		}
-		
+	
+ 	public int getNumberSold(){
+		return number_sold;	
 	}
 
 	public void incrementNumberSold(){
-		if (type.equals("Product"))
-			number_sold++;
+		number_sold++;
 	}	
 }

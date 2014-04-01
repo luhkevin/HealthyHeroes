@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:gravity="fill"
+    android:orientation="horizontal" >
+
+    <Button
+        android:id="@+id/minusButton"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:onClick="onMinusButtonClick"
+        android:text="-" />
+
+    <Button
+        android:id="@+id/plusButton"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:onClick="onPlusButtonClick"
+        android:text="+" />
+
+    <TextView
+        android:id="@+id/productName"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_above="@+id/numberSold"
+        android:layout_alignParentTop="true"
+        android:layout_toLeftOf="@+id/plusButton"
+        android:layout_toRightOf="@+id/minusButton"
+        android:gravity="center"
+        android:text="Product Name"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/numberSoldLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/minusButton"
+        android:layout_alignLeft="@+id/productName"
+        android:layout_marginLeft="37dp"
+        android:text="Number Sold:"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <TextView
+        android:id="@+id/numberSold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/numberSoldLabel"
+        android:layout_alignBottom="@+id/numberSoldLabel"
+        android:layout_marginLeft="23dp"
+        android:layout_toRightOf="@+id/numberSoldLabel"
+        android:text="0"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+</RelativeLayout>

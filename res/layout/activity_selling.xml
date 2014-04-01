@@ -28,7 +28,7 @@
             android:text="@string/selling_finish_button" />
     </LinearLayout>
 
-	<LinearLayout
+	<RelativeLayout
 	    android:layout_width="wrap_content"
 	    android:layout_height="wrap_content" 
 	    android:layout_above="@+id/linearLayout1"
@@ -37,25 +37,25 @@
 	    android:id="@+id/linearLayout2">
 
     <TextView
-        android:id="@+id/textView1"
+        android:id="@+id/cashLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Cash In Register:" />
         
-   </LinearLayout>
+   
 
 	<TextView
 	    android:id="@+id/moneyTotal"
 	    android:layout_width="wrap_content"
 	    android:layout_height="wrap_content"
-	    android:layout_above="@+id/linearLayout1"
 	    android:layout_alignParentRight="true"
 	    android:text="$0.00"
 	    android:textAppearance="?android:attr/textAppearanceMedium" />
-
+	</RelativeLayout>
+	
 	<ListView
-	    android:id="@+id/listView1"
+	    android:id="@+id/listOfProducts"
 	    android:layout_width="match_parent"
 	    android:layout_height="wrap_content"
 	    android:layout_above="@+id/linearLayout2"

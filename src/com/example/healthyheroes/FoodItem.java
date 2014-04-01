@@ -66,4 +66,8 @@ public class FoodItem {
 	public void incrementNumberSold(){
 		number_sold++;
 	}	
+	
+	public void decrementNumberSold(){
+		number_sold--;
+	}
 }

@@ -29,7 +29,7 @@ public final class R {
         public static final int ic_launcher=0x7f020000;
     }
     public static final class id {
-        public static final int action_settings=0x7f08000e;
+        public static final int action_settings=0x7f080010;
         public static final int button1=0x7f080000;
         public static final int button2=0x7f080001;
         public static final int ingredeint_add_button=0x7f080006;
@@ -38,12 +38,14 @@ public final class R {
         public static final int ingredient_name=0x7f080002;
         public static final int ingredient_price=0x7f080003;
         public static final int ingredient_quantity=0x7f080004;
+        public static final int linearLayout1=0x7f08000e;
         public static final int product_add_button=0x7f08000c;
         public static final int product_back_button=0x7f08000b;
         public static final int product_finish_button=0x7f08000d;
         public static final int product_name=0x7f080008;
         public static final int product_price=0x7f080009;
         public static final int product_quantity=0x7f08000a;
+        public static final int sellingProductView1=0x7f08000f;
     }
     public static final class layout {
         public static final int activity_home=0x7f030000;
@@ -72,6 +74,8 @@ public final class R {
         public static final int product_name=0x7f05000a;
         public static final int product_price=0x7f05000b;
         public static final int product_quantity=0x7f05000c;
+        public static final int selling_back_button=0x7f050010;
+        public static final int selling_finish_button=0x7f050011;
         public static final int title_activity_ingredient=0x7f050002;
         public static final int title_activity_product=0x7f050003;
     }

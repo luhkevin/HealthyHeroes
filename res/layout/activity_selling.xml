@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
-
+    
     <LinearLayout
         android:id="@+id/linearLayout1"
         android:layout_width="wrap_content"
@@ -28,13 +28,41 @@
             android:text="@string/selling_finish_button" />
     </LinearLayout>
 
-    <com.example.healthyheroes.SellingProductView
-        android:id="@+id/sellingProductView1"
+	<LinearLayout
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content" 
+	    android:layout_above="@+id/linearLayout1"
+	    android:layout_alignParentLeft="true"
+	    
+	    android:id="@+id/linearLayout2">
+
+    <TextView
+        android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/linearLayout1"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentTop="true" />
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Cash In Register:" />
+        
+   </LinearLayout>
+
+	<TextView
+	    android:id="@+id/moneyTotal"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_above="@+id/linearLayout1"
+	    android:layout_alignParentRight="true"
+	    android:text="$0.00"
+	    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+	<ListView
+	    android:id="@+id/listView1"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:layout_above="@+id/linearLayout2"
+	    android:layout_alignParentLeft="true"
+	    android:layout_alignParentTop="true" >
+
+	</ListView>
 
 </RelativeLayout>
+    

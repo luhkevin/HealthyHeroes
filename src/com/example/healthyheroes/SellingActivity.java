@@ -11,8 +11,8 @@ import android.widget.TextView;
 
 public class SellingActivity extends Activity {
 	
-	TextView cashBox;
-	ListView list;
+	private TextView cashBox;
+	private ListView list;
 	
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,9 +33,17 @@ public class SellingActivity extends Activity {
 		list = (ListView) this.findViewById(R.id.listOfProducts);
 		
 		ArrayList<FoodItem> foods = new ArrayList<FoodItem>();
-		list.setAdapter(new FoodItemAdapter(SellingActivity.this, R.layout.selling_list_item, foods)); // create itemAdapater
-		list.setOnClickListener(null); //TODO set as appropriate?
+		for(int i = 0 ; i < 10; i++) {
+		foods.add(new FoodItem("Apple", 0.50, 10));
+		foods.add(new FoodItem("Banana", 1.00, 5));
+		foods.add(new FoodItem("Orange", 1.50, 20)); 
+		}
+		//TODO add actual foodItem from session
+		list.setAdapter(new FoodItemAdapter(SellingActivity.this, R.layout.selling_list_item, foods, this)); // create itemAdapater
 		//TODO figure out how to update cashbox onClick
+		
+
+
 	}
     
     public void onFinishButton(View v) {
@@ -47,6 +55,11 @@ public class SellingActivity extends Activity {
     }
     
     public void setCashBox(double cash) {
-    	cashBox.setText(Double.toString(cash));
+    	cashBox.setText("$" + Double.toString(cash));
     }
+    
+    public double getCashBox() {
+    	return Double.parseDouble(cashBox.getText().toString().substring(1));
+    }
+    
 }

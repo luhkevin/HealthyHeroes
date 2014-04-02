@@ -4,6 +4,7 @@
 	<string name="action_settings">Settings</string>
     <string name="title_activity_ingredient">Add Ingredients</string>
     <string name="title_activity_product">Add Products</string>
+    <string name="title_activity_selling">Selling Things!</string>
     
     <string name="ingredient_name">Name</string>
     <string name="ingredient_price">Price</string>

@@ -17,12 +17,15 @@ public class FoodItemAdapter extends ArrayAdapter<FoodItem> {
 	private int layoutResourceId;
 	private Context context;
 	private List<FoodItem> items;
+	private SellingActivity sa;
 
-	public FoodItemAdapter(Context context, int resource, List<FoodItem> objects) {
+	public FoodItemAdapter(Context context, int resource, List<FoodItem> objects, SellingActivity sa) {
 		super(context, resource, objects);
 		this.layoutResourceId = resource;
 		this.context = context;
 		this.items = objects;
+		this.sa = sa;
+		
 	}
 
 	Activity bob;
@@ -64,6 +67,8 @@ public class FoodItemAdapter extends ArrayAdapter<FoodItem> {
 				FoodItem food = holder.food;
 				food.decrementNumberSold();
 				holder.numberSold.setText(Integer.toString(food.getNumberSold())); //update # sold
+				double current = sa.getCashBox();
+				sa.setCashBox(current - food.getPrice());
 			}
 		}); 
 		
@@ -76,7 +81,8 @@ public class FoodItemAdapter extends ArrayAdapter<FoodItem> {
 				FoodItem food = holder.food;
 				food.incrementNumberSold();
 				holder.numberSold.setText(Integer.toString(food.getNumberSold())); //update # sold
-				
+				double current = sa.getCashBox();
+				sa.setCashBox(current + food.getPrice());
 			}
 		}); 
 

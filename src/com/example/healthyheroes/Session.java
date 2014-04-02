@@ -110,8 +110,15 @@ public class Session {
 		participants.add(name_participant);
 	}
 	
-	//TODO: implement setInitialCash()
 	/** Sets the initial cash balance of the session */
+	public void setInitialCash(double cash){
+		initial_cash = cash;
+		cashbox = initial_cash;
+	}
+	
+	public double getCurrentCash(){
+		return cashbox;
+	}
 	
 	/** Adds an ingredient to the session */
 	public void addIngredient(String item_name, double price, int quantity){
@@ -151,6 +158,10 @@ public class Session {
 			item.incrementNumberSold();
 			cashbox += item.getPrice();
 		}
+	}
+	
+	public HashMap<String, FoodItem> getProducts(){
+		return products;
 	}
 	
 	/** Writes the contents of the session into the file with filename */

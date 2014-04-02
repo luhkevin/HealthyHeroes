@@ -3,7 +3,9 @@ package com.example.healthyheroes;
 import java.util.ArrayList;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.widget.ListView;
@@ -33,12 +35,9 @@ public class SellingActivity extends Activity {
 		list = (ListView) this.findViewById(R.id.listOfProducts);
 		
 		ArrayList<FoodItem> foods = new ArrayList<FoodItem>();
-		for(int i = 0 ; i < 10; i++) {
-		foods.add(new FoodItem("Apple", 0.50, 10));
-		foods.add(new FoodItem("Banana", 1.00, 5));
-		foods.add(new FoodItem("Orange", 1.50, 20)); 
-		}
-		//TODO add actual foodItem from session
+		for(FoodItem product : HomeActivity.getCurrentSession().getProducts().values()) {
+			   foods.add(product);
+			}
 		list.setAdapter(new FoodItemAdapter(SellingActivity.this, R.layout.selling_list_item, foods, this)); // create itemAdapater
 		
 
@@ -49,12 +48,28 @@ public class SellingActivity extends Activity {
     }
     
     public void onBackButton(View v) {
-    	//TODO write me
+		Log.v("SellingActivity","onBackButton() -- Back button pressed.");
+		
+		// Saving the currentSession
+    	HomeActivity.saveSession();
+		
+		// Starting the new Activity
+    	Intent i = new Intent(this, ProductActivity.class);
+    	startActivity(i);
+    }
+    
+    // This helper method rounds a double to a given number of decimal places
+    public static double round(double value, int places) {
+        if (places < 0) throw new IllegalArgumentException();
+        long factor = (long) Math.pow(10, places);
+        value *= factor;
+        long tempval = Math.round(value);
+        return (double) tempval / factor;
     }
     
     public void setCashBox(double cash) {
-    	cashBox.setText("$" + Double.toString(cash));
-    	//TODO get currency formatting e.g. $1.00 instead of $1.0
+    	String cashFormatted = String.format("%.2f", cash);
+    	cashBox.setText("$" + cashFormatted);
     }
     
     public double getCashBox() {

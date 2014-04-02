@@ -64,7 +64,12 @@ public class HomeActivity extends Activity {
     /** Sets the initial cash balance of the session */
     public static void setInitialCashBalance(double initial_cash){
     	Log.v("HomeActivity", "setInitialCashBalance() -- "+initial_cash+" was set as initial cash balance.");
-    	//TODO: implement setInitialCashBalance() in HomeActivity
+    	current_session.setInitialCash(initial_cash);
+    }
+    
+    /** Gets the current cash balance of the session */
+    public static double getCurrentCashBalance(){
+    	return current_session.getCurrentCash();
     }
     
     /** Adds a new participant to the session */
@@ -89,7 +94,11 @@ public class HomeActivity extends Activity {
     public static void purchaseProduct(String item_name){
     	Log.v("HomeActivity", "purchaseProduct() -- "+item_name+" was purchased.");
     	current_session.purchaseProduct(item_name);
-    }    
+    }
+    
+    public static Session getCurrentSession(){
+    	return current_session;
+    }
     
     /** Saves the current session to a file */
     public static void saveSession(){

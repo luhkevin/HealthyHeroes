@@ -56,6 +56,7 @@ public class SellingActivity extends Activity {
     
     public void setCashBox(double cash) {
     	cashBox.setText("$" + Double.toString(cash));
+    	//TODO get currency formatting e.g. $1.00 instead of $1.0
     }
     
     public double getCashBox() {

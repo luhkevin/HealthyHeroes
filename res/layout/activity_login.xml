@@ -1,0 +1,160 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+    <TableLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+		android:layout_weight="1">
+		
+	    <!-- PARTICIPANTS -->
+		<TableRow
+	        android:layout_height="wrap_content"
+	        android:layout_width="match_parent">
+	        
+		    <TextView
+		        android:layout_width="match_parent"
+		        android:layout_height="wrap_content"
+		        android:layout_weight="1"
+		        android:text="@string/participant_name" />
+		    
+		    <EditText
+		        android:id="@+id/participant_name"
+		        android:layout_width="match_parent"
+		        android:layout_height="wrap_content"
+		        android:layout_weight="2" />
+
+	 	</TableRow>
+	 	
+		<!-- CASHBOX -->
+		<TableRow
+	        android:layout_height="wrap_content"
+	        android:layout_width="match_parent">
+	        
+		    <TextView
+		        android:layout_width="match_parent"
+		        android:layout_height="wrap_content"
+		        android:layout_weight="1"
+		        android:text="@string/cashbox_value" />
+		    
+		    <EditText
+		        android:id="@+id/cashbox_value"
+		        android:layout_width="match_parent"
+		        android:layout_height="wrap_content"
+		        android:layout_weight="2" />
+
+	 	</TableRow>
+	 	
+
+	</TableLayout>
+	
+	<!-- BOTTOM BUTTONS -->
+	<LinearLayout
+	    android:orientation="horizontal"
+	    android:layout_width="fill_parent" 
+		android:layout_height="wrap_content">
+		
+	    <Button
+	        android:id="@+id/login_back_button"
+	        android:layout_width="match_parent"
+	        android:layout_height="match_parent"
+	        android:layout_weight="1"
+	        android:onClick="onBackButton"
+	        android:text="@string/login_back_button" />
+
+	    
+	    <Button
+	        android:id="@+id/login_continue_button"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_weight="1"
+	        android:onClick="onFinishButton"
+	        android:text="@string/login_continue_button" />
+		
+	</LinearLayout>
+</LinearLayout>
+
+<!-- <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.healthyheroes.LoginActivity"
+    tools:ignore="MergeRootFrame" >
+
+    <RelativeLayout
+        android:id="@+id/ParticipantInput"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="59dp" >
+
+        <TextView
+            android:id="@+id/name_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/name_field"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_toLeftOf="@+id/name_field"
+            android:text="Participant Names:" />
+
+        <EditText
+            android:id="@+id/name_field"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:ems="10"/>
+
+        <TextView
+            android:id="@+id/cashbox_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/cashbox_field"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/name_label"
+            android:layout_toLeftOf="@+id/cashbox_field"
+            android:text="Cashbox Value:" />
+
+        <EditText
+            android:id="@+id/cashbox_field"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/name_field"
+            android:ems="10"
+            android:inputType="number" />
+        
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/heading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:text="Participants " />
+
+    <Button
+        android:id="@+id/backToHomebutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginRight="20dp"
+        android:layout_toLeftOf="@+id/heading"
+        android:onClick="onBackButton"
+        android:text="Back" />
+
+    <Button
+        android:id="@+id/finish_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/heading"
+        android:onClick="onFinishedButton"
+        android:text="Finish" />
+
+</RelativeLayout> -->

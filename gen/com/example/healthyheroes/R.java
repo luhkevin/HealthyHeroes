@@ -29,65 +29,76 @@ public final class R {
         public static final int ic_launcher=0x7f020000;
     }
     public static final class id {
-        public static final int action_settings=0x7f080018;
+        public static final int action_settings=0x7f08001c;
         public static final int button1=0x7f080000;
         public static final int button2=0x7f080001;
-        public static final int cashLabel=0x7f080010;
+        public static final int cashLabel=0x7f080014;
+        public static final int cashbox_value=0x7f080009;
         public static final int ingredeint_add_button=0x7f080006;
         public static final int ingredient_back_button=0x7f080005;
         public static final int ingredient_finish_button=0x7f080007;
         public static final int ingredient_name=0x7f080002;
         public static final int ingredient_price=0x7f080003;
         public static final int ingredient_quantity=0x7f080004;
-        public static final int linearLayout1=0x7f08000e;
-        public static final int linearLayout2=0x7f08000f;
-        public static final int listOfProducts=0x7f080012;
-        public static final int minusButton=0x7f080013;
-        public static final int moneyTotal=0x7f080011;
-        public static final int numberSold=0x7f080016;
-        public static final int numberSoldLabel=0x7f080017;
-        public static final int plusButton=0x7f080014;
-        public static final int productName=0x7f080015;
-        public static final int product_add_button=0x7f08000c;
-        public static final int product_back_button=0x7f08000b;
-        public static final int product_finish_button=0x7f08000d;
-        public static final int product_name=0x7f080008;
-        public static final int product_price=0x7f080009;
-        public static final int product_quantity=0x7f08000a;
+        public static final int linearLayout1=0x7f080012;
+        public static final int linearLayout2=0x7f080013;
+        public static final int listOfProducts=0x7f080016;
+        public static final int login_back_button=0x7f08000a;
+        public static final int login_continue_button=0x7f08000b;
+        public static final int minusButton=0x7f080017;
+        public static final int moneyTotal=0x7f080015;
+        public static final int numberSold=0x7f08001a;
+        public static final int numberSoldLabel=0x7f08001b;
+        public static final int participant_name=0x7f080008;
+        public static final int plusButton=0x7f080018;
+        public static final int productName=0x7f080019;
+        public static final int product_add_button=0x7f080010;
+        public static final int product_back_button=0x7f08000f;
+        public static final int product_finish_button=0x7f080011;
+        public static final int product_name=0x7f08000c;
+        public static final int product_price=0x7f08000d;
+        public static final int product_quantity=0x7f08000e;
     }
     public static final class layout {
         public static final int activity_home=0x7f030000;
         public static final int activity_ingredient=0x7f030001;
-        public static final int activity_product=0x7f030002;
-        public static final int activity_selling=0x7f030003;
-        public static final int selling_list_item=0x7f030004;
+        public static final int activity_login=0x7f030002;
+        public static final int activity_product=0x7f030003;
+        public static final int activity_selling=0x7f030004;
+        public static final int selling_list_item=0x7f030005;
     }
     public static final class menu {
         public static final int home=0x7f070000;
         public static final int ingredient=0x7f070001;
-        public static final int product=0x7f070002;
-        public static final int selling=0x7f070003;
+        public static final int login=0x7f070002;
+        public static final int product=0x7f070003;
+        public static final int selling=0x7f070004;
     }
     public static final class string {
         public static final int action_settings=0x7f050001;
         public static final int app_name=0x7f050000;
-        public static final int ingredient_add_button=0x7f050008;
-        public static final int ingredient_back_button=0x7f05000a;
-        public static final int ingredient_finish_button=0x7f050009;
-        public static final int ingredient_name=0x7f050005;
-        public static final int ingredient_price=0x7f050006;
-        public static final int ingredient_quantity=0x7f050007;
-        public static final int product_add_button=0x7f05000e;
-        public static final int product_back_button=0x7f050010;
-        public static final int product_finish_button=0x7f05000f;
-        public static final int product_name=0x7f05000b;
-        public static final int product_price=0x7f05000c;
-        public static final int product_quantity=0x7f05000d;
-        public static final int selling_back_button=0x7f050011;
-        public static final int selling_finish_button=0x7f050012;
-        public static final int title_activity_ingredient=0x7f050002;
-        public static final int title_activity_product=0x7f050003;
-        public static final int title_activity_selling=0x7f050004;
+        public static final int cashbox_value=0x7f050007;
+        public static final int ingredient_add_button=0x7f05000d;
+        public static final int ingredient_back_button=0x7f05000f;
+        public static final int ingredient_finish_button=0x7f05000e;
+        public static final int ingredient_name=0x7f05000a;
+        public static final int ingredient_price=0x7f05000b;
+        public static final int ingredient_quantity=0x7f05000c;
+        public static final int login_back_button=0x7f050009;
+        public static final int login_continue_button=0x7f050008;
+        public static final int participant_name=0x7f050006;
+        public static final int product_add_button=0x7f050013;
+        public static final int product_back_button=0x7f050015;
+        public static final int product_finish_button=0x7f050014;
+        public static final int product_name=0x7f050010;
+        public static final int product_price=0x7f050011;
+        public static final int product_quantity=0x7f050012;
+        public static final int selling_back_button=0x7f050016;
+        public static final int selling_finish_button=0x7f050017;
+        public static final int title_activity_ingredient=0x7f050003;
+        public static final int title_activity_login=0x7f050002;
+        public static final int title_activity_product=0x7f050004;
+        public static final int title_activity_selling=0x7f050005;
     }
     public static final class style {
         /** 

@@ -23,6 +23,10 @@
             </intent-filter>
         </activity>
         <activity
+            android:name="com.example.healthyheroes.LoginActivity"
+            android:label="@string/title_activity_login" >
+        </activity>
+        <activity
             android:name="com.example.healthyheroes.IngredientActivity"
             android:label="@string/title_activity_ingredient" >
         </activity>

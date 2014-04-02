@@ -34,7 +34,7 @@ public class IngredientActivity extends Activity {
     	HomeActivity.saveSession();
 		
 		// Starting the new Activity
-    	Intent i = new Intent(this, HomeActivity.class);
+    	Intent i = new Intent(this, LoginActivity.class);
     	startActivity(i);
 	}
 

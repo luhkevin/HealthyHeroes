@@ -10,7 +10,7 @@ import android.view.Menu;
 import android.view.View;
 
 public class HomeActivity extends Activity {	
-	public static final int IngredientActivity_ID = 1; // I don't think we have to use startActivityforResult()
+	public static final int LoginActivity_ID = 1; // I don't think we have to use startActivityforResult()
 	
 	// private instance of session object
 	private static Session current_session;
@@ -36,20 +36,20 @@ public class HomeActivity extends Activity {
     
     /** Called when [Create Session] button is clicked */
     public void onCreateSessionButton(View v) {
-    	Log.v("HomeActivity", "onCreateSessionButton() -- [Create Session] button pressed");
+    	Log.v("HomeActivity", "onCreateSessionButton() -- [New Session] button pressed");
     	// Create a new session and set current_session
     	current_session = new Session();
     	
     	Session.getAllSessions();
     	
     	// Starting the new Activity
-    	Intent i = new Intent(this, IngredientActivity.class);
-    	startActivityForResult(i, IngredientActivity_ID);
+    	Intent i = new Intent(this, LoginActivity.class);
+    	startActivityForResult(i, LoginActivity_ID);
     }
     
     /** Called when [View Sessions] button is clicked */
     public void onViewSessionButton(View v) {
-    	Log.v("HomeActivity", "onViewSessionButton() -- [View Session] button pressed");
+    	Log.v("HomeActivity", "onViewSessionButton() -- [View Sessions] button pressed");
     	//Intent i = new Intent(this, ViewSessionActivity.class);
     	//startActivityForResult(i, ViewSessionActivity_ID);
     }

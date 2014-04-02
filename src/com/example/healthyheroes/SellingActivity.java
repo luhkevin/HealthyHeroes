@@ -40,9 +40,7 @@ public class SellingActivity extends Activity {
 		}
 		//TODO add actual foodItem from session
 		list.setAdapter(new FoodItemAdapter(SellingActivity.this, R.layout.selling_list_item, foods, this)); // create itemAdapater
-		//TODO figure out how to update cashbox onClick
 		
-
 
 	}
     

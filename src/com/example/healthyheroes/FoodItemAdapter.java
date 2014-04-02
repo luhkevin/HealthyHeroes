@@ -27,8 +27,6 @@ public class FoodItemAdapter extends ArrayAdapter<FoodItem> {
 		this.sa = sa;
 		
 	}
-
-	Activity bob;
 	
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {

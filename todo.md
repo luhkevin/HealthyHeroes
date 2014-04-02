@@ -39,14 +39,8 @@ Remove number sold label and change to number sold per customer.
 Back button: adds a pop-up asking are you sure you need to add more products?
 
 EndActivity
+
 Data at end
 Total numbers of stuff sold
 Total number of stuff (products) brought
 
-
-/* IGNORE IDEA
-ReadyScreenActivity -- NEW
-Are you ready to sell out?
-List out all the FoodItems
-Have a Start Selling & Go Back button.
-*/

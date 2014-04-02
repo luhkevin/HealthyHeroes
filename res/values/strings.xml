@@ -23,7 +23,7 @@
     <string name="product_price">What is the selling price?</string>
     <string name="product_quantity">How many did you make?</string>
     <string name="product_add_button">Save This Product</string>
-    <string name="product_finish_button">I'm ready to Sell!</string>
+    <string name="product_finish_button">Ready to Sell!</string>
     <string name="product_back_button">Back to Ingredients</string>
     
     <string name="selling_back_button">Back to Products</string>

@@ -32,6 +32,7 @@ public class SellingActivity extends Activity {
 	
     private void init() {
     	cashBox = (TextView) this.findViewById(R.id.moneyTotal);
+    	cashBox.setText("$" + String.format("%.2f", HomeActivity.getCurrentCashBalance()));
 		list = (ListView) this.findViewById(R.id.listOfProducts);
 		
 		ArrayList<FoodItem> foods = new ArrayList<FoodItem>();
@@ -68,8 +69,7 @@ public class SellingActivity extends Activity {
     }
     
     public void setCashBox(double cash) {
-    	String cashFormatted = String.format("%.2f", cash);
-    	cashBox.setText("$" + cashFormatted);
+    	cashBox.setText("$" + String.format("%.2f", cash));
     }
     
     public double getCashBox() {

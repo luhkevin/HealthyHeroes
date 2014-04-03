@@ -9,18 +9,22 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
-        android:layout_centerVertical="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="120dp"
+        android:background="#0099FF"
         android:gravity="center_vertical|center_horizontal"
         android:onClick="onCreateSessionButton"
-        android:text="Create Session" />
+        android:text="Create New Session" />
 
     <Button
         android:id="@+id/button2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/button1"
-        android:layout_centerHorizontal="true"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/button1"
+        android:layout_marginTop="20dp"
+        android:background="#0099FF"
         android:onClick="onViewSessionButton"
-        android:text="View Sessions" />
+        android:text="View Past Sessions" />
 
 </RelativeLayout>

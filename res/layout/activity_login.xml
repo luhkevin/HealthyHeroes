@@ -61,6 +61,7 @@
 	        android:layout_height="match_parent"
 	        android:layout_weight="1"
 	        android:onClick="onBackButton"
+	        android:background= "#0099FF"
 	        android:text="@string/login_back_button" />
 
 	    
@@ -70,6 +71,7 @@
 	        android:layout_height="wrap_content"
 	        android:layout_weight="1"
 	        android:onClick="onFinishButton"
+	      	android:background= "#0099FF"
 	        android:text="@string/login_continue_button" />
 		
 	</LinearLayout>

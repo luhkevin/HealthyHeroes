@@ -12,6 +12,7 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:onClick="onMinusButtonClick"
+	    android:background= "#0099FF"
         android:text="-" />
 
     <Button
@@ -21,6 +22,7 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
         android:onClick="onPlusButtonClick"
+        android:background= "#0099FF"
         android:text="+" />
 
     <TextView

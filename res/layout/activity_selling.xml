@@ -17,6 +17,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:onClick="onBackButton"
+	        android:background= "#0099FF"
             android:text="@string/selling_back_button" />
 
         <Button
@@ -25,6 +26,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:onClick="onFinishButton"
+	        android:background= "#0099FF"
             android:text="@string/selling_finish_button" />
     </LinearLayout>
 

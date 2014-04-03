@@ -32,7 +32,7 @@ public final class R {
         public static final int action_settings=0x7f08001c;
         public static final int button1=0x7f080000;
         public static final int button2=0x7f080001;
-        public static final int cashLabel=0x7f080014;
+        public static final int cashLabel=0x7f080015;
         public static final int cashbox_value=0x7f080009;
         public static final int ingredeint_add_button=0x7f080006;
         public static final int ingredient_back_button=0x7f080005;
@@ -40,13 +40,13 @@ public final class R {
         public static final int ingredient_name=0x7f080002;
         public static final int ingredient_price=0x7f080003;
         public static final int ingredient_quantity=0x7f080004;
-        public static final int linearLayout1=0x7f080012;
+        public static final int linearLayout1=0x7f080014;
         public static final int linearLayout2=0x7f080013;
-        public static final int listOfProducts=0x7f080016;
+        public static final int listOfProducts=0x7f080012;
         public static final int login_back_button=0x7f08000a;
         public static final int login_continue_button=0x7f08000b;
         public static final int minusButton=0x7f080017;
-        public static final int moneyTotal=0x7f080015;
+        public static final int moneyTotal=0x7f080016;
         public static final int numberSold=0x7f08001a;
         public static final int numberSoldLabel=0x7f08001b;
         public static final int participant_name=0x7f080008;

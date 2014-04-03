@@ -1,52 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
-    
-    <LinearLayout
-        android:id="@+id/linearLayout1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true" >
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
 
-        <Button
-            android:id="@+id/product_back_button"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:onClick="onBackButton"
-	        android:background= "#0099FF"
-            android:text="@string/selling_back_button" />
 
-        <Button
-            android:id="@+id/product_finish_button"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:onClick="onFinishButton"
-	        android:background= "#0099FF"
-            android:text="@string/selling_finish_button" />
-    </LinearLayout>
 
+	
+	<ListView
+	    android:id="@+id/listOfProducts"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:layout_above="@+id/linearLayout2"
+	    android:layout_alignParentLeft="true"
+	    android:layout_alignParentTop="true" >
+	</ListView>
+
+
+	
 	<RelativeLayout
-	    android:layout_width="wrap_content"
+	    android:id="@+id/linearLayout2"
+	    android:layout_width="match_parent"
 	    android:layout_height="wrap_content" 
 	    android:layout_above="@+id/linearLayout1"
-	    android:layout_alignParentLeft="true"
-	    
-	    android:id="@+id/linearLayout2">
-
+	    android:layout_alignParentLeft="true">
     <TextView
         android:id="@+id/cashLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Cash In Register:" />
-        
-   
-
+        android:text="Cash In Register:" /> 
 	<TextView
 	    android:id="@+id/moneyTotal"
 	    android:layout_width="wrap_content"
@@ -56,15 +39,31 @@
 	    android:textAppearance="?android:attr/textAppearanceMedium" />
 	</RelativeLayout>
 	
-	<ListView
-	    android:id="@+id/listOfProducts"
-	    android:layout_width="match_parent"
-	    android:layout_height="wrap_content"
-	    android:layout_above="@+id/linearLayout2"
-	    android:layout_alignParentLeft="true"
-	    android:layout_alignParentTop="true" >
-
-	</ListView>
-
+	
+	<LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true" >
+        <Button
+            android:id="@+id/product_back_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="onBackButton"
+            android:background= "#0099FF"
+            android:text="@string/selling_back_button" />
+        <Button
+            android:id="@+id/product_finish_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="onFinishButton"
+            android:background= "#0099FF"
+            android:text="@string/selling_finish_button" />
+    </LinearLayout>
+	
 </RelativeLayout>
     

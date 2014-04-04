@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class ProductActivity extends Activity {
 	public static final int SellingActivity_ID = 1;
@@ -45,6 +46,11 @@ public class ProductActivity extends Activity {
 		EditText price_view 	= (EditText) findViewById(R.id.product_price);
 		EditText quantity_view 	= (EditText) findViewById(R.id.product_quantity); 
 		
+		//More duplicate code...
+		if(isInvalidView(name_view) || isInvalidView(price_view) || isInvalidView(quantity_view)) {
+			Toast.makeText(this, "Name, price, or quantity not entered", Toast.LENGTH_SHORT).show();
+			return;
+		}
 		// Grabbing the values
 		//TODO: Some VALIDATION for the fields
 		String 	name 	 = name_view.getText().toString();
@@ -70,5 +76,10 @@ public class ProductActivity extends Activity {
     public void onFinishButton(View v) {
     	Intent i = new Intent(this, SellingActivity.class); //goto SellingActivity
     	startActivityForResult(i, SellingActivity_ID);
+    }
+
+    //duplicate code ... will want to refactor product/ingredient into same interface later if have the time
+    private boolean isInvalidView(EditText view) {
+    	return view.getText().toString().equals("");
     }
 }

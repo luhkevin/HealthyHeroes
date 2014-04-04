@@ -11,10 +11,8 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 public class IngredientActivity extends Activity {
-
 	private static final int ProductActivity_ID = 0;
-	private boolean emptyFields = true;
-	
+
 	/** Called when Application is started */
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -55,7 +53,6 @@ public class IngredientActivity extends Activity {
 			return;
 		}
 
-		emptyFields = false;
 		String 	name 	 = name_view.getText().toString();
 		double 	price 	 = Double.parseDouble(price_view.getText().toString());	
 		int 	quantity = Integer.parseInt(quantity_view.getText().toString());
@@ -79,8 +76,6 @@ public class IngredientActivity extends Activity {
     public void onFinishButton(View v) {
     	Log.v("IngredientActivity", "onFinishedButton() --Finished button pressed.");
     	
-    	if(emptyFields) return;
-    		
     	// Saving the currentSession
     	HomeActivity.saveSession();
     	

@@ -42,7 +42,7 @@ public class FoodItemAdapter extends ArrayAdapter<FoodItem> {
 			holder.plus = (Button) row.findViewById(R.id.plusButton);
 			holder.plus.setTag(holder); //add holder to button tag
 			holder.name = (TextView) row.findViewById(R.id.productName);
-			holder.numberSoldLabel = (TextView) row.findViewById(R.id.numberSoldLabel);
+//			holder.numberSoldLabel = (TextView) row.findViewById(R.id.numberSoldLabel);
 			holder.numberSold = (TextView) row.findViewById(R.id.numberSold);
 			holder.food = items.get(position);
 			row.setTag(holder); //store it in tag
@@ -67,6 +67,8 @@ public class FoodItemAdapter extends ArrayAdapter<FoodItem> {
 				holder.numberSold.setText(Integer.toString(food.getNumberSold())); //update # sold
 				double current = sa.getCashBox();
 				sa.setCashBox(current - food.getPrice());
+				
+				//TODO input sanitiation i.e. no negative #'s and none past limit sold.
 			}
 		}); 
 		
@@ -81,6 +83,8 @@ public class FoodItemAdapter extends ArrayAdapter<FoodItem> {
 				holder.numberSold.setText(Integer.toString(food.getNumberSold())); //update # sold
 				double current = sa.getCashBox();
 				sa.setCashBox(current + food.getPrice());
+				
+				//TODO input sanitation
 			}
 		}); 
 
@@ -92,7 +96,7 @@ public class FoodItemAdapter extends ArrayAdapter<FoodItem> {
 		TextView name;
 		Button plus;
 		Button minus;
-		TextView numberSoldLabel;
+//		TextView numberSoldLabel;
 		TextView numberSold;
 	}
 }

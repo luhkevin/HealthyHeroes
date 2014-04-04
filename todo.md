@@ -31,11 +31,11 @@ User name / CashBox initial amount field
 
 SellingActivity
 
-NewCustomer Button -> add items -> Finish Customer
+NewCustomer Button -> add items -> Finish Customer  -- added the buttons
 Can't add anything until New Customer e.g everything freezes until new customer
 Customer total field for current sale -> Finish Customer -> then adds that total to cashbox amount
 Change finish to finish day/session
-Remove number sold label and change to number sold per customer. 
+Remove number sold label and change to number sold per customer.  -- DONE
 Back button: adds a pop-up asking are you sure you need to add more products?
 
 EndActivity

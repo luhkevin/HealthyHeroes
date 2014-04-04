@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
     android:layout_height="match_parent"
-    android:gravity="fill"
+    android:gravity="center_horizontal"
     android:orientation="horizontal" >
 
     <Button
@@ -38,23 +38,11 @@
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <TextView
-        android:id="@+id/numberSoldLabel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/minusButton"
-        android:layout_alignLeft="@+id/productName"
-        android:layout_marginLeft="37dp"
-        android:text="Number Sold:"
-        android:textAppearance="?android:attr/textAppearanceSmall" />
-
-    <TextView
         android:id="@+id/numberSold"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/numberSoldLabel"
-        android:layout_alignBottom="@+id/numberSoldLabel"
-        android:layout_marginLeft="23dp"
-        android:layout_toRightOf="@+id/numberSoldLabel"
+        android:layout_alignBottom="@+id/minusButton"
+        android:layout_centerHorizontal="true"
         android:text="0"
         android:textAppearance="?android:attr/textAppearanceSmall" />
 

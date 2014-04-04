@@ -51,12 +51,23 @@ public class SellingActivity extends Activity {
     public void onBackButton(View v) {
 		Log.v("SellingActivity","onBackButton() -- Back button pressed.");
 		
+		//TODO pop-up warning
 		// Saving the currentSession
     	HomeActivity.saveSession();
 		
 		// Starting the new Activity
     	Intent i = new Intent(this, ProductActivity.class);
     	startActivity(i);
+    }
+    
+    public void onNewCustomerButton(View v) {
+    	//TODO write me
+    	
+    }
+    
+    public void onFinishCustomerButton(View v) {
+    	//TODO write me
+    	
     }
     
     // This helper method rounds a double to a given number of decimal places

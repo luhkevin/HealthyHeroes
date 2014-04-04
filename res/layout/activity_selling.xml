@@ -4,22 +4,20 @@
     android:layout_height="match_parent"
     android:orientation="vertical" >
 
-
-
-	
 	<ListView
 	    android:id="@+id/listOfProducts"
 	    android:layout_width="match_parent"
 	    android:layout_height="wrap_content"
-	    android:layout_above="@+id/linearLayout2"
+	    android:layout_above="@+id/finishButton"
 	    android:layout_alignParentLeft="true"
-	    android:layout_alignParentTop="true" >
+	    android:layout_below="@+id/newCustomerButton" >
+
 	</ListView>
 
 
 	
 	<RelativeLayout
-	    android:id="@+id/linearLayout2"
+	    android:id="@+id/cashboxLayout"
 	    android:layout_width="match_parent"
 	    android:layout_height="wrap_content" 
 	    android:layout_above="@+id/linearLayout1"
@@ -37,6 +35,9 @@
 	    android:layout_alignParentRight="true"
 	    android:text="$0.00"
 	    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+
+
 	</RelativeLayout>
 	
 	
@@ -64,6 +65,24 @@
             android:background= "#0099FF"
             android:text="@string/selling_finish_button" />
     </LinearLayout>
+
+	<Button
+	    android:id="@+id/newCustomerButton"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:layout_alignParentLeft="true"
+	    android:layout_alignParentTop="true"
+	    android:onClick="onNewCustomerButton"
+	    android:text="New Customer" />
+	
+	<Button 
+	    android:id="@+id/finishButton"
+		android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:layout_alignParentLeft="true"
+	    android:layout_above="@+id/cashboxLayout"
+	    android:onClick="onFinishCustomerButton"
+	    android:text="Finish Customer" />
 	
 </RelativeLayout>
     

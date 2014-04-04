@@ -29,6 +29,7 @@ public class LoginActivity extends Activity {
 		Log.v("LoginActivity","onBackButton() -- Back button pressed.");
 		
 		// Saving the currentSession
+		// TODO: why are we saving HomeActivity...shouldn't it be LoginActivity?
     	HomeActivity.saveSession();
 		
 		// Starting the new Activity

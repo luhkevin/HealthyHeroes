@@ -8,10 +8,12 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class IngredientActivity extends Activity {
 
 	private static final int ProductActivity_ID = 0;
+	private boolean emptyFields = true;
 	
 	/** Called when Application is started */
 	@Override
@@ -49,8 +51,11 @@ public class IngredientActivity extends Activity {
 		// Grabbing the values
 		//TODO: Some VALIDATION for the fields
 		if(isInvalidView(name_view) || isInvalidView(price_view) || isInvalidView(quantity_view)) {
-			
+			Toast.makeText(this, "Name, price, or quantity not entered", Toast.LENGTH_SHORT).show();
+			return;
 		}
+
+		emptyFields = false;
 		String 	name 	 = name_view.getText().toString();
 		double 	price 	 = Double.parseDouble(price_view.getText().toString());	
 		int 	quantity = Integer.parseInt(quantity_view.getText().toString());
@@ -74,6 +79,8 @@ public class IngredientActivity extends Activity {
     public void onFinishButton(View v) {
     	Log.v("IngredientActivity", "onFinishedButton() --Finished button pressed.");
     	
+    	if(emptyFields) return;
+    		
     	// Saving the currentSession
     	HomeActivity.saveSession();
     	
@@ -83,6 +90,6 @@ public class IngredientActivity extends Activity {
     }
     
     private boolean isInvalidView(EditText view) {
-    	return view.getText().equals("");
+    	return view.getText().toString().equals("");
     }
 }

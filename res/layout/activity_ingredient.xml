@@ -75,7 +75,7 @@
 	    <Button
 	        android:id="@+id/ingredient_back_button"
 	        android:layout_width="match_parent"
-	        android:layout_height="wrap_content"
+	        android:layout_height="match_parent"
 	        android:layout_weight="1"
 	        android:onClick="onBackButton"
 	        android:background= "#0099FF"
@@ -84,7 +84,7 @@
 	    <Button
 	        android:id="@+id/ingredeint_add_button"
 	        android:layout_width="match_parent"
-	        android:layout_height="wrap_content"
+	        android:layout_height="match_parent"
 	        android:layout_weight="1"
 	        android:onClick="onAddButton"
 	        android:background= "#0099FF"
@@ -93,7 +93,7 @@
 	    <Button
 	        android:id="@+id/ingredient_finish_button"
 	        android:layout_width="match_parent"
-	        android:layout_height="wrap_content"
+	        android:layout_height="match_parent"
 	        android:layout_weight="1"
 	        android:onClick="onFinishButton"
 	        android:background= "#0099FF"

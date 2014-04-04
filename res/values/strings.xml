@@ -29,6 +29,10 @@
     <string name="selling_back_button">Back to Products</string>
     <string name="selling_finish_button">End Session</string>
 
+    <string name="more_products_title">Add More Products?</string>
+    <string name="more_products_message">Are you sure you need to add more Products?</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
     
 
 </resources>

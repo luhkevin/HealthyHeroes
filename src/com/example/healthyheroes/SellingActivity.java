@@ -3,6 +3,8 @@ package com.example.healthyheroes;
 import java.util.ArrayList;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -51,13 +53,35 @@ public class SellingActivity extends Activity {
     public void onBackButton(View v) {
 		Log.v("SellingActivity","onBackButton() -- Back button pressed.");
 		
-		//TODO pop-up warning
+		//pop-up warning
+		new AlertDialog.Builder(this)
+        .setIcon(android.R.drawable.ic_dialog_alert)
+        .setTitle(R.string.more_products_title)
+        .setMessage(R.string.more_products_message)
+        .setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {
+
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+                //Stop the activity
+                SellingActivity.this.finishSession();    
+            }
+
+        })
+        .setNegativeButton(R.string.no, null)
+        .show();
+		
+    }
+    
+    private void finishSession() {
+    	
 		// Saving the currentSession
     	HomeActivity.saveSession();
 		
 		// Starting the new Activity
     	Intent i = new Intent(this, ProductActivity.class);
     	startActivity(i);
+    	this.finish(); //do we need this?
     }
     
     public void onNewCustomerButton(View v) {

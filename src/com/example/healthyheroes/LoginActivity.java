@@ -46,6 +46,10 @@ public class LoginActivity extends Activity {
 		// Grabbing the values
 		//TODO: Some VALIDATION for the fields
 		String 	name 	 		= name_view.getText().toString();
+		if(cashbox_view.getText().toString() == null) {
+			//TODO add dialog box asking for cashbox to have a value
+			return; //avoids crash at parseDouble
+		}
 		double 	cashbox_value 	= Double.parseDouble(cashbox_view.getText().toString());
 		
 		Log.v("LoginActivity", "onFinishedButton() -- name and cashbox value gotten from view.");

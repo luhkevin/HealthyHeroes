@@ -73,7 +73,7 @@
 	    android:layout_alignParentLeft="true"
 	    android:layout_alignParentTop="true"
 	    android:onClick="onNewCustomerButton"
-	    android:text="New Customer" />
+	    android:text="@string/new_customer" />
 	
 	<Button 
 	    android:id="@+id/finishButton"
@@ -82,7 +82,7 @@
 	    android:layout_alignParentLeft="true"
 	    android:layout_above="@+id/cashboxLayout"
 	    android:onClick="onFinishCustomerButton"
-	    android:text="Finish Customer" />
+	    android:text="@string/finish_customer" />
 	
 </RelativeLayout>
     

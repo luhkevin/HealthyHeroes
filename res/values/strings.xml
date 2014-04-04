@@ -28,6 +28,8 @@
     
     <string name="selling_back_button">Back to Products</string>
     <string name="selling_finish_button">End Session</string>
+    <string name="new_customer">New Customer</string>
+    <string name="finish_customer">Finish Customer</string>
 
     <string name="more_products_title">Add More Products?</string>
     <string name="more_products_message">Are you sure you need to add more Products?</string>

@@ -79,6 +79,7 @@ public final class R {
         public static final int action_settings=0x7f050001;
         public static final int app_name=0x7f050000;
         public static final int cashbox_value=0x7f050007;
+        public static final int finish_customer=0x7f050019;
         public static final int ingredient_add_button=0x7f05000d;
         public static final int ingredient_back_button=0x7f05000f;
         public static final int ingredient_finish_button=0x7f05000e;
@@ -87,9 +88,10 @@ public final class R {
         public static final int ingredient_quantity=0x7f05000c;
         public static final int login_back_button=0x7f050009;
         public static final int login_continue_button=0x7f050008;
-        public static final int more_products_message=0x7f050019;
-        public static final int more_products_title=0x7f050018;
-        public static final int no=0x7f05001b;
+        public static final int more_products_message=0x7f05001b;
+        public static final int more_products_title=0x7f05001a;
+        public static final int new_customer=0x7f050018;
+        public static final int no=0x7f05001d;
         public static final int participant_name=0x7f050006;
         public static final int product_add_button=0x7f050013;
         public static final int product_back_button=0x7f050015;
@@ -103,7 +105,7 @@ public final class R {
         public static final int title_activity_login=0x7f050002;
         public static final int title_activity_product=0x7f050004;
         public static final int title_activity_selling=0x7f050005;
-        public static final int yes=0x7f05001a;
+        public static final int yes=0x7f05001c;
     }
     public static final class style {
         /** 

@@ -48,6 +48,9 @@ public class IngredientActivity extends Activity {
 		
 		// Grabbing the values
 		//TODO: Some VALIDATION for the fields
+		if(isInvalidView(name_view) || isInvalidView(price_view) || isInvalidView(quantity_view)) {
+			
+		}
 		String 	name 	 = name_view.getText().toString();
 		double 	price 	 = Double.parseDouble(price_view.getText().toString());	
 		int 	quantity = Integer.parseInt(quantity_view.getText().toString());
@@ -77,5 +80,9 @@ public class IngredientActivity extends Activity {
     	// Starting the new Activity
     	Intent i = new Intent(this, ProductActivity.class);
     	startActivityForResult(i, ProductActivity_ID);
+    }
+    
+    private boolean isInvalidView(EditText view) {
+    	return view.getText().equals("");
     }
 }

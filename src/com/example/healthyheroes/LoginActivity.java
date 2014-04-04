@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class LoginActivity extends Activity {
 	
@@ -43,13 +44,13 @@ public class LoginActivity extends Activity {
     	EditText name_view 		= (EditText) findViewById(R.id.participant_name);
 		EditText cashbox_view 	= (EditText) findViewById(R.id.cashbox_value);
 		
-		// Grabbing the values
-		//TODO: Some VALIDATION for the fields
-		String 	name 	 		= name_view.getText().toString();
-		if(cashbox_view.getText().toString() == null) {
-			//TODO add dialog box asking for cashbox to have a value
-			return; //avoids crash at parseDouble
+		if(cashbox_view.getText().toString().equals("") || name_view.getText().toString().equals("")) {
+			Toast.makeText(this, "Cashbox or names not entered", Toast.LENGTH_SHORT).show();
+			return;
 		}
+		
+		String 	name 	 		= name_view.getText().toString();
+
 		double 	cashbox_value 	= Double.parseDouble(cashbox_view.getText().toString());
 		
 		Log.v("LoginActivity", "onFinishedButton() -- name and cashbox value gotten from view.");

@@ -23,7 +23,8 @@
 		        android:id="@+id/ingredient_name"
 		        android:layout_width="match_parent"
 		        android:layout_height="wrap_content"
-		        android:layout_weight="2" />
+		        android:layout_weight="2"
+		        android:singleLine="true" />
 
 	 	</TableRow>
 	 	
@@ -42,7 +43,8 @@
 		        android:id="@+id/ingredient_price"
 		        android:layout_width="match_parent"
 		        android:layout_height="wrap_content"
-		        android:layout_weight="2" />
+		        android:layout_weight="2"
+		        android:inputType="number" />
 
 	 	</TableRow>
 	 	
@@ -61,7 +63,8 @@
 		        android:id="@+id/ingredient_quantity"
 		        android:layout_width="match_parent"
 		        android:layout_height="wrap_content"
-		        android:layout_weight="2" />
+		        android:layout_weight="2"
+		        android:inputType="number" />
 
 	 	</TableRow>
 	</TableLayout>

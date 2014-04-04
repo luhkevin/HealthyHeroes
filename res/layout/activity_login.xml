@@ -23,7 +23,8 @@
 		        android:id="@+id/participant_name"
 		        android:layout_width="match_parent"
 		        android:layout_height="wrap_content"
-		        android:layout_weight="2" />
+		        android:layout_weight="2"
+		        android:singleLine="true" />
 
 	 	</TableRow>
 	 	
@@ -42,7 +43,8 @@
 		        android:id="@+id/cashbox_value"
 		        android:layout_width="match_parent"
 		        android:layout_height="wrap_content"
-		        android:layout_weight="2" />
+		        android:layout_weight="2"
+		        android:inputType="number" />
 
 	 	</TableRow>
 	 	

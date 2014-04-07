@@ -5,7 +5,7 @@
     android:layout_height="match_parent" >
     <TableLayout
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dip"
 		android:layout_weight="1">
 		
 	    <!-- PARTICIPANTS -->
@@ -24,6 +24,7 @@
 		        android:layout_width="match_parent"
 		        android:layout_height="wrap_content"
 		        android:layout_weight="2"
+		        android:inputType="text|textPersonName"
 		        android:singleLine="true" />
 
 	 	</TableRow>
@@ -44,7 +45,7 @@
 		        android:layout_width="match_parent"
 		        android:layout_height="wrap_content"
 		        android:layout_weight="2"
-		        android:inputType="number" />
+		        android:inputType="numberDecimal" />
 
 	 	</TableRow>
 	 	
@@ -60,7 +61,7 @@
 	    <Button
 	        android:id="@+id/login_back_button"
 	        android:layout_width="match_parent"
-	        android:layout_height="wrap_content"
+	        android:layout_height="match_parent"
 	        android:layout_weight="1"
 	        android:onClick="onBackButton"
 	        android:background= "#0099FF"
@@ -70,7 +71,7 @@
 	    <Button
 	        android:id="@+id/login_continue_button"
 	        android:layout_width="match_parent"
-	        android:layout_height="wrap_content"
+	        android:layout_height="match_parent"
 	        android:layout_weight="1"
 	        android:onClick="onFinishButton"
 	      	android:background= "#0099FF"

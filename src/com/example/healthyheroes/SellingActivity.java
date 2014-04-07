@@ -16,7 +16,9 @@ import android.widget.TextView;
 public class SellingActivity extends Activity {
 	
 	private TextView cashBox;
+	private TextView customerTotal;
 	private ListView list;
+	
 	
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,7 +37,13 @@ public class SellingActivity extends Activity {
     private void init() {
     	cashBox = (TextView) this.findViewById(R.id.moneyTotal);
     	cashBox.setText("$" + String.format("%.2f", HomeActivity.getCurrentCashBalance()));
+    	
+    	customerTotal = (TextView) this.findViewById(R.id.customerTotal);
+    	customerTotal.setText("$" + String.format("%.2f", 0.0));
+    	
 		list = (ListView) this.findViewById(R.id.listOfProducts);
+		
+		
 		
 		ArrayList<FoodItem> foods = new ArrayList<FoodItem>();
 		for(FoodItem product : HomeActivity.getCurrentSession().getProducts().values()) {
@@ -110,5 +118,14 @@ public class SellingActivity extends Activity {
     public double getCashBox() {
     	return Double.parseDouble(cashBox.getText().toString().substring(1));
     }
+    
+    public void setCustomerTotal(double cash) {
+    	customerTotal.setText("$" + String.format("%.2f", cash));
+    }
+    
+    public double getCustomerTotal() {
+    	return Double.parseDouble(customerTotal.getText().toString().substring(1));
+    }
+    
     
 }

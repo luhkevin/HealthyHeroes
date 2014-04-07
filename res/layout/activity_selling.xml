@@ -13,9 +13,29 @@
 	    android:layout_below="@+id/newCustomerButton" >
 
 	</ListView>
-
-
 	
+	<RelativeLayout
+	    android:id="@+id/customerTotalLayout"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content" 
+	    android:layout_above="@+id/finishButton"
+	    android:layout_alignParentLeft="true">
+    <TextView
+        android:id="@+id/customerTotalLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Customer Total:" /> 
+	<TextView
+	    android:id="@+id/customerTotal"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_alignParentRight="true"
+	    android:text="$0.00"
+	    android:textAppearance="?android:attr/textAppearanceMedium" />
+	</RelativeLayout>
+	
+		
 	<RelativeLayout
 	    android:id="@+id/cashboxLayout"
 	    android:layout_width="match_parent"
@@ -35,11 +55,7 @@
 	    android:layout_alignParentRight="true"
 	    android:text="$0.00"
 	    android:textAppearance="?android:attr/textAppearanceMedium" />
-
-
-
 	</RelativeLayout>
-	
 	
 	<LinearLayout
         android:id="@+id/linearLayout1"
@@ -49,7 +65,7 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true" >
         <Button
-            android:id="@+id/product_back_button"
+            android:id="@+id/selling_back_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -57,7 +73,7 @@
             android:background= "#0099FF"
             android:text="@string/selling_back_button" />
         <Button
-            android:id="@+id/product_finish_button"
+            android:id="@+id/selling_finish_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"

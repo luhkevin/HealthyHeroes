@@ -8,6 +8,7 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -108,7 +109,7 @@ public class SellingActivity extends Activity {
         		View rowView = list.getChildAt(i);
         		FoodItemHolder holder = (FoodItemHolder) rowView.getTag();
         		holder.enabled = true;
-        		//TODO colors later
+        		rowView.setBackgroundColor(Color.GRAY);
         	}
     	}
     }
@@ -126,6 +127,7 @@ public class SellingActivity extends Activity {
     		FoodItemHolder holder = (FoodItemHolder) rowView.getTag();
     		holder.numberSold.setText("0");
     		holder.enabled = false;
+    		rowView.setBackgroundColor(Color.WHITE);
     	}
     	this.customerTotals.add(Double.valueOf((cashBox + custTotal)));
     	finished = true;

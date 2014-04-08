@@ -40,7 +40,7 @@ public class ProductActivity extends Activity {
 	
 	/** Called when [Add] button is clicked */
     public void onAddButton(View v) {
-    	Log.v("ProductActiviyt", "onAddButton() -- Add button pressed");
+    	Log.v("ProductActivity", "onAddButton() -- Add button pressed");
     	// Grabbing the View elements
     	EditText name_view 		= (EditText) findViewById(R.id.product_name);
 		EditText price_view 	= (EditText) findViewById(R.id.product_price);

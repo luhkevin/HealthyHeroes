@@ -34,10 +34,15 @@
             android:name="com.example.healthyheroes.ProductActivity"
             android:label="@string/title_activity_product" >
         </activity>
+
         <activity
             android:name="com.example.healthyheroes.SellingActivity"
-            android:label="@string/title_activity_selling"
-            >
+            android:label="@string/title_activity_selling" >
+        </activity>
+
+        <activity
+            android:name="com.example.healthyheroes.ViewSessionActivity"
+            android:label="@string/title_activity_view_session" >
         </activity>
     </application>
 

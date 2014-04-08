@@ -6,7 +6,8 @@
     <string name="title_activity_ingredient">What ingredients do you have?</string>
     <string name="title_activity_product">What products did you make?</string>
     <string name="title_activity_selling">Sell your products!</string>
-    
+    <string name="title_activity_view_session">View Session Info</string>
+
     <string name="participant_name">People\'s Names</string>
     <string name="cashbox_value">Cashbox Starting Amount</string>
     <string name="login_continue_button">Continue to Ingredients</string>

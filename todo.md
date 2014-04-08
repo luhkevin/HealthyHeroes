@@ -44,3 +44,28 @@ Data at end
 Total numbers of stuff sold
 Total number of stuff (products) brought
 
+
+
+
+----------------------------------------
+4/8/14
+
+Add new Person Button for multiple people (LoginActvity) rather than comma separated.
+
+Move cursor to top when products saved.
+Add product saved toasts ?
+
+Math help for kids
+	e.g. throw friendly pop-ups making sure that total potential profits would outweigh total ingredient costs.
+	
+More warning pop-ups between screens.
+
+Make the whole colors scheme prettier.
+
+Put $ in front of cash fields, label fields to make them more obvious
+
+Simple and playful is the motto for this app.
+
+
+
+

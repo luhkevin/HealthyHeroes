@@ -63,8 +63,8 @@ public class FoodItemAdapter extends ArrayAdapter<FoodItem> {
 				food.decrementNumberSold();
 				holder.numberSold.setText(Integer.toString(food.getNumberSold())); //update # sold
 				if(!food.limitReached()) {
-					double cashBoxcurrent = sa.getCashBox();
-					sa.setCashBox(cashBoxcurrent + food.getPrice());
+					//double cashBoxcurrent = sa.getCashBox();
+					//a.setCashBox(cashBoxcurrent - food.getPrice());
 					double current = sa.getCustomerTotal();
 					sa.setCustomerTotal(current - food.getPrice());
 				}
@@ -82,8 +82,8 @@ public class FoodItemAdapter extends ArrayAdapter<FoodItem> {
 				food.incrementNumberSold();
 				holder.numberSold.setText(Integer.toString(food.getNumberSold())); //update # sold
 				if(!food.limitReached()) {
-					double cashBoxcurrent = sa.getCashBox();
-					sa.setCashBox(cashBoxcurrent + food.getPrice());
+					//double cashBoxcurrent = sa.getCashBox();
+					//sa.setCashBox(cashBoxcurrent + food.getPrice());
 					double current = sa.getCustomerTotal();
 					sa.setCustomerTotal(current + food.getPrice());
 				}

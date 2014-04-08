@@ -100,7 +100,9 @@ public class SellingActivity extends Activity {
     
     public void onFinishCustomerButton(View v) {
     	//TODO write me
-    	
+    	double custTotal = this.getCustomerTotal();
+    	double cashBox = this.getCashBox();
+    	this.setCashBox(cashBox + custTotal);
     }
     
     // This helper method rounds a double to a given number of decimal places

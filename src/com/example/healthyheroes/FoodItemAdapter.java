@@ -18,6 +18,7 @@ public class FoodItemAdapter extends ArrayAdapter<FoodItem> {
 	private Context context;
 	private List<FoodItem> items;
 	private SellingActivity sa;
+	FoodItemHolder holder = null;
 
 	public FoodItemAdapter(Context context, int resource, List<FoodItem> objects, SellingActivity sa) {
 		super(context, resource, objects);
@@ -25,13 +26,11 @@ public class FoodItemAdapter extends ArrayAdapter<FoodItem> {
 		this.context = context;
 		this.items = objects;
 		this.sa = sa;
-		
 	}
 	
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
 		View row = convertView;
-		FoodItemHolder holder = null;
 
 		if(row == null) { //make new data holder for the row
 			LayoutInflater inflater = ((Activity) context).getLayoutInflater();
@@ -95,6 +94,11 @@ public class FoodItemAdapter extends ArrayAdapter<FoodItem> {
 		}); 
 
 		return row;
+	}
+	
+	public void resetFoodValues() {
+		holder.food.reset();
+		holder.numberSold.setText("0"); //update # sold
 	}
 
 	public static class FoodItemHolder {

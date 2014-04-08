@@ -78,4 +78,8 @@ public class FoodItem {
 	public boolean lowerLimitReached() {
 		return (number_sold == 0);
 	}
+	
+	public void reset() {
+		this.number_sold = 0;
+	}
 }

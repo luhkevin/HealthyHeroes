@@ -19,7 +19,9 @@ public class SellingActivity extends Activity {
 	private TextView cashBox;
 	private TextView customerTotal;
 	private ListView list;
-	
+	private ArrayList<Double> customerTotals = new ArrayList<Double>();
+	private FoodItemAdapter foodAdapt;
+	private boolean finished = false;
 	
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,7 +51,8 @@ public class SellingActivity extends Activity {
 		for(FoodItem product : HomeActivity.getCurrentSession().getProducts().values()) {
 			   foods.add(product);
 			}
-		list.setAdapter(new FoodItemAdapter(SellingActivity.this, R.layout.selling_list_item, foods, this)); // create itemAdapater
+		foodAdapt = new FoodItemAdapter(SellingActivity.this, R.layout.selling_list_item, foods, this); // create itemAdapater
+		list.setAdapter(foodAdapt); // create itemAdapater
 		
 
 	}
@@ -94,8 +97,11 @@ public class SellingActivity extends Activity {
     }
     
     public void onNewCustomerButton(View v) {
-    	//TODO write me
-    	
+    	if(finished) {
+    		this.setCustomerTotal(0.0);
+    		this.foodAdapt.resetFoodValues();
+    		finished = false;
+    	}
     }
     
     public void onFinishCustomerButton(View v) {
@@ -104,6 +110,9 @@ public class SellingActivity extends Activity {
     	double cashBox = this.getCashBox();
     	this.setCashBox(cashBox + custTotal);
     	this.setCustomerTotal(0.0);
+    	this.foodAdapt.resetFoodValues();
+    	this.customerTotals.add(Double.valueOf((cashBox + custTotal)));
+    	finished = true;
     }
     
     // This helper method rounds a double to a given number of decimal places

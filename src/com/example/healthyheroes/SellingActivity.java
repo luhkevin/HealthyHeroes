@@ -21,6 +21,7 @@ public class SellingActivity extends Activity {
 	private ListView list;
 	private ArrayList<Double> customerTotals = new ArrayList<Double>();
 	private FoodItemAdapter foodAdapt;
+	private double totalRevenue = 0;
 	private boolean finished = false;
 	
     @Override
@@ -91,7 +92,7 @@ public class SellingActivity extends Activity {
 		
 		// Starting the new Activity
     	Intent i = new Intent(this, ViewSessionActivity.class);
-    	i.putExtra("REVENUE_ID", String.valueOf(this.getCustomerTotal()));
+    	i.putExtra("REVENUE_ID", String.valueOf(totalRevenue));
     	startActivityForResult(i, ViewSessionActivity_ID);
     	this.finish(); //do we need this?
     }
@@ -108,6 +109,7 @@ public class SellingActivity extends Activity {
     	//set cashbox
     	double custTotal = this.getCustomerTotal();
     	double cashBox = this.getCashBox();
+    	this.totalRevenue += custTotal;
     	this.setCashBox(cashBox + custTotal);
     	this.setCustomerTotal(0.0);
     	this.foodAdapt.resetFoodValues();

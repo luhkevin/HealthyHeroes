@@ -24,7 +24,7 @@ public class SellingActivity extends Activity {
 	private ArrayList<Double> customerTotals = new ArrayList<Double>();
 	private FoodItemAdapter foodAdapt;
 	private double totalRevenue = 0;
-	private boolean finished = false;
+	private boolean finished = true;
 	
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -2,6 +2,8 @@ package com.example.healthyheroes;
 
 import java.util.ArrayList;
 
+import com.example.healthyheroes.FoodItemAdapter.FoodItemHolder;
+
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -113,6 +115,11 @@ public class SellingActivity extends Activity {
     	this.setCashBox(cashBox + custTotal);
     	this.setCustomerTotal(0.0);
     	this.foodAdapt.resetFoodValues();
+    	for (int i = 0; i < list.getChildCount(); i++) {
+    		View rowView = list.getChildAt(i);
+    		FoodItemHolder holder = (FoodItemHolder) rowView.getTag();
+    		holder.numberSold.setText("0");
+    	}
     	this.customerTotals.add(Double.valueOf((cashBox + custTotal)));
     	finished = true;
     }

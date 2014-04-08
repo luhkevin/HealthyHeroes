@@ -97,8 +97,13 @@ public class FoodItemAdapter extends ArrayAdapter<FoodItem> {
 	}
 	
 	public void resetFoodValues() {
-		holder.food.reset();
-		holder.numberSold.setText("0"); //update # sold
+		
+		for (int i = 0; i < this.getCount(); i++)
+		{
+			FoodItem food = this.getItem(i);
+			food.reset();
+			
+		}
 	}
 
 	public static class FoodItemHolder {

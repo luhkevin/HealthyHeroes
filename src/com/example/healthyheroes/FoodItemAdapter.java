@@ -54,9 +54,6 @@ public class FoodItemAdapter extends ArrayAdapter<FoodItem> {
 		holder.name.setText(food.getName()); //set Name
 		holder.numberSold.setText(Integer.toString(food.getNumberSold())); //set # sold
 		
-		
-		
-		
 		holder.minus.setOnClickListener(new OnClickListener() {
 		
 			@Override
@@ -65,12 +62,13 @@ public class FoodItemAdapter extends ArrayAdapter<FoodItem> {
 				FoodItem food = holder.food;
 				food.decrementNumberSold();
 				holder.numberSold.setText(Integer.toString(food.getNumberSold())); //update # sold
-//				double current = sa.getCashBox();
-//				sa.setCashBox(current + food.getPrice());
-				double current = sa.getCustomerTotal();
-				sa.setCustomerTotal(current - food.getPrice());
-				
-				//TODO input sanitiation i.e. no negative #'s and none past limit sold.
+				if(!food.limitReached()) {
+					double cashBoxcurrent = sa.getCashBox();
+					sa.setCashBox(cashBoxcurrent + food.getPrice());
+					double current = sa.getCustomerTotal();
+					sa.setCustomerTotal(current - food.getPrice());
+				}
+				//TODO input sanitation i.e. no negative #'s and none past limit sold.
 			}
 		}); 
 		
@@ -83,10 +81,12 @@ public class FoodItemAdapter extends ArrayAdapter<FoodItem> {
 				FoodItem food = holder.food;
 				food.incrementNumberSold();
 				holder.numberSold.setText(Integer.toString(food.getNumberSold())); //update # sold
-//				double current = sa.getCashBox();
-//				sa.setCashBox(current + food.getPrice());
-				double current = sa.getCustomerTotal();
-				sa.setCustomerTotal(current + food.getPrice());
+				if(!food.limitReached()) {
+					double cashBoxcurrent = sa.getCashBox();
+					sa.setCashBox(cashBoxcurrent + food.getPrice());
+					double current = sa.getCustomerTotal();
+					sa.setCustomerTotal(current + food.getPrice());
+				}
 				
 				//TODO input sanitation
 			}

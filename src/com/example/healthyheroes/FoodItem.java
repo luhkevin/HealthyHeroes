@@ -64,10 +64,14 @@ public class FoodItem {
 	}
 
 	public void incrementNumberSold(){
-		number_sold++;
+		number_sold = Math.min(this.quantity, number_sold + 1);
 	}	
 	
 	public void decrementNumberSold(){
-		number_sold--;
+		number_sold = Math.max(0, number_sold - 1);
+	}
+	
+	public boolean limitReached() {
+		return (number_sold == this.quantity || number_sold == 0);
 	}
 }

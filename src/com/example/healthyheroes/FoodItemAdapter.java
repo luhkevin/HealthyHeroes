@@ -1,7 +1,6 @@
 package com.example.healthyheroes;
 
 import java.util.List;
-
 import android.app.Activity;
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -44,6 +43,7 @@ public class FoodItemAdapter extends ArrayAdapter<FoodItem> {
 //			holder.numberSoldLabel = (TextView) row.findViewById(R.id.numberSoldLabel);
 			holder.numberSold = (TextView) row.findViewById(R.id.numberSold);
 			holder.food = items.get(position);
+			holder.enabled = false;
 			row.setTag(holder); //store it in tag
 		} else { //else load the data holder
 			holder = (FoodItemHolder) row.getTag();
@@ -60,7 +60,7 @@ public class FoodItemAdapter extends ArrayAdapter<FoodItem> {
 				FoodItemHolder holder = (FoodItemHolder) v.getTag(); //finds holder set earlier
 				FoodItem food = holder.food;
 				
-				if(!food.lowerLimitReached()) {
+				if(!food.lowerLimitReached() && holder.enabled) {
 					//double cashBoxcurrent = sa.getCashBox();
 					//a.setCashBox(cashBoxcurrent - food.getPrice());
 					food.decrementNumberSold();
@@ -79,7 +79,7 @@ public class FoodItemAdapter extends ArrayAdapter<FoodItem> {
 			public void onClick(View v) {
 				FoodItemHolder holder = (FoodItemHolder) v.getTag(); //finds holder set earlier
 				FoodItem food = holder.food;
-				if(!food.upperLimitReached()) {
+				if(!food.upperLimitReached() && holder.enabled) {
 					//double cashBoxcurrent = sa.getCashBox();
 					//sa.setCashBox(cashBoxcurrent + food.getPrice());
 
@@ -113,5 +113,6 @@ public class FoodItemAdapter extends ArrayAdapter<FoodItem> {
 		Button minus;
 //		TextView numberSoldLabel;
 		TextView numberSold;
+		boolean enabled;
 	}
 }

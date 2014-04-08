@@ -102,8 +102,14 @@ public class SellingActivity extends Activity {
     public void onNewCustomerButton(View v) {
     	if(finished) {
     		this.setCustomerTotal(0.0);
-    		this.foodAdapt.resetFoodValues();
+//    		this.foodAdapt.resetFoodValues();
     		finished = false;
+        	for (int i = 0; i < list.getChildCount(); i++) {
+        		View rowView = list.getChildAt(i);
+        		FoodItemHolder holder = (FoodItemHolder) rowView.getTag();
+        		holder.enabled = true;
+        		//TODO colors later
+        	}
     	}
     }
     
@@ -119,6 +125,7 @@ public class SellingActivity extends Activity {
     		View rowView = list.getChildAt(i);
     		FoodItemHolder holder = (FoodItemHolder) rowView.getTag();
     		holder.numberSold.setText("0");
+    		holder.enabled = false;
     	}
     	this.customerTotals.add(Double.valueOf((cashBox + custTotal)));
     	finished = true;

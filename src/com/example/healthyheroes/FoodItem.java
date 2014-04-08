@@ -12,6 +12,7 @@ public class FoodItem {
 	private final int 		quantity;
 	
 	private int	number_sold;	// only used for products
+	private int total_sold;
 	
 	public FoodItem(String name, double price, int quantity){
 		Log.v("FoodItem", "new FoodItem created - "+name);
@@ -20,6 +21,7 @@ public class FoodItem {
 		this.price 		= price;
 		this.quantity 	= quantity;
 		this.number_sold= 0;
+		this.total_sold = 0;
 	}
 	
 	/** Constructor used when you want to set the number_sold */
@@ -72,7 +74,7 @@ public class FoodItem {
 	}
 	
 	public boolean upperLimitReached() {
-		return (number_sold == this.quantity);
+		return ((number_sold + total_sold) == this.quantity);
 	}
 
 	public boolean lowerLimitReached() {
@@ -80,6 +82,7 @@ public class FoodItem {
 	}
 	
 	public void reset() {
+		total_sold += number_sold;
 		this.number_sold = 0;
 	}
 }

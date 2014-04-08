@@ -58,7 +58,13 @@ public class SellingActivity extends Activity {
 		foodAdapt = new FoodItemAdapter(SellingActivity.this, R.layout.selling_list_item, foods, this); // create itemAdapater
 		list.setAdapter(foodAdapt); // create itemAdapater
 		
-
+    	for (int i = 0; i < list.getChildCount(); i++) {
+    		View rowView = list.getChildAt(i);
+    		FoodItemHolder holder = (FoodItemHolder) rowView.getTag();
+    		holder.numberSold.setText("0");
+    		holder.enabled = false;
+    		rowView.setBackgroundColor(Color.GRAY);
+    	}
 	}
     
     public void onFinishButton(View v) {
@@ -109,7 +115,7 @@ public class SellingActivity extends Activity {
         		View rowView = list.getChildAt(i);
         		FoodItemHolder holder = (FoodItemHolder) rowView.getTag();
         		holder.enabled = true;
-        		rowView.setBackgroundColor(Color.GRAY);
+        		rowView.setBackgroundColor(Color.WHITE);
         	}
     	}
     }
@@ -127,7 +133,7 @@ public class SellingActivity extends Activity {
     		FoodItemHolder holder = (FoodItemHolder) rowView.getTag();
     		holder.numberSold.setText("0");
     		holder.enabled = false;
-    		rowView.setBackgroundColor(Color.WHITE);
+    		rowView.setBackgroundColor(Color.GRAY);
     	}
     	this.customerTotals.add(Double.valueOf((cashBox + custTotal)));
     	finished = true;

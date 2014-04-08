@@ -60,11 +60,12 @@ public class FoodItemAdapter extends ArrayAdapter<FoodItem> {
 			public void onClick(View v) {
 				FoodItemHolder holder = (FoodItemHolder) v.getTag(); //finds holder set earlier
 				FoodItem food = holder.food;
-				food.decrementNumberSold();
-				holder.numberSold.setText(Integer.toString(food.getNumberSold())); //update # sold
+				
 				if(!food.limitReached()) {
 					//double cashBoxcurrent = sa.getCashBox();
 					//a.setCashBox(cashBoxcurrent - food.getPrice());
+					food.decrementNumberSold();
+					holder.numberSold.setText(Integer.toString(food.getNumberSold())); //update # sold
 					double current = sa.getCustomerTotal();
 					sa.setCustomerTotal(current - food.getPrice());
 				}
@@ -79,11 +80,12 @@ public class FoodItemAdapter extends ArrayAdapter<FoodItem> {
 			public void onClick(View v) {
 				FoodItemHolder holder = (FoodItemHolder) v.getTag(); //finds holder set earlier
 				FoodItem food = holder.food;
-				food.incrementNumberSold();
-				holder.numberSold.setText(Integer.toString(food.getNumberSold())); //update # sold
 				if(!food.limitReached()) {
 					//double cashBoxcurrent = sa.getCashBox();
 					//sa.setCashBox(cashBoxcurrent + food.getPrice());
+
+					food.incrementNumberSold();
+					holder.numberSold.setText(Integer.toString(food.getNumberSold())); //update # sold
 					double current = sa.getCustomerTotal();
 					sa.setCustomerTotal(current + food.getPrice());
 				}

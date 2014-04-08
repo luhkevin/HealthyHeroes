@@ -61,7 +61,7 @@ public class FoodItemAdapter extends ArrayAdapter<FoodItem> {
 				FoodItemHolder holder = (FoodItemHolder) v.getTag(); //finds holder set earlier
 				FoodItem food = holder.food;
 				
-				if(!food.limitReached()) {
+				if(!food.lowerLimitReached()) {
 					//double cashBoxcurrent = sa.getCashBox();
 					//a.setCashBox(cashBoxcurrent - food.getPrice());
 					food.decrementNumberSold();
@@ -80,7 +80,7 @@ public class FoodItemAdapter extends ArrayAdapter<FoodItem> {
 			public void onClick(View v) {
 				FoodItemHolder holder = (FoodItemHolder) v.getTag(); //finds holder set earlier
 				FoodItem food = holder.food;
-				if(!food.limitReached()) {
+				if(!food.upperLimitReached()) {
 					//double cashBoxcurrent = sa.getCashBox();
 					//sa.setCashBox(cashBoxcurrent + food.getPrice());
 

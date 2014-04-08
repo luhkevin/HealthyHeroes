@@ -71,7 +71,11 @@ public class FoodItem {
 		number_sold = Math.max(0, number_sold - 1);
 	}
 	
-	public boolean limitReached() {
-		return (number_sold == this.quantity || number_sold == 0);
+	public boolean upperLimitReached() {
+		return (number_sold == this.quantity);
+	}
+
+	public boolean lowerLimitReached() {
+		return (number_sold == 0);
 	}
 }

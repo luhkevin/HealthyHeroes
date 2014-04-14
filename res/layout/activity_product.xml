@@ -1,12 +1,16 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
+    android:background="#A3E3DD"
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
+
     <TableLayout
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-		android:layout_weight="1">
+        android:layout_height="144dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="25dp" >
 		
 	    <!-- NAME -->
 		<TableRow
@@ -15,15 +19,17 @@
 	        
 		    <TextView
 		        android:layout_width="match_parent"
-		        android:layout_height="wrap_content"
+		        android:layout_height="50dp"
 		        android:layout_weight="1"
-		        android:text="@string/product_name" />
+		        android:text="@string/product_name"
+		        android:textSize="14pt" />
 		    
 		    <EditText
 		        android:id="@+id/product_name"
 		        android:layout_width="match_parent"
 		        android:layout_height="wrap_content"
 		        android:layout_weight="2"
+		        android:hint="What is the product name?"
 		        android:singleLine="true" />
 
 	 	</TableRow>
@@ -35,15 +41,17 @@
 	        
 		    <TextView
 		        android:layout_width="match_parent"
-		        android:layout_height="wrap_content"
+		        android:layout_height="50dp"
 		        android:layout_weight="1"
-		        android:text="@string/product_price" />
+		        android:text="@string/product_price"
+		        android:textSize="14pt" />
 		    
 		    <EditText
 		        android:id="@+id/product_price"
 		        android:layout_width="match_parent"
 		        android:layout_height="wrap_content"
 		        android:layout_weight="2"
+		        android:hint="What is the selling price?"
 		        android:inputType="number|numberDecimal" />
 
 	 	</TableRow>
@@ -55,52 +63,62 @@
 	        
 		    <TextView
 		        android:layout_width="match_parent"
-		        android:layout_height="wrap_content"
+		        android:layout_height="50dp"
 		        android:layout_weight="1"
-		        android:text="@string/product_quantity" />
+		        android:text="@string/product_quantity"
+		        android:textSize="14pt" />
 		    
 		    <EditText
 		        android:id="@+id/product_quantity"
 		        android:layout_width="match_parent"
 		        android:layout_height="wrap_content"
 		        android:layout_weight="2"
+		        android:hint="How many did you make?"
 		        android:inputType="number" />
 
 	 	</TableRow>
 	</TableLayout>
 	
+    	    <Button
+    	        android:id="@+id/product_add_button"
+    	        android:layout_width="300dp"
+    	        android:layout_height="75dp"
+    	        android:layout_gravity="center|top"
+    	        android:layout_marginBottom="75dp"
+    	        android:layout_weight="1"
+    	        android:background="#0099FF"
+    	        android:onClick="onAddButton"
+    	        android:text="@string/product_add_button"
+    	        android:textSize="12pt" />
+	
 	<!-- BOTTOM BUTTONS -->
+
 	<LinearLayout
-	    android:orientation="horizontal"
-	    android:layout_width="fill_parent" 
-		android:layout_height="wrap_content">
-		
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:orientation="horizontal" >
+
 	    <Button
 	        android:id="@+id/product_back_button"
 	        android:layout_width="match_parent"
-	        android:layout_height="match_parent"
+	        android:layout_height="75dp"
+	        android:layout_margin="10dp"
 	        android:layout_weight="1"
+	        android:background="#0099FF"
 	        android:onClick="onBackButton"
-	        android:background= "#0099FF"
-	        android:text="@string/product_back_button" />
-	    
-	    <Button
-	        android:id="@+id/product_add_button"
-	        android:layout_width="match_parent"
-	        android:layout_height="match_parent"
-	        android:layout_weight="1"
-	        android:onClick="onAddButton"
-	        android:background= "#0099FF"
-	        android:text="@string/product_add_button" />
-	    
+	        android:text="@string/product_back_button"
+	        android:textSize="12pt" />
+
 	    <Button
 	        android:id="@+id/product_finish_button"
 	        android:layout_width="match_parent"
-	        android:layout_height="match_parent"
+	        android:layout_height="75dp"
+	        android:layout_margin="10dp"
 	        android:layout_weight="1"
+	        android:background="#0099FF"
 	        android:onClick="onFinishButton"
-	        android:background= "#0099FF"
-	        android:text="@string/product_finish_button" />
-		
+	        android:text="@string/product_finish_button"
+	        android:textSize="12pt" />
 	</LinearLayout>
+
 </LinearLayout>

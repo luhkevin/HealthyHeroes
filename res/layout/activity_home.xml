@@ -5,27 +5,25 @@
     android:layout_height="match_parent"
     android:orientation="vertical" >
 
+    <ImageButton
+        android:id="@+id/createsession"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="69dp"
+        android:onClick="onCreateSessionButton"
+        android:src="@drawable/createsessionbutton" />
+
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/viewsessionbutton"
         android:layout_width="300dp"
         android:layout_height="100dp"
-        android:layout_below="@+id/button1"
+        android:layout_below="@+id/createsession"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="34dp"
         android:background="#0099FF"
         android:onClick="onViewSessionButton"
         android:text="View Past Sessions" />
-
-    <Button
-        android:id="@+id/button1"
-        android:layout_width="300dp"
-        android:layout_height="100dp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="102dp"
-        android:background="#0099FF"
-        android:gravity="center_vertical|center_horizontal"
-        android:onClick="onCreateSessionButton"
-        android:text="Create New Session" />
 
 </RelativeLayout>

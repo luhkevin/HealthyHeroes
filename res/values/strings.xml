@@ -8,10 +8,11 @@
     <string name="title_activity_selling">Sell your products!</string>
     <string name="title_activity_view_session">View Session Info</string>
 
-    <string name="participant_name">People\'s Names</string>
+    <string name="participant_name">Who\'s Selling?</string>
     <string name="cashbox_value">Cashbox Starting Amount</string>
     <string name="login_continue_button">Continue to Ingredients</string>
     <string name="login_back_button">Back to Home</string>
+    <string name="add_participant_button">Add This Seller!</string>
     
     <string name="ingredient_name">Ingredient Name</string>
     <string name="ingredient_price">How much does each one cost?</string>

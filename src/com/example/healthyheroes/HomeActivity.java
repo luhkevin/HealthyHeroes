@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.View;
+import android.widget.Button;
 
 public class HomeActivity extends Activity {	
 	public static final int LoginActivity_ID = 1; // I don't think we have to use startActivityforResult()
@@ -25,8 +26,8 @@ public class HomeActivity extends Activity {
         setContentView(R.layout.activity_home);
         
         files_directory = getFilesDir();
-        
     }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.

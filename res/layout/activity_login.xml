@@ -20,7 +20,7 @@
 		    <TextView
 		        android:layout_width="match_parent"
 		        android:layout_height="50dp"
-		        android:layout_weight="1"
+		        android:layout_weight="10"
 		        android:text="@string/participant_name"
 		        android:textSize="14pt" />
 		    
@@ -28,7 +28,7 @@
 		        android:id="@+id/participant_name"
 		        android:layout_width="match_parent"
 		        android:layout_height="wrap_content"
-		        android:layout_weight="2"
+		        android:layout_weight="0.1"
 		        android:hint="Who are you?"
 		        android:singleLine="true" />
 
@@ -42,7 +42,7 @@
 		    <TextView
 		        android:layout_width="match_parent"
 		        android:layout_height="50dp"
-		        android:layout_weight="1"
+		        android:layout_weight="10"
 		        android:text="@string/cashbox_value"
 		        android:textSize="14pt" />
 		    
@@ -50,8 +50,8 @@
 		        android:id="@+id/cashbox_value"
 		        android:layout_width="match_parent"
 		        android:layout_height="wrap_content"
-		        android:layout_weight="2"
-		        android:hint="Is there any money in the cashbox already?"
+		        android:layout_weight="0.1"
+		        android:hint="How much money is in the cashbox?"
 		        android:inputType="number" />
 
 	 	</TableRow>
@@ -62,7 +62,8 @@
     	        android:layout_width="300dp"
     	        android:layout_height="75dp"
     	        android:layout_gravity="center|top"
-    	        android:layout_marginBottom="75dp"
+    	        android:layout_marginTop="35dp"
+    	        android:layout_marginBottom="50dp"
     	        android:layout_weight="1"
     	        android:background="#0099FF"
     	        android:onClick="onAddButton"

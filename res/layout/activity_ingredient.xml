@@ -18,7 +18,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:layout_weight="1"
+                android:layout_weight="2"
                 android:text="@string/ingredient_name"
                 android:textSize="14pt" />
 
@@ -26,7 +26,7 @@
                 android:id="@+id/ingredient_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="2"
+                android:layout_weight="0.1"
                 android:hint="Ingredient Name"
                 android:singleLine="true" >
 
@@ -41,16 +41,16 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:layout_weight="1"
+                android:layout_weight="2"
                 android:text="@string/ingredient_price"
                 android:textSize="14pt" />
 
             <EditText
                 android:id="@+id/ingredient_price"
-                android:layout_width="match_parent"
+                android:layout_width="100dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="2"
-                android:hint="How much does each one cost?"
+                android:layout_weight="0.1"
+                android:hint="How much does each ingredient cost?"
                 android:inputType="numberDecimal" />
 
         </TableRow>
@@ -62,7 +62,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:layout_weight="1"
+                android:layout_weight="2"
                 android:text="@string/ingredient_quantity"
                 android:textSize="14pt" />
 
@@ -70,7 +70,7 @@
                 android:id="@+id/ingredient_quantity"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="2"
+                android:layout_weight="0.1"
                 android:hint="How many do you have?"
                 android:inputType="number" />
         </TableRow>
@@ -81,8 +81,9 @@
         android:layout_width="300dp"
         android:layout_height="75dp"
         android:layout_gravity="center|top"
-        android:layout_marginBottom="75dp"
-        android:layout_weight="0.00"
+        android:layout_marginTop="35dp"
+        android:layout_marginBottom="50dp"
+        android:layout_weight="1"
         android:background="#0099FF"
         android:onClick="onAddButton"
         android:text="@string/ingredient_add_button"
@@ -91,7 +92,7 @@
 	<!-- BOTTOM BUTTONS -->
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal" >
 
@@ -99,9 +100,7 @@
             android:id="@+id/ingredient_back_button"
             android:layout_width="match_parent"
             android:layout_height="75dp"
-            android:layout_marginBottom="10dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
+            android:layout_margin="10dp"
             android:layout_weight="1"
             android:background="#0099FF"
             android:onClick="onBackButton"
@@ -112,9 +111,7 @@
             android:id="@+id/ingredient_finish_button"
             android:layout_width="match_parent"
             android:layout_height="75dp"
-            android:layout_marginBottom="10dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
+            android:layout_margin="10dp"
             android:layout_weight="1"
             android:background="#0099FF"
             android:onClick="onFinishButton"
@@ -123,117 +120,3 @@
     </LinearLayout>
 
 </LinearLayout>
-
-<!-- <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/container"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.example.healthyheroes.IngredientActivity"
-    tools:ignore="MergeRootFrame" >
-
-    <RelativeLayout
-        android:id="@+id/IngredientInput"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="59dp" >
-
-        <TextView
-            android:id="@+id/name_label"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignBottom="@+id/name_field"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
-            android:layout_toLeftOf="@+id/name_field"
-            android:text="Name:" />
-
-        <EditText
-            android:id="@+id/name_field"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentTop="true"
-            android:ems="10"/>
-
-        <TextView
-            android:id="@+id/price_label"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignBottom="@+id/price_field"
-            android:layout_alignParentLeft="true"
-            android:layout_below="@+id/name_label"
-            android:layout_toLeftOf="@+id/price_field"
-            android:text="Price:" />
-
-        <EditText
-            android:id="@+id/price_field"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_below="@+id/name_field"
-            android:ems="10"
-            android:inputType="number" />
-        
-		<TextView
-            android:id="@+id/quantity_label"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignBottom="@+id/quantity_field"
-            android:layout_alignParentLeft="true"
-            android:layout_alignRight="@+id/price_label"
-            android:layout_alignTop="@+id/quantity_label"
-            android:text="Quantity:" />
-		
-        <EditText
-            android:id="@+id/quantity_field"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_below="@+id/price_field"
-            android:ems="10"
-            android:inputType="number" />
-
-        
-    </RelativeLayout>
-
-    <TextView
-        android:id="@+id/heading"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:text="Ingredients" />
-
-    <Button
-        android:id="@+id/addIngredientbutton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_marginLeft="24dp"
-        android:layout_toRightOf="@+id/heading"
-        android:onClick="onAddButton"
-        android:text="Add" />
-
-    <Button
-        android:id="@+id/backToHomebutton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_marginRight="20dp"
-        android:layout_toLeftOf="@+id/heading"
-        android:onClick="onBackButton"
-        android:text="Back" />
-
-    <Button
-        android:id="@+id/finish_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignRight="@+id/heading"
-        android:onClick="onFinishedButton"
-        android:text="Finish" />
-
-</RelativeLayout> -->

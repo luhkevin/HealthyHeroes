@@ -15,8 +15,8 @@
     <string name="add_participant_button">Add This Seller!</string>
     
     <string name="ingredient_name">Ingredient Name</string>
-    <string name="ingredient_price">How much does each one cost?</string>
-    <string name="ingredient_quantity">How many do you have?</string>
+    <string name="ingredient_price">Ingredient Cost</string>
+    <string name="ingredient_quantity">Ingredient Quantity</string>
     <string name="ingredient_add_button">Save This Ingredient</string>
     <string name="ingredient_finish_button">Continue to Products</string>
     <string name="ingredient_back_button">Back to Login</string>

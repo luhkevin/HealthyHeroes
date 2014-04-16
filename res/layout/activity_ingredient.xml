@@ -4,95 +4,62 @@
     android:background="#A3E3DD"
     android:orientation="vertical" >
 
-    <TableLayout
-        android:layout_width="fill_parent"
-        android:layout_height="150dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginTop="25dp" >
+    <LinearLayout
+        android:id="@+id/ingredients"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="vertical" >
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" >
+        <EditText
+            android:id="@+id/ingredient_name"
+            android:layout_width="510dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:hint="Ingredient Name"
+            android:singleLine="true"
+            android:textSize="48sp" >
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_weight="2"
-                android:text="@string/ingredient_name"
-                android:textSize="14pt" />
+            <requestFocus />
+        </EditText>
 
-            <EditText
-                android:id="@+id/ingredient_name"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.1"
-                android:hint="Ingredient Name"
-                android:singleLine="true" >
+        <EditText
+            android:id="@+id/ingredient_price"
+            android:layout_width="115dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:ems="10"
+            android:hint="Cost?"
+            android:inputType="numberDecimal"
+            android:textSize="36sp" />
 
-                <requestFocus />
-            </EditText>
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" >
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_weight="2"
-                android:text="@string/ingredient_price"
-                android:textSize="14pt" />
-
-            <EditText
-                android:id="@+id/ingredient_price"
-                android:layout_width="100dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.1"
-                android:hint="How much does each ingredient cost?"
-                android:inputType="numberDecimal" />
-
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" >
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_weight="2"
-                android:text="@string/ingredient_quantity"
-                android:textSize="14pt" />
-
-            <EditText
-                android:id="@+id/ingredient_quantity"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.1"
-                android:hint="How many do you have?"
-                android:inputType="number" />
-        </TableRow>
-    </TableLayout>
+        <EditText
+            android:id="@+id/ingredient_quantity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:hint="How many?"
+            android:inputType="number"
+            android:textSize="36sp" />
+    </LinearLayout>
 
     <Button
         android:id="@+id/ingredient_add_button"
         android:layout_width="300dp"
         android:layout_height="75dp"
         android:layout_gravity="center|top"
+        android:layout_marginBottom="55dp"
         android:layout_marginTop="35dp"
-        android:layout_marginBottom="50dp"
         android:layout_weight="1"
         android:background="#0099FF"
         android:onClick="onAddButton"
         android:text="@string/ingredient_add_button"
         android:textSize="12pt" />
-	
-	<!-- BOTTOM BUTTONS -->
+
+    <!-- BOTTOM BUTTONS -->
 
     <LinearLayout
-        android:layout_width="fill_parent"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal" >
 

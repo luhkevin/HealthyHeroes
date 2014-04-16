@@ -1,103 +1,78 @@
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:background="#A3E3DD"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+    android:layout_height="match_parent"
+    android:background="#A3E3DD"
+    android:orientation="vertical" >
 
-    <TableLayout
+    <EditText
+        android:id="@+id/cashbox_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:hint="Starting money"
+        android:textSize="36sp" />
+
+    <RelativeLayout
+        android:id="@+id/login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center_horizontal" >
+
+    <EditText
+        android:id="@+id/participant_name"
+        android:layout_width="366dp"
+        android:layout_height="wrap_content"
+        android:hint="Who are you?"
+        android:singleLine="true"
+        android:textSize="24sp" >
+
+    </EditText>
+
+    </RelativeLayout>
+
+
+    <Button
+        android:id="@+id/add_participant_button"
+        android:layout_width="300dp"
+        android:layout_height="75dp"
+        android:layout_gravity="center|top"
+        android:layout_marginBottom="50dp"
+        android:layout_marginTop="35dp"
+        android:layout_weight="1"
+        android:background="#0099FF"
+        android:onClick="onAddButton"
+        android:text="@string/add_participant_button"
+        android:textSize="12pt" />
+
+    <!-- BOTTOM BUTTONS -->
+
+    <LinearLayout
         android:layout_width="fill_parent"
-        android:layout_height="144dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginTop="25dp" >
-		
-	    <!-- NAME -->
-		<TableRow
-	        android:layout_height="wrap_content"
-	        android:layout_width="match_parent">
-	        
-		    <TextView
-		        android:layout_width="match_parent"
-		        android:layout_height="50dp"
-		        android:layout_weight="10"
-		        android:text="@string/participant_name"
-		        android:textSize="14pt" />
-		    
-		    <EditText
-		        android:id="@+id/participant_name"
-		        android:layout_width="match_parent"
-		        android:layout_height="wrap_content"
-		        android:layout_weight="0.1"
-		        android:hint="Who are you?"
-		        android:singleLine="true" />
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
 
-	 	</TableRow>
-	 	
-		<!-- QUANTITY -->
-		<TableRow
-	        android:layout_height="wrap_content"
-	        android:layout_width="match_parent">
-	        
-		    <TextView
-		        android:layout_width="match_parent"
-		        android:layout_height="50dp"
-		        android:layout_weight="10"
-		        android:text="@string/cashbox_value"
-		        android:textSize="14pt" />
-		    
-		    <EditText
-		        android:id="@+id/cashbox_value"
-		        android:layout_width="match_parent"
-		        android:layout_height="wrap_content"
-		        android:layout_weight="0.1"
-		        android:hint="How much money is in the cashbox?"
-		        android:inputType="number" />
+        <Button
+            android:id="@+id/login_back_button"
+            android:layout_width="match_parent"
+            android:layout_height="75dp"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:background="#0099FF"
+            android:onClick="onBackButton"
+            android:text="@string/login_back_button"
+            android:textSize="12pt" />
 
-	 	</TableRow>
-	</TableLayout>
-	
-    	    <Button
-    	        android:id="@+id/add_participant_button"
-    	        android:layout_width="300dp"
-    	        android:layout_height="75dp"
-    	        android:layout_gravity="center|top"
-    	        android:layout_marginTop="35dp"
-    	        android:layout_marginBottom="50dp"
-    	        android:layout_weight="1"
-    	        android:background="#0099FF"
-    	        android:onClick="onAddButton"
-    	        android:text="@string/add_participant_button"
-    	        android:textSize="12pt" />
-	
-	<!-- BOTTOM BUTTONS -->
-
-	<LinearLayout
-	    android:layout_width="fill_parent"
-	    android:layout_height="wrap_content"
-	    android:orientation="horizontal" >
-
-	    <Button
-	        android:id="@+id/login_back_button"
-	        android:layout_width="match_parent"
-	        android:layout_height="75dp"
-	        android:layout_margin="10dp"
-	        android:layout_weight="1"
-	        android:background="#0099FF"
-	        android:onClick="onBackButton"
-	        android:text="@string/login_back_button"
-	        android:textSize="12pt" />
-
-	    <Button
-	        android:id="@+id/login_continue_button"
-	        android:layout_width="match_parent"
-	        android:layout_height="75dp"
-	        android:layout_margin="10dp"
-	        android:layout_weight="1"
-	        android:background="#0099FF"
-	        android:onClick="onFinishButton"
-	        android:text="@string/login_continue_button"
-	        android:textSize="12pt" />
-	</LinearLayout>
+        <Button
+            android:id="@+id/login_continue_button"
+            android:layout_width="match_parent"
+            android:layout_height="75dp"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:background="#0099FF"
+            android:onClick="onFinishButton"
+            android:text="@string/login_continue_button"
+            android:textSize="12pt" />
+    </LinearLayout>
 
 </LinearLayout>

@@ -1,125 +1,88 @@
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:background="#A3E3DD"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+    android:layout_height="match_parent"
+    android:background="#A3E3DD"
+    android:orientation="vertical" >
 
-    <TableLayout
+    <LinearLayout
+        android:id="@+id/products"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="vertical" >
+
+        <EditText
+            android:id="@+id/product_name"
+            android:layout_width="428dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:hint="Product Name?"
+            android:singleLine="true"
+            android:textSize="48sp" />
+
+            <EditText
+                android:id="@+id/product_price"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Selling Price?"
+                android:inputType="number|numberDecimal"
+                android:textSize="36sp" >
+
+            </EditText>
+
+            <EditText
+                android:id="@+id/product_quantity"
+                android:layout_width="315dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="How many made?"
+                android:inputType="number"
+                android:textSize="36sp" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/product_add_button"
+        android:layout_width="300dp"
+        android:layout_height="75dp"
+        android:layout_gravity="center|top"
+        android:layout_marginBottom="50dp"
+        android:layout_marginTop="35dp"
+        android:layout_weight="1"
+        android:background="#0099FF"
+        android:onClick="onAddButton"
+        android:text="@string/product_add_button"
+        android:textSize="12pt" />
+
+    <!-- BOTTOM BUTTONS -->
+
+    <LinearLayout
         android:layout_width="fill_parent"
-        android:layout_height="144dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginTop="25dp" >
-		
-	    <!-- NAME -->
-		<TableRow
-	        android:layout_height="wrap_content"
-	        android:layout_width="match_parent">
-	        
-		    <TextView
-		        android:layout_width="match_parent"
-		        android:layout_height="50dp"
-		        android:layout_weight="1"
-		        android:text="@string/product_name"
-		        android:textSize="14pt" />
-		    
-		    <EditText
-		        android:id="@+id/product_name"
-		        android:layout_width="match_parent"
-		        android:layout_height="wrap_content"
-		        android:layout_weight="2"
-		        android:hint="What is the product name?"
-		        android:singleLine="true" />
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
 
-	 	</TableRow>
-	 	
-		<!-- PRICE -->
-		<TableRow
-	        android:layout_height="wrap_content"
-	        android:layout_width="match_parent">
-	        
-		    <TextView
-		        android:layout_width="match_parent"
-		        android:layout_height="50dp"
-		        android:layout_weight="1"
-		        android:text="@string/product_price"
-		        android:textSize="14pt" />
-		    
-		    <EditText
-		        android:id="@+id/product_price"
-		        android:layout_width="match_parent"
-		        android:layout_height="wrap_content"
-		        android:layout_weight="2"
-		        android:hint="What is the selling price?"
-		        android:inputType="number|numberDecimal" />
+        <Button
+            android:id="@+id/product_back_button"
+            android:layout_width="match_parent"
+            android:layout_height="75dp"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:background="#0099FF"
+            android:onClick="onBackButton"
+            android:text="@string/product_back_button"
+            android:textSize="12pt" />
 
-	 	</TableRow>
-	 	
-		<!-- QUANTITY -->
-		<TableRow
-	        android:layout_height="wrap_content"
-	        android:layout_width="match_parent">
-	        
-		    <TextView
-		        android:layout_width="match_parent"
-		        android:layout_height="50dp"
-		        android:layout_weight="1"
-		        android:text="@string/product_quantity"
-		        android:textSize="14pt" />
-		    
-		    <EditText
-		        android:id="@+id/product_quantity"
-		        android:layout_width="match_parent"
-		        android:layout_height="wrap_content"
-		        android:layout_weight="2"
-		        android:hint="How many did you make?"
-		        android:inputType="number" />
-
-	 	</TableRow>
-	</TableLayout>
-	
-    	    <Button
-    	        android:id="@+id/product_add_button"
-    	        android:layout_width="300dp"
-    	        android:layout_height="75dp"
-    	        android:layout_gravity="center|top"
-    	        android:layout_marginTop="35dp"
-    	        android:layout_marginBottom="50dp"
-    	        android:layout_weight="1"
-    	        android:background="#0099FF"
-    	        android:onClick="onAddButton"
-    	        android:text="@string/product_add_button"
-    	        android:textSize="12pt" />
-	
-	<!-- BOTTOM BUTTONS -->
-
-	<LinearLayout
-	    android:layout_width="fill_parent"
-	    android:layout_height="wrap_content"
-	    android:orientation="horizontal" >
-
-	    <Button
-	        android:id="@+id/product_back_button"
-	        android:layout_width="match_parent"
-	        android:layout_height="75dp"
-	        android:layout_margin="10dp"
-	        android:layout_weight="1"
-	        android:background="#0099FF"
-	        android:onClick="onBackButton"
-	        android:text="@string/product_back_button"
-	        android:textSize="12pt" />
-
-	    <Button
-	        android:id="@+id/product_finish_button"
-	        android:layout_width="match_parent"
-	        android:layout_height="75dp"
-	        android:layout_margin="10dp"
-	        android:layout_weight="1"
-	        android:background="#0099FF"
-	        android:onClick="onFinishButton"
-	        android:text="@string/product_finish_button"
-	        android:textSize="12pt" />
-	</LinearLayout>
+        <Button
+            android:id="@+id/product_finish_button"
+            android:layout_width="match_parent"
+            android:layout_height="75dp"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:background="#0099FF"
+            android:onClick="onFinishButton"
+            android:text="@string/product_finish_button"
+            android:textSize="12pt" />
+    </LinearLayout>
 
 </LinearLayout>

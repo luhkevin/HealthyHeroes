@@ -22,7 +22,7 @@
                 android:layout_height="100dp"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentTop="true"
-                android:background="#A3E3DD"
+                android:background="#66CCFF"
                 android:onClick="onMinusButtonClick"
                 android:text="-"
                 android:textSize="36dp" />
@@ -33,7 +33,7 @@
                 android:layout_height="100dp"
                 android:layout_alignParentRight="true"
                 android:layout_alignParentTop="true"
-                android:background="#A3E3DD"
+                android:background="#66CCFF"
                 android:onClick="onPlusButtonClick"
                 android:text="+"
                 android:textSize="36dp" />

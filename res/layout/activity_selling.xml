@@ -66,7 +66,8 @@
 	    android:layout_alignParentTop="true"
 	    android:background="#0099FF"
 	    android:onClick="onNewCustomerButton"
-	    android:text="@string/new_customer" />
+	    android:text="@string/new_customer" 
+	    android:textSize="36dp"/>
 	
 	<Button 
 	    android:id="@+id/finishButton"
@@ -76,7 +77,8 @@
 	    android:layout_above="@+id/cashboxLayout"
 	    android:onClick="onFinishCustomerButton"
 	    android:background="#0099FF"
-	    android:text="@string/finish_customer" />
+	    android:text="@string/finish_customer" 
+	    android:textSize="36dp"/>
 
 	<LinearLayout
 	    android:id="@+id/linearLayout1"
@@ -94,6 +96,7 @@
 	        android:layout_weight="1"
 	        android:background="#0099FF"
 	        android:onClick="onBackButton"
+	        android:textSize="24dp"
 	        android:text="@string/selling_back_button" />
 
 	    <Button
@@ -104,6 +107,7 @@
 	        android:layout_weight="1"
 	        android:background="#0099FF"
 	        android:onClick="onFinishButton"
+	        android:textSize="24dp"
 	        android:text="@string/selling_finish_button" />
 
 	</LinearLayout>

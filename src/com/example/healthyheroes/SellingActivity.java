@@ -87,20 +87,24 @@ public class SellingActivity extends Activity {
             public void onClick(DialogInterface dialog, int which) {
 
                 //Stop the activity
-                SellingActivity.this.finishSession();    
-                
+                SellingActivity.this.backToProducts();    
             }
 
         })
         .setNegativeButton(R.string.no, null)
         .show();
-		
-		Intent i = new Intent(this, ProductActivity.class);
+    }
+    
+    private void backToProducts() {
+		// Saving the currentSession
+    	HomeActivity.saveSession();
+
+		// Starting the new Activity
+    	Intent i = new Intent(this, ProductActivity.class);
     	startActivity(i);
     }
     
     private void finishSession() {
-    	
 		// Saving the currentSession
     	HomeActivity.saveSession();
 		

@@ -38,5 +38,7 @@
     <string name="yes">Yes</string>
     <string name="no">No</string>
     
+    <string name="more_ingredients_title">Add More Ingredients?</string>
+    <string name="more_ingredients_message">Are you sure you need to add more Ingredients?</string>
 
 </resources>

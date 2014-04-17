@@ -1,6 +1,8 @@
 package com.example.healthyheroes;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -13,12 +15,18 @@ public class ProductActivity extends Activity {
 	public static final int SellingActivity_ID = 1;
 	public static final int IngredientActivity_ID = 1;
 	
+	private String name = null;
+	private double price = -1;
+	private int quantity = -1;
+	
 	/** Called when Application is started */
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_product);
+		Intent i = this.getIntent();
 	}
+
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
@@ -33,7 +41,29 @@ public class ProductActivity extends Activity {
     	// Saving the currentSession
     	HomeActivity.saveSession();
     	
-    	// Starting the new Activity
+    	//pop-up warning
+		new AlertDialog.Builder(this)
+        .setIcon(android.R.drawable.ic_dialog_alert)
+        .setTitle(R.string.more_ingredients_title)
+        .setMessage(R.string.more_ingredients_message)
+        .setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {
+
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                //Stop the activity
+                ProductActivity.this.backtoIngr();    
+            }
+
+        })
+        .setNegativeButton(R.string.no, null)
+        .show();
+    }
+    
+    private void backtoIngr() {
+    	// Saving the currentSession
+    	HomeActivity.saveSession();
+
+		// Starting the new Activity
     	Intent i = new Intent(this, IngredientActivity.class);
     	startActivity(i);
     }
@@ -53,9 +83,9 @@ public class ProductActivity extends Activity {
 		}
 		// Grabbing the values
 		//TODO: Some VALIDATION for the fields
-		String 	name 	 = name_view.getText().toString();
-		double 	price 	 = Double.parseDouble(price_view.getText().toString());	
-		int 	quantity = Integer.parseInt(quantity_view.getText().toString());
+		name 	 = name_view.getText().toString();
+		price 	 = Double.parseDouble(price_view.getText().toString());	
+		quantity = Integer.parseInt(quantity_view.getText().toString());
 		
 		Log.v("ProductActivity", "onAddButton() -- name, price and quantity gotten from view.");
 		Log.v("ProductActivity", "onAddButton() -- name = " + name);
@@ -74,6 +104,11 @@ public class ProductActivity extends Activity {
 
     /** Called when [Finish] button is clicked */
     public void onFinishButton(View v) {
+    	if(name == null || price == -1 || quantity == -1) {
+			Toast.makeText(this, "You didn't enter all of the Product information!", Toast.LENGTH_SHORT).show();
+			return;
+    	}
+
     	Intent i = new Intent(this, SellingActivity.class); //goto SellingActivity
     	startActivityForResult(i, SellingActivity_ID);
     }

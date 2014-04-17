@@ -25,6 +25,7 @@ public class IngredientActivity extends Activity {
 		Intent i = this.getIntent();
 		cashbox = i.getDoubleExtra("cashBox", -1);
 	}
+
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.

@@ -5,45 +5,62 @@
     android:gravity="center_horizontal"
     android:orientation="horizontal" >
 
-    <Button
-        android:id="@+id/minusButton"
-        android:layout_width="50dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:onClick="onMinusButtonClick"
-	    android:background= "#0099FF"
-        android:text="-" />
-
-    <Button
-        android:id="@+id/plusButton"
-        android:layout_width="50dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentTop="true"
-        android:onClick="onPlusButtonClick"
-        android:background= "#0099FF"
-        android:text="+" />
-
-    <TextView
-        android:id="@+id/productName"
+    <ScrollView
+        android:id="@+id/scrollingproducts"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:layout_above="@+id/numberSold"
-        android:layout_alignParentTop="true"
-        android:layout_toLeftOf="@+id/plusButton"
-        android:layout_toRightOf="@+id/minusButton"
-        android:gravity="center"
-        android:text="Product Name"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
+        android:layout_marginTop="10dp" >
 
-    <TextView
-        android:id="@+id/numberSold"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/minusButton"
-        android:layout_centerHorizontal="true"
-        android:text="0"
-        android:textAppearance="?android:attr/textAppearanceSmall" />
+        <RelativeLayout
+            android:id="@+id/productrel"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" >
+
+            <Button
+                android:id="@+id/minusButton"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:background="#A3E3DD"
+                android:onClick="onMinusButtonClick"
+                android:text="-"
+                android:textSize="36dp" />
+
+            <Button
+                android:id="@+id/plusButton"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:background="#A3E3DD"
+                android:onClick="onPlusButtonClick"
+                android:text="+"
+                android:textSize="36dp" />
+
+            <TextView
+                android:id="@+id/productName"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_above="@+id/numberSold"
+                android:layout_alignParentTop="true"
+                android:layout_toLeftOf="@+id/plusButton"
+                android:layout_toRightOf="@+id/minusButton"
+                android:gravity="center"
+                android:text="Product Name"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textSize="24dp" />
+
+            <TextView
+                android:id="@+id/numberSold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/plusButton"
+                android:layout_centerHorizontal="true"
+                android:text="0"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textSize="24dp" />
+        </RelativeLayout>
+    </ScrollView>
 
 </RelativeLayout>

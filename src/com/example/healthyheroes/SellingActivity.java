@@ -88,12 +88,15 @@ public class SellingActivity extends Activity {
 
                 //Stop the activity
                 SellingActivity.this.finishSession();    
+                
             }
 
         })
         .setNegativeButton(R.string.no, null)
         .show();
 		
+		Intent i = new Intent(this, ProductActivity.class);
+    	startActivity(i);
     }
     
     private void finishSession() {

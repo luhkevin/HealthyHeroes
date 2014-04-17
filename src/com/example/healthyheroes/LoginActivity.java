@@ -10,13 +10,25 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 public class LoginActivity extends Activity {
+	private String nameField = null;
+	private boolean added = false;
+	private double cashbox_value;
 	
 	/** Called when Application is started */
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_login);
+		Intent i = this.getIntent();
+		added = i.getBooleanExtra("sellersAdded", false);
+		cashbox_value = i.getDoubleExtra("cashBox", -1);
+		
+		if (cashbox_value != -1) {
+			EditText cashview = (EditText) findViewById(R.id.cashbox_value);
+			cashview.setText(String.valueOf(cashbox_value));
+		}
 	}
+
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
@@ -45,6 +57,8 @@ public class LoginActivity extends Activity {
 		if (name_view.getText().toString().equals("")){
 			Toast.makeText(this, "Don't forget to type in who is selling!", Toast.LENGTH_SHORT).show();
 			return;
+		} else {
+			nameField = name_view.getText().toString();
 		}
 		
 		String name = name_view.getText().toString();
@@ -72,9 +86,12 @@ public class LoginActivity extends Activity {
 		// if there is a name currently in the name view then add the name first
 		if(!name_view.getText().toString().equals("")){
 			onAddButton(v);
+		} else if (nameField == null && !added) {
+			Toast.makeText(this, "Don't forget to type in who is selling!", Toast.LENGTH_SHORT).show();
+			return;
 		}
 		
-		double 	cashbox_value 	= Double.parseDouble(cashbox_view.getText().toString());
+		cashbox_value 	= Double.parseDouble(cashbox_view.getText().toString());
 	
 		// Storing the values
 		HomeActivity.setInitialCashBalance(cashbox_value);
@@ -84,6 +101,7 @@ public class LoginActivity extends Activity {
     	
     	// Starting the new Activity
     	Intent i = new Intent(this, IngredientActivity.class);
+    	i.putExtra("cashBox", cashbox_value);
     	startActivity(i);
     }
 }

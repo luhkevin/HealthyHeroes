@@ -1,6 +1,5 @@
 package com.example.healthyheroes;
 
-
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,12 +11,19 @@ import android.widget.Toast;
 
 public class IngredientActivity extends Activity {
 	private static final int ProductActivity_ID = 0;
+	private double cashbox = -1;
+	
+	private String name = null;
+	private double price = -1;
+	private int quantity = -1;
 
 	/** Called when Application is started */
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_ingredient);
+		Intent i = this.getIntent();
+		cashbox = i.getDoubleExtra("cashBox", -1);
 	}
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
@@ -35,6 +41,8 @@ public class IngredientActivity extends Activity {
 		
 		// Starting the new Activity
     	Intent i = new Intent(this, LoginActivity.class);
+    	i.putExtra("sellersAdded", true);
+    	i.putExtra("cashBox", cashbox);
     	startActivity(i);
 	}
 
@@ -53,9 +61,9 @@ public class IngredientActivity extends Activity {
 			return;
 		}
 
-		String 	name 	 = name_view.getText().toString();
-		double 	price 	 = Double.parseDouble(price_view.getText().toString());	
-		int 	quantity = Integer.parseInt(quantity_view.getText().toString());
+		name 	 = name_view.getText().toString();
+		price 	 = Double.parseDouble(price_view.getText().toString());	
+		quantity = Integer.parseInt(quantity_view.getText().toString());
 		
 		Log.v("IngredientActivity", "onAddButton() -- name, price and quantity gotten from view.");
 		Log.v("IngredientActivity", "onAddButton() -- name = " + name);
@@ -76,6 +84,11 @@ public class IngredientActivity extends Activity {
     public void onFinishButton(View v) {
     	Log.v("IngredientActivity", "onFinishedButton() --Finished button pressed.");
     	
+    	if(name == null || price == -1 || quantity == -1) {
+			Toast.makeText(this, "You forgot the ingredient information!", Toast.LENGTH_SHORT).show();
+			return;
+    	}
+
     	// Saving the currentSession
     	HomeActivity.saveSession();
     	

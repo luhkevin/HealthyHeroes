@@ -13,7 +13,6 @@
 	    android:layout_above="@+id/finishButton"
 	    android:layout_alignParentLeft="true"
 	    android:layout_below="@+id/newCustomerButton" >
-
 	</ListView>
 	
 	<RelativeLayout
@@ -91,7 +90,6 @@
 	        android:layout_width="384dp"
 	        android:layout_height="wrap_content"
 	        android:layout_gravity="center_horizontal"
-	        android:layout_marginLeft="10dp"
 	        android:layout_marginRight="10dp"
 	        android:layout_weight="1"
 	        android:background="#0099FF"
@@ -103,7 +101,6 @@
 	        android:layout_width="400dp"
 	        android:layout_height="wrap_content"
 	        android:layout_marginLeft="10dp"
-	        android:layout_marginRight="10dp"
 	        android:layout_weight="1"
 	        android:background="#0099FF"
 	        android:onClick="onFinishButton"

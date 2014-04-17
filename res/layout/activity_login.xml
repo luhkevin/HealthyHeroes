@@ -9,7 +9,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:hint="Starting money"
+        android:hint="Starting cash"
+        android:inputType="numberDecimal"
         android:textSize="36sp" />
 
     <RelativeLayout
@@ -23,7 +24,7 @@
         android:id="@+id/participant_name"
         android:layout_width="366dp"
         android:layout_height="wrap_content"
-        android:hint="Who are you?"
+        android:hint="What's your name?"
         android:singleLine="true"
         android:textSize="24sp" >
 

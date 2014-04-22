@@ -4,6 +4,7 @@ package com.example.healthyheroes;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
+import android.view.View;
 import android.widget.TextView;
 
 public class ViewSessionActivity extends Activity {
@@ -32,5 +33,15 @@ public class ViewSessionActivity extends Activity {
 		}
     	revenueInfo = (TextView) this.findViewById(R.id.revenue);
     	revenueInfo.setText(revenue);
+    	
+    	//TODO set soldproducts, ingredientcost and profit.
+	}
+	
+	public void onBackButton(View v) {
+		//TODO write me
+	}
+	
+	public void onFinishButton(View v) {
+		//TODO write me
 	}
 }

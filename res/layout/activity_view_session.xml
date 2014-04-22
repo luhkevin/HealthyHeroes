@@ -6,21 +6,31 @@
     android:orientation="vertical" >
 
     <TextView
-        android:id="@+id/soldproducts"
+        android:id="@+id/soldproductslabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:text="Sold Products"
+        android:text="Number of Products sold: "
         android:textSize="20sp" />
 
+   <TextView
+        android:id="@+id/soldproducts"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/soldproductslabel"
+        android:layout_toRightOf="@+id/soldproductslabel"
+        android:text="0" 
+        android:textSize="20sp" />
+        
     <TextView
         android:id="@+id/revenueLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
-        android:layout_below="@+id/soldproducts"
-        android:text="Total revenue: " />
+        android:layout_below="@+id/soldproductslabel"
+        android:text="Your money earned: " 
+        android:textSize="20sp"  />
 
     <TextView
         android:id="@+id/revenue"
@@ -29,6 +39,75 @@
         android:layout_alignBaseline="@+id/revenueLabel"
         android:layout_alignBottom="@+id/revenueLabel"
         android:layout_toRightOf="@+id/revenueLabel"
-        android:text="0" />
+        android:text="0" 
+        android:textSize="20sp" />
+    
+    <TextView
+        android:id="@+id/ingredientcostLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/revenueLabel"
+        android:text="Your ingredient's costs: "
+        android:textSize="20sp"
+        />
+    
+    <TextView
+        android:id="@+id/ingredientcost"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/ingredientcostLabel"
+        android:layout_alignBottom="@+id/ingredientcostLabel"
+        android:layout_toRightOf="@+id/ingredientcostLabel"
+        android:text="0" 
+        android:textSize="20sp" />
+        
+    <TextView
+        android:id="@+id/profitLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ingredientcostLabel"
+        android:text="Your profit: "
+        android:textSize="20sp"
+        />
+    
+   <TextView
+        android:id="@+id/profit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/profitLabel"
+        android:layout_alignBottom="@+id/profitLabel"
+        android:layout_toRightOf="@+id/profitLabel"
+        android:text="0" 
+        android:textSize="20sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/view_session_back_button"
+            android:layout_width="match_parent"
+            android:layout_height="75dp"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:background="#0099FF"
+            android:onClick="onBackButton"
+            android:text="Back to Selling Products"
+            android:textSize="12pt" />
+
+        <Button
+            android:id="@+id/view_session_finish_button"
+            android:layout_width="match_parent"
+            android:layout_height="75dp"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:background="#0099FF"
+            android:onClick="onFinishButton"
+            android:text="Finish Your Session!"
+            android:textSize="12pt" />
+    </LinearLayout>
 
 </RelativeLayout>

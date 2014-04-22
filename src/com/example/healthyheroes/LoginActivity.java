@@ -68,6 +68,7 @@ public class LoginActivity extends Activity {
 		
 		name_view.setText("");		
 		name_view.setHint("Who else is selling?");
+		name_view.requestFocus(); //put cursor on name_view
 	}
 	
     /** Called when [Finish] button is clicked */

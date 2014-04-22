@@ -57,7 +57,7 @@ public class IngredientActivity extends Activity {
 		
 		// Grabbing the values
 		//TODO: Some VALIDATION for the fields
-		if(isInvalidView(name_view) || isInvalidView(price_view) || isInvalidView(quantity_view)) {
+		if(isEmptyTextView(name_view) || isEmptyTextView(price_view) || isEmptyTextView(quantity_view)) {
 			Toast.makeText(this, "Name, price, or quantity not entered", Toast.LENGTH_SHORT).show();
 			return;
 		}
@@ -79,6 +79,8 @@ public class IngredientActivity extends Activity {
 		name_view.setText("");
 		price_view.setText("");
 		quantity_view.setText("");
+		
+		name_view.requestFocus(); //put cursor on name_view
     }
 
     /** Called when [Finish] button is clicked */
@@ -98,7 +100,7 @@ public class IngredientActivity extends Activity {
     	startActivityForResult(i, ProductActivity_ID);
     }
     
-    private boolean isInvalidView(EditText view) {
+    private boolean isEmptyTextView(EditText view) {
     	return view.getText().toString().equals("");
     }
 }

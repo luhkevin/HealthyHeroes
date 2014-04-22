@@ -24,7 +24,7 @@ public class ProductActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_product);
-		Intent i = this.getIntent();
+//		Intent i = this.getIntent();
 	}
 
 	@Override
@@ -100,6 +100,8 @@ public class ProductActivity extends Activity {
 		name_view.setText("");
 		price_view.setText("");
 		quantity_view.setText("");
+		
+		name_view.requestFocus(); //set cursor to name_view
     }
 
     /** Called when [Finish] button is clicked */

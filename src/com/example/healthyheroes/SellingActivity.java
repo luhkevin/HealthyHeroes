@@ -97,7 +97,7 @@ public class SellingActivity extends Activity {
     
     private void backToProducts() {
 		// Saving the currentSession
-    	HomeActivity.saveSession();
+    	// HomeActivity.saveSession();
 
 		// Starting the new Activity
     	Intent i = new Intent(this, ProductActivity.class);
@@ -106,7 +106,7 @@ public class SellingActivity extends Activity {
     
     private void finishSession() {
 		// Saving the currentSession
-    	HomeActivity.saveSession();
+    	// HomeActivity.saveSession();
 		
 		// Starting the new Activity
     	Intent i = new Intent(this, ViewSessionActivity.class);

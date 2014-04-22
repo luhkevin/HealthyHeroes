@@ -3,6 +3,7 @@ package com.example.healthyheroes;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -13,6 +14,7 @@ import java.util.GregorianCalendar;
 import java.util.HashMap;
 import java.util.Iterator;
 
+import android.content.Context;
 import android.util.Log;
 
 /**
@@ -42,7 +44,7 @@ public class Session {
 	public Session(){
 		Log.v("Session", "new Session created with empty constructor.");
 		this.date 		  = new Date();
-		this.filename 	  = "CurrentSession.session";	//TODO: File format
+		this.filename 	  = "healthyheroes.log";	//TODO: File format
 		
 		this.participants = new ArrayList<String>();
 		this.initial_cash = -1;
@@ -174,9 +176,20 @@ public class Session {
 	}
 	
 	/** Writes the contents of the session into the file with filename */
-	public void writeSessionToFile(){
+	public void writeSessionToFile(Context ctx){
 		Log.v("Session", "writeSessionToFile() -- writting session to file.");
-		File files_directory = HomeActivity.getFilesDirectory();
+		String string = "Hello world!";
+		FileOutputStream outputStream;
+
+		try {
+		  outputStream = ctx.openFileOutput(filename, Context.MODE_PRIVATE);
+		  Log.v("saving to file", filename);
+		  outputStream.write(string.getBytes());
+		  outputStream.close();
+		} catch (Exception e) {
+		  e.printStackTrace();
+		}
+/*		File files_directory = HomeActivity.getFilesDirectory();
 		
 		try {
 			BufferedWriter bw = 
@@ -187,7 +200,7 @@ public class Session {
 			bw.close();
 		} catch (IOException e){
 			Log.e("Session", "writeSessionToFile() -- " + e.getMessage());
-		}
+		}*/
 	}
 	
 	/** HELPER METHOD: Returns a string to be written to a file */

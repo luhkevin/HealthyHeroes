@@ -3,6 +3,7 @@ package com.example.healthyheroes;
 import java.io.File;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -15,7 +16,7 @@ public class HomeActivity extends Activity {
 	// private instance of session object
 	private static Session current_session;
 	
-	private static File 		files_directory;
+	private static File files_directory;
 	
 	
 	/** Called when Application is started */
@@ -23,8 +24,8 @@ public class HomeActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-        
         files_directory = getFilesDir();
+        Log.v("Saving to File", files_directory.toString());
     }
 
     @Override
@@ -101,10 +102,9 @@ public class HomeActivity extends Activity {
     }
     
     /** Saves the current session to a file */
-    public static void saveSession(){
+    public static void saveSession(Context ctx){
     	Log.v("HomeActivity", "saveSession() -- session is being saved.");
-    	
-    	current_session.writeSessionToFile();
+    	current_session.writeSessionToFile(ctx);
     	
     	Log.v("HomeActivity", "saveSession() -- DONE saving session.");
     }

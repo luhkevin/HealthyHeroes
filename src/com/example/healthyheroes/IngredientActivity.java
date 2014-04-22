@@ -38,7 +38,7 @@ public class IngredientActivity extends Activity {
 		Log.v("IngredientActivity","onBackButton() -- Back button pressed.");
 		
 		// Saving the currentSession
-    	HomeActivity.saveSession();
+    	// HomeActivity.saveSession();
 		
 		// Starting the new Activity
     	Intent i = new Intent(this, LoginActivity.class);
@@ -56,7 +56,7 @@ public class IngredientActivity extends Activity {
 		EditText quantity_view 	= (EditText) findViewById(R.id.ingredient_quantity); 
 		
 		// Grabbing the values
-		//TODO: Some VALIDATION for the fields
+		// TODO: Some VALIDATION for the fields
 		if(isEmptyTextView(name_view) || isEmptyTextView(price_view) || isEmptyTextView(quantity_view)) {
 			Toast.makeText(this, "Name, price, or quantity not entered", Toast.LENGTH_SHORT).show();
 			return;
@@ -93,7 +93,7 @@ public class IngredientActivity extends Activity {
     	}
 
     	// Saving the currentSession
-    	HomeActivity.saveSession();
+    	// HomeActivity.saveSession();
     	
     	// Starting the new Activity
     	Intent i = new Intent(this, ProductActivity.class);

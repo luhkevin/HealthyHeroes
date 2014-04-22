@@ -39,7 +39,7 @@ public class ProductActivity extends Activity {
     	Log.v("ProductActivity","onBackButton() -- Back button pressed.");
     	
     	// Saving the currentSession
-    	HomeActivity.saveSession();
+    	// HomeActivity.saveSession();
     	
     	//pop-up warning
 		new AlertDialog.Builder(this)
@@ -61,7 +61,7 @@ public class ProductActivity extends Activity {
     
     private void backtoIngr() {
     	// Saving the currentSession
-    	HomeActivity.saveSession();
+    	//HomeActivity.saveSession();
 
 		// Starting the new Activity
     	Intent i = new Intent(this, IngredientActivity.class);

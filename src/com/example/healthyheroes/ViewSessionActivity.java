@@ -1,8 +1,13 @@
 package com.example.healthyheroes;
 
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
 import android.app.Activity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.widget.TextView;
@@ -65,6 +70,27 @@ public class ViewSessionActivity extends Activity {
 	}
 	
 	public void onFinishButton(View v) {
+		HomeActivity.saveSession(this);
+		
+		/*
+		int ch;
+		StringBuffer fileContent = new StringBuffer("");
+		FileInputStream fis;
+		try {
+		    fis = this.openFileInput("healthyheroes.log");
+		    try {
+		        while( (ch = fis.read()) != -1)
+		            fileContent.append((char)ch);
+		    } catch (IOException e) {
+		        e.printStackTrace();
+		    }
+		} catch (FileNotFoundException e) {
+		    e.printStackTrace();
+		}
+
+		String data = new String(fileContent);
+		Log.v("file data", data);
+		*/
 		//TODO write me
 	}
 }

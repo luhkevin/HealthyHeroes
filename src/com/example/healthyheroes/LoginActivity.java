@@ -41,7 +41,7 @@ public class LoginActivity extends Activity {
 		Log.v("LoginActivity","onBackButton() -- Back button pressed.");
 		
 		// Saving the currentSession
-    	HomeActivity.saveSession();
+    	// HomeActivity.saveSession();
 		
 		// Starting the new Activity
     	Intent i = new Intent(this, HomeActivity.class);
@@ -98,7 +98,7 @@ public class LoginActivity extends Activity {
 		HomeActivity.setInitialCashBalance(cashbox_value);
     	
     	// Saving the currentSession
-    	HomeActivity.saveSession();
+    	// HomeActivity.saveSession();
     	
     	// Starting the new Activity
     	Intent i = new Intent(this, IngredientActivity.class);

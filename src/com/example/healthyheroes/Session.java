@@ -110,6 +110,11 @@ public class Session {
 		participants.add(name_participant);
 	}
 	
+	/** Returns the list of participants */
+	public ArrayList<String> getParticpant() {
+		return participants;
+	}
+	
 	/** Sets the initial cash balance of the session */
 	public void setInitialCash(double cash){
 		initial_cash = cash;

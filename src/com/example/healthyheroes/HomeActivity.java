@@ -8,7 +8,6 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.View;
-import android.widget.Button;
 
 public class HomeActivity extends Activity {	
 	public static final int LoginActivity_ID = 1; // I don't think we have to use startActivityforResult()
@@ -76,7 +75,7 @@ public class HomeActivity extends Activity {
     /** Adds a new participant to the session */
     public static void addParticipant(String participant_name){
     	Log.v("HomeActivity", "addParticipant() -- "+participant_name+" was added.");
-    	//TODO: implement addParticipant() in HomeActivity
+    	current_session.addParticipant(participant_name);
     }
     
     /** Adds the ingredient to the session */

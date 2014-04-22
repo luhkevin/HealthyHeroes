@@ -47,7 +47,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/revenueLabel"
-        android:text="Your ingredient's costs: "
+        android:text="Your ingredient's total costs: "
         android:textSize="20sp"
         />
     

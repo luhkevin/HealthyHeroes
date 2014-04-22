@@ -169,6 +169,10 @@ public class Session {
 		return products;
 	}
 	
+	public HashMap<String, FoodItem> getIngredients(){
+		return ingredients;
+	}
+	
 	/** Writes the contents of the session into the file with filename */
 	public void writeSessionToFile(){
 		Log.v("Session", "writeSessionToFile() -- writting session to file.");

@@ -9,6 +9,9 @@ import android.widget.TextView;
 
 public class ViewSessionActivity extends Activity {
 	private TextView revenueInfo;
+	private TextView soldProducts;
+	private TextView ingredientCost;
+	private TextView profit;
 
 	/** Called when Application is started */
 	@Override
@@ -34,7 +37,27 @@ public class ViewSessionActivity extends Activity {
     	revenueInfo = (TextView) this.findViewById(R.id.revenue);
     	revenueInfo.setText(revenue);
     	
-    	//TODO set soldproducts, ingredientcost and profit.
+    	Session currentSession = HomeActivity.getCurrentSession();
+    	
+    	soldProducts = (TextView) this.findViewById(R.id.soldproducts);
+    	int soldProductsNumber = 0;
+    	for(FoodItem food : currentSession.getProducts().values())
+    	{
+    		soldProductsNumber += food.getTotalSold();
+    	}
+    	soldProducts.setText(String.valueOf(soldProductsNumber));
+    	
+    	ingredientCost = (TextView) this.findViewById(R.id.ingredientcost);
+    	double ingredientCostNumber = 0.0;
+    	for(FoodItem food : currentSession.getIngredients().values())
+    	{
+    		ingredientCostNumber += (food.getPrice() * food.getQuantity());
+    	}
+    	ingredientCost.setText(String.valueOf(ingredientCostNumber));
+    	
+    	profit = (TextView) this.findViewById(R.id.profit);
+    	profit.setText(String.valueOf(
+    			(Double.parseDouble(revenue) - ingredientCostNumber)));
 	}
 	
 	public void onBackButton(View v) {

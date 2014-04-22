@@ -64,6 +64,10 @@ public class FoodItem {
  	public int getNumberSold(){
 		return number_sold;	
 	}
+ 	
+ 	public int getTotalSold(){
+ 		return total_sold;
+ 	}
 
 	public void incrementNumberSold(){
 		number_sold = Math.min(this.quantity, number_sold + 1);

@@ -45,6 +45,7 @@ public class IngredientActivity extends Activity {
     	i.putExtra("sellersAdded", true);
     	i.putExtra("cashBox", cashbox);
     	startActivity(i);
+    	this.finish();
 	}
 
 	/** Called when [Add] button is clicked */
@@ -98,6 +99,7 @@ public class IngredientActivity extends Activity {
     	// Starting the new Activity
     	Intent i = new Intent(this, ProductActivity.class);
     	startActivityForResult(i, ProductActivity_ID);
+    	this.finish();
     }
     
     private boolean isEmptyTextView(EditText view) {

@@ -62,9 +62,13 @@ public class ViewSessionActivity extends Activity {
 	
 	public void onBackButton(View v) {
 		//TODO write me
+		
+		//this.finish(); //TODO uncomment when method written
 	}
 	
 	public void onFinishButton(View v) {
 		//TODO write me
+		
+		//this.finish(); //TODO uncomment when method written
 	}
 }

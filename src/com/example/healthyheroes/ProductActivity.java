@@ -66,6 +66,7 @@ public class ProductActivity extends Activity {
 		// Starting the new Activity
     	Intent i = new Intent(this, IngredientActivity.class);
     	startActivity(i);
+    	this.finish();
     }
 	
 	/** Called when [Add] button is clicked */
@@ -113,6 +114,7 @@ public class ProductActivity extends Activity {
 
     	Intent i = new Intent(this, SellingActivity.class); //goto SellingActivity
     	startActivityForResult(i, SellingActivity_ID);
+    	this.finish();
     }
 
     //duplicate code ... will want to refactor product/ingredient into same interface later if have the time

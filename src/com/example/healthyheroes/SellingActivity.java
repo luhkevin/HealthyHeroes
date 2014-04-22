@@ -102,6 +102,7 @@ public class SellingActivity extends Activity {
 		// Starting the new Activity
     	Intent i = new Intent(this, ProductActivity.class);
     	startActivity(i);
+    	this.finish();
     }
     
     private void finishSession() {
@@ -112,7 +113,7 @@ public class SellingActivity extends Activity {
     	Intent i = new Intent(this, ViewSessionActivity.class);
     	i.putExtra("REVENUE_ID", String.valueOf(totalRevenue));
     	startActivityForResult(i, ViewSessionActivity_ID);
-    	this.finish(); //do we need this?
+    	this.finish(); 
     }
     
     public void onNewCustomerButton(View v) {

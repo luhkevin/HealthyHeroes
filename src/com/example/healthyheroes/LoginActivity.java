@@ -46,6 +46,7 @@ public class LoginActivity extends Activity {
 		// Starting the new Activity
     	Intent i = new Intent(this, HomeActivity.class);
     	startActivity(i);
+    	this.finish();
 	}
 	
 	/** Called when [Add] button is clicked */
@@ -104,5 +105,6 @@ public class LoginActivity extends Activity {
     	Intent i = new Intent(this, IngredientActivity.class);
     	i.putExtra("cashBox", cashbox_value);
     	startActivity(i);
+    	this.finish();
     }
 }

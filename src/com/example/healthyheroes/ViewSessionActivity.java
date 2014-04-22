@@ -67,6 +67,8 @@ public class ViewSessionActivity extends Activity {
 	
 	public void onBackButton(View v) {
 		//TODO write me
+		
+		//this.finish(); //TODO uncomment when method written
 	}
 	
 	public void onFinishButton(View v) {
@@ -92,5 +94,7 @@ public class ViewSessionActivity extends Activity {
 		Log.v("file data", data);
 		*/
 		//TODO write me
+		
+		//this.finish(); //TODO uncomment when method written
 	}
 }

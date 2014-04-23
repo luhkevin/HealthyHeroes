@@ -1,18 +1,18 @@
 package com.example.healthyheroes;
 
 import java.io.BufferedReader;
-import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.FileReader;
-import java.io.FileWriter;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.TimeZone;
 
 import android.content.Context;
 import android.util.Log;
@@ -23,6 +23,7 @@ import android.util.Log;
 public class Session {
 	private Date 	 					date;
 	private String						filename;	
+	private String 						finalfilename;
 	
 	private ArrayList<String> 			participants;
 //	private ArrayList<Customer>			customers; //TODO: implement customers 
@@ -44,7 +45,7 @@ public class Session {
 	public Session(){
 		Log.v("Session", "new Session created with empty constructor.");
 		this.date 		  = new Date();
-		this.filename 	  = "healthyheroes.log";	//TODO: File format
+		this.filename 	  = "healthyheroes";	//TODO: File format
 		
 		this.participants = new ArrayList<String>();
 		this.initial_cash = -1;
@@ -178,29 +179,27 @@ public class Session {
 	/** Writes the contents of the session into the file with filename */
 	public void writeSessionToFile(Context ctx){
 		Log.v("Session", "writeSessionToFile() -- writting session to file.");
-		String string = "Hello world!";
 		FileOutputStream outputStream;
-
+		String timestamp = this.getTime(); 
+		finalfilename = filename + "_" + timestamp + ".log";
 		try {
-		  outputStream = ctx.openFileOutput(filename, Context.MODE_PRIVATE);
-		  Log.v("saving to file", filename);
-		  outputStream.write(string.getBytes());
+		  outputStream = ctx.openFileOutput(finalfilename, Context.MODE_PRIVATE);
+		  Log.v("saving to file", finalfilename);
+		  Log.v("file content", this.getFileString());
+		  outputStream.write(this.getFileString().getBytes());
 		  outputStream.close();
 		} catch (Exception e) {
 		  e.printStackTrace();
 		}
-/*		File files_directory = HomeActivity.getFilesDirectory();
-		
-		try {
-			BufferedWriter bw = 
-					new BufferedWriter(new FileWriter(files_directory + filename));
-			
-			bw.write(this.getFileString());
-			
-			bw.close();
-		} catch (IOException e){
-			Log.e("Session", "writeSessionToFile() -- " + e.getMessage());
-		}*/
+	}
+	
+	private String getTime() {
+		Date dt = new Date();
+		SimpleDateFormat sd = new SimpleDateFormat("dd-MM-yyyy_hh:mm:ss-a");
+		sd.setTimeZone(TimeZone.getTimeZone("EST"));
+		String formDate = sd.format(dt);
+		System.out.println("formated: " + formDate);
+		return formDate;
 	}
 	
 	/** HELPER METHOD: Returns a string to be written to a file */
@@ -208,7 +207,7 @@ public class Session {
 		Log.v("Session","getFileStringBytes() -- creating content for file " + filename);
 		
 		// Initializing string
-		String 				output_string = "";
+		String output_string = "";
 		
 		// Building File String
 		output_string += String.valueOf(DATE) 			+ "," + this.getDateFileString() 		+ "\n";
@@ -217,23 +216,26 @@ public class Session {
 		for (String participant : participants){
 			output_string += String.valueOf(PARTICIPANT) + "," + participant + "\n";
 		}
-		for (FoodItem ingredient : ingredients.values()){
+		
+		for (FoodItem ingredient : ingredients.values()) {
 			output_string += String.valueOf(INGREDIENT) + "," + ingredient.getFileString() + "\n";
-		} 
-		for (FoodItem product : products.values()){
+		}
+		
+		for (FoodItem product : products.values()) {
 			output_string += String.valueOf(PRODUCT) + "," + product.getFileString() + "\n";
 			
 		}
+
 		//TODO: UPDATE when customer list is implemented
 		
 		return output_string;
 	}
 	
 	/** HELPER METHOD: Returns a string of the date DAY, MONTH, YEAR */
-	private String getDateFileString(){
+	private String getDateFileString() {
 		GregorianCalendar cal 	= new GregorianCalendar();
 		cal.setTime(date);
-		
+
 		// generating date string
 		String date_string = 	Integer.valueOf(cal.get(Calendar.YEAR))  + "," + 
 								Integer.valueOf(cal.get(Calendar.MONTH)) + "," + 
@@ -243,7 +245,7 @@ public class Session {
 	}
 	
 	/** HELPER METHOD: Reads the file and returns a String array for each line */
-	private ArrayList<String> readSessionFromFile(){
+	private ArrayList<String> readSessionFromFile() {
 		Log.v("Session", "readSessionFromFile() -- reading session from file.");
 		
 		File files_directory 	= HomeActivity.getFilesDirectory();

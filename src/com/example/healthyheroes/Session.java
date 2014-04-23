@@ -203,7 +203,7 @@ public class Session {
 	}
 	
 	/** HELPER METHOD: Returns a string to be written to a file */
-	private String getFileString(){
+	private String getFileString() {
 		Log.v("Session","getFileStringBytes() -- creating content for file " + filename);
 		
 		// Initializing string

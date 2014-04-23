@@ -24,12 +24,14 @@ public class SellingActivity extends Activity {
 	private ListView list;
 	private ArrayList<Double> customerTotals = new ArrayList<Double>();
 	private FoodItemAdapter foodAdapt;
-	private double totalRevenue = 0;
+	private double totalRevenue;
 	private boolean finished = true;
 	
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Intent i = this.getIntent();
+        totalRevenue = i.getDoubleExtra("REVENUE", 0);
         setContentView(R.layout.activity_selling);
         init();
     }

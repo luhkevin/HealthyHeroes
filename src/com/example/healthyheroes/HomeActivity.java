@@ -25,7 +25,6 @@ public class HomeActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         files_directory = getFilesDir();
-        Log.v("Saving to File", files_directory.toString());
     }
 
     @Override
@@ -102,7 +101,7 @@ public class HomeActivity extends Activity {
     }
     
     /** Saves the current session to a file */
-    public static void saveSession(Context ctx){
+    public static void saveSession(Context ctx) {
     	Log.v("HomeActivity", "saveSession() -- session is being saved.");
     	current_session.writeSessionToFile(ctx);
     	

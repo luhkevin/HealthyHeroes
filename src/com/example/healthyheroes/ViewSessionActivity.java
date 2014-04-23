@@ -6,6 +6,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -17,6 +18,7 @@ public class ViewSessionActivity extends Activity {
 	private TextView soldProducts;
 	private TextView ingredientCost;
 	private TextView profit;
+	private Double revenue;
 
 	/** Called when Application is started */
 	@Override
@@ -60,41 +62,24 @@ public class ViewSessionActivity extends Activity {
     	}
     	ingredientCost.setText(String.valueOf(ingredientCostNumber));
     	
+    	this.revenue = Double.parseDouble(revenue);
     	profit = (TextView) this.findViewById(R.id.profit);
     	profit.setText(String.valueOf(
-    			(Double.parseDouble(revenue) - ingredientCostNumber)));
+    			(this.revenue - ingredientCostNumber)));
 	}
 	
 	public void onBackButton(View v) {
 		//TODO write me
-		
-		//this.finish(); //TODO uncomment when method written
+		Intent i = new Intent(this, SellingActivity.class);
+		i.putExtra("REVENUE", revenue);
+		startActivity(i);
+		this.finish(); //TODO uncomment when method written
 	}
 	
 	public void onFinishButton(View v) {
 		HomeActivity.saveSession(this);
-		
-		/*
-		int ch;
-		StringBuffer fileContent = new StringBuffer("");
-		FileInputStream fis;
-		try {
-		    fis = this.openFileInput("healthyheroes.log");
-		    try {
-		        while( (ch = fis.read()) != -1)
-		            fileContent.append((char)ch);
-		    } catch (IOException e) {
-		        e.printStackTrace();
-		    }
-		} catch (FileNotFoundException e) {
-		    e.printStackTrace();
-		}
-
-		String data = new String(fileContent);
-		Log.v("file data", data);
-		*/
-		//TODO write me
-		
-		//this.finish(); //TODO uncomment when method written
+		Intent i = new Intent(this, HomeActivity.class);
+    	startActivity(i);	
+		this.finish(); //TODO uncomment when method written
 	}
 }

@@ -51,8 +51,8 @@ public class HomeActivity extends Activity {
     /** Called when [View Sessions] button is clicked */
     public void onViewSessionButton(View v) {
     	Log.v("HomeActivity", "onViewSessionButton() -- [View Sessions] button pressed");
-    	//Intent i = new Intent(this, ViewSessionActivity.class);
-    	//startActivityForResult(i, ViewSessionActivity_ID);
+    	Intent i = new Intent(this, ViewPastSessionActivity.class);
+    	startActivityForResult(i, 1);
     }
     
 //	STATIC METHODS TO BE USED TO PASS INFORMATION TO SESSION CLASS

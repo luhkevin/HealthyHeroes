@@ -3,36 +3,57 @@
     android:layout_height="match_parent"
     android:background="#A3E3DD"
     android:orientation="vertical" >
-
+	
+    <TextView 
+		    android:id="@+id/ingredient_prompt"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:singleLine="true"
+		    android:layout_gravity="center"
+		    android:textSize="48sp"
+		    android:text="What Ingredients Do You Have Today?"		/>
+    
     <LinearLayout
         android:id="@+id/ingredients"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:orientation="vertical" >
-
+		
         <EditText
             android:id="@+id/ingredient_name"
             android:layout_width="510dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:hint="Ingredient Name"
+            android:hint="Ingredient name"
             android:singleLine="true"
             android:textSize="48sp" >
-
             <requestFocus />
         </EditText>
+		<LinearLayout  
+		    android:id="@+id/cost_layout"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:layout_gravity="left"
+		    android:orientation = "horizontal">
 
-        <EditText
-            android:id="@+id/ingredient_price"
-            android:layout_width="115dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="left"
-            android:ems="10"
-            android:hint="Cost?"
-            android:inputType="numberDecimal"
-            android:textSize="36sp" />
+			<TextView
+			    android:id="@+id/dollar_sign"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:text="$"
+			    android:textSize="36sp" />
 
+			<EditText
+			    android:id="@+id/ingredient_price"
+			    android:layout_width="115dp"
+			    android:layout_height="wrap_content"
+			    android:ems="10"
+			    android:hint="Cost?"
+			    android:inputType="numberDecimal"
+			    android:textSize="36sp" />
+	        
+		</LinearLayout>
         <EditText
             android:id="@+id/ingredient_quantity"
             android:layout_width="wrap_content"

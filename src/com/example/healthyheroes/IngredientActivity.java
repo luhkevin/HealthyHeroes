@@ -82,6 +82,8 @@ public class IngredientActivity extends Activity {
 		quantity_view.setText("");
 		
 		name_view.requestFocus(); //put cursor on name_view
+		Toast.makeText(this, "Ingredient Saved!", Toast.LENGTH_SHORT).show();
+		
     }
 
     /** Called when [Finish] button is clicked */

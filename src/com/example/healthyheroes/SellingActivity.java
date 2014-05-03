@@ -13,6 +13,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -26,6 +27,7 @@ public class SellingActivity extends Activity {
 	private FoodItemAdapter foodAdapt;
 	private double totalRevenue;
 	private boolean finished = true;
+	private Button newCustomer, finishCustomer;
 	
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,15 +61,20 @@ public class SellingActivity extends Activity {
 		foodAdapt = new FoodItemAdapter(SellingActivity.this, R.layout.selling_list_item, foods, this); // create itemAdapater
 		list.setAdapter(foodAdapt); // create itemAdapater
 		
+		newCustomer = (Button) this.findViewById(R.id.newCustomerButton);
+		finishCustomer = (Button) this.findViewById(R.id.finishButton);
+		
 		//TODO initalize colors
-		/*
-    	for (int i = 0; i < list.getChildCount(); i++) {
-    		View rowView = list.getChildAt(i);
-    		FoodItemHolder holder = (FoodItemHolder) rowView.getTag();
-    		holder.numberSold.setText("0");
-    		holder.enabled = false;
-    		rowView.setBackgroundColor(Color.GRAY);
-    	} */
+		newCustomer.setBackgroundColor(Color.GREEN);
+		finishCustomer.setBackgroundColor(Color.RED);
+		
+//    	for (int i = 0; i < list.getChildCount(); i++) {
+//    		View rowView = list.getChildAt(i);
+//    		FoodItemHolder holder = (FoodItemHolder) rowView.getTag();
+//    		holder.numberSold.setText("0");
+//    		holder.enabled = false;
+//    		rowView.setBackgroundColor(Color.GRAY);
+//    	} 
 	}
     
     public void onFinishButton(View v) {
@@ -128,6 +135,8 @@ public class SellingActivity extends Activity {
         		holder.enabled = true;
         		rowView.setBackgroundColor(Color.WHITE);
         	}
+        	newCustomer.setBackgroundColor(Color.RED);
+        	finishCustomer.setBackgroundColor(Color.GREEN);
     	}
     }
     
@@ -139,6 +148,7 @@ public class SellingActivity extends Activity {
     	this.setCashBox(cashBox + custTotal);
     	this.setCustomerTotal(0.0);
     	this.foodAdapt.resetFoodValues();
+    	
     	for (int i = 0; i < list.getChildCount(); i++) {
     		View rowView = list.getChildAt(i);
     		FoodItemHolder holder = (FoodItemHolder) rowView.getTag();
@@ -146,6 +156,9 @@ public class SellingActivity extends Activity {
     		holder.enabled = false;
     		rowView.setBackgroundColor(Color.GRAY);
     	}
+    	newCustomer.setBackgroundColor(Color.GREEN);
+    	finishCustomer.setBackgroundColor(Color.RED);
+    	
     	this.customerTotals.add(Double.valueOf((cashBox + custTotal)));
     	finished = true;
     }

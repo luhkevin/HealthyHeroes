@@ -2,11 +2,15 @@ package com.example.healthyheroes;
 
 
 
+import java.util.ArrayList;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 import android.widget.TextView;
 
 public class ViewSessionActivity extends Activity {
@@ -71,6 +75,29 @@ public class ViewSessionActivity extends Activity {
     		postSellingMessage.setText("You didn't earn a profit today. Try to sell more next time!");
     	}
     	
+    	ArrayList<String> leftoverProducts = new ArrayList<String>();
+    	for(FoodItem food : currentSession.getProducts().values()) {
+    		if(food.getQuantity() != food.getTotalSold()) {
+    			String s = food.getName() + ": " + Integer.valueOf(food.getQuantity() - food.getTotalSold()).toString();
+    			leftoverProducts.add(s);
+    		}
+    	}
+    	ListView list = (ListView) this.findViewById(R.id.leftoverProducts);
+    	ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.id.leftover_product_row, leftoverProducts);
+    	list.setAdapter(adapter);
+    	
+    	TextView bestSeller = (TextView) this.findViewById(R.id.bestSeller);
+    	FoodItem bestSellerFood = null;
+    	int quantity = Integer.MIN_VALUE;
+    	for(FoodItem food : currentSession.getProducts().values()) {
+    		if (food.getTotalSold() > quantity) {
+    			bestSellerFood = food;
+    			quantity = food.getTotalSold();
+    		}
+    	}
+    	if(bestSellerFood != null) {
+    		bestSeller.setText(bestSellerFood.getName());
+    	}
 	}
 	
 	public void onBackButton(View v) {

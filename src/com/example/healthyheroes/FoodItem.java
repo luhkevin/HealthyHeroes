@@ -42,7 +42,7 @@ public class FoodItem {
 		return price;
 	}
 	
-	public double getQuantity(){
+	public int getQuantity(){
 		return quantity;
 	}
 	

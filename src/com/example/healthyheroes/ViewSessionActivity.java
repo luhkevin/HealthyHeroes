@@ -18,6 +18,7 @@ public class ViewSessionActivity extends Activity {
 	private TextView soldProducts;
 	private TextView ingredientCost;
 	private TextView profit;
+	private TextView postSellingMessage;
 	private Double revenue;
 
 	/** Called when Application is started */
@@ -66,6 +67,14 @@ public class ViewSessionActivity extends Activity {
     	profit = (TextView) this.findViewById(R.id.profit);
     	profit.setText(String.valueOf(
     			(this.revenue - ingredientCostNumber)));
+    	
+    	postSellingMessage = (TextView) this.findViewById(R.id.postSellingMessage);
+    	if (this.revenue - ingredientCostNumber > 0.0) {
+    		postSellingMessage.setText("You earned money today! Congratulations!");
+    	} else {
+    		postSellingMessage.setText("You didn't earn a profit today. Try to sell more next time!");
+    	}
+    	
 	}
 	
 	public void onBackButton(View v) {

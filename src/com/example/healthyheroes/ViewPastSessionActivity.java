@@ -63,6 +63,7 @@ private String[] SavedFiles;			// THIS IS THE LIST OF FILES
 			String text = tv.getText().toString();
 			Log.v("CLICKED ON ITEM", text);
 			Intent i = new Intent(parent.getContext(), PastSessionsActivity.class);
+			i.putExtra("filename", text);
 			startActivity(i);
 		}
 	  };

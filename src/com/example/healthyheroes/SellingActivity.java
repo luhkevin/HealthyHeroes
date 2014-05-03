@@ -52,11 +52,10 @@ public class SellingActivity extends Activity {
     	
 		list = (ListView) this.findViewById(R.id.listOfProducts);
 		
-		
 		ArrayList<FoodItem> foods = new ArrayList<FoodItem>();
 		for(FoodItem product : HomeActivity.getCurrentSession().getProducts().values()) {
 			   foods.add(product);
-			}
+		}
 		foodAdapt = new FoodItemAdapter(SellingActivity.this, R.layout.selling_list_item, foods, this); // create itemAdapater
 		list.setAdapter(foodAdapt); // create itemAdapater
 		

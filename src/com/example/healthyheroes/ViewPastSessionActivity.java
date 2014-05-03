@@ -6,6 +6,7 @@ import java.io.IOException;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -21,12 +22,13 @@ import android.widget.Toast;
 
 public class ViewPastSessionActivity extends Activity {
 
-EditText edFileName, edContent;
-Button btnSave;
+private ViewPastSessionActivity vpsa = this;
+private EditText edFileName, edContent;
+private Button btnSave;
 
-ListView listSavedFiles;
+private ListView listSavedFiles;
 
-String[] SavedFiles;			// THIS IS THE LIST OF FILES
+private String[] SavedFiles;			// THIS IS THE LIST OF FILES
 
   /** Called when the activity is first created. */
   @Override
@@ -60,6 +62,8 @@ String[] SavedFiles;			// THIS IS THE LIST OF FILES
 			TextView tv = (TextView) parent.getChildAt(pos);
 			String text = tv.getText().toString();
 			Log.v("CLICKED ON ITEM", text);
+			Intent i = new Intent(parent.getContext(), PastSessionsActivity.class);
+			startActivity(i);
 		}
 	  };
 

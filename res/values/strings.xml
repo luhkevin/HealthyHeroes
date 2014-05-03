@@ -8,6 +8,7 @@
     <string name="title_activity_selling">Sell your products!</string>
     <string name="title_activity_view_session">View Session Info</string>
     <string name="title_activity_view_past_session">Past Sessions</string>
+    <string name="title_past_sessions">Past Sesssions Log</string>
 
     <string name="participant_name">Who\'s Selling?</string>
     <string name="cashbox_value">Cashbox Starting Amount</string>

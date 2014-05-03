@@ -207,28 +207,30 @@ public class Session {
 		Log.v("Session","getFileStringBytes() -- creating content for file " + filename);
 		
 		// Initializing string
-		String output_string = "";
+		StringBuilder output_string = new StringBuilder();
 		
 		// Building File String
-		output_string += String.valueOf(DATE) 			+ "," + this.getDateFileString() 		+ "\n";
-		output_string += String.valueOf(INITIAL_CASH) 	+ "," + String.valueOf(initial_cash) 	+ "\n";
-		output_string += String.valueOf(FINAL_CASH) 	+ "," + String.valueOf(cashbox) 		+ "\n";
+		output_string.append("Date of Session: " + this.getDateFileString() + "\n");
+		output_string.append("Initial Cash: " + String.valueOf(initial_cash) + "\n");
+		output_string.append("Final Cash: " + String.valueOf(cashbox) + "\n");
+		output_string.append("Participants: ");
 		for (String participant : participants){
-			output_string += String.valueOf(PARTICIPANT) + "," + participant + "\n";
+			output_string.append(participant + "\n");
 		}
 		
+		output_string.append("Ingredients: ");
 		for (FoodItem ingredient : ingredients.values()) {
-			output_string += String.valueOf(INGREDIENT) + "," + ingredient.getFileString() + "\n";
+			output_string.append(ingredient.getFileString() + "\n");
 		}
 		
+		output_string.append("Prodcuts: ");
 		for (FoodItem product : products.values()) {
-			output_string += String.valueOf(PRODUCT) + "," + product.getFileString() + "\n";
-			
+			output_string.append(product.getFileString() + "\n");
 		}
 
 		//TODO: UPDATE when customer list is implemented
 		
-		return output_string;
+		return output_string.toString();
 	}
 	
 	/** HELPER METHOD: Returns a string of the date DAY, MONTH, YEAR */
@@ -237,9 +239,9 @@ public class Session {
 		cal.setTime(date);
 
 		// generating date string
-		String date_string = 	Integer.valueOf(cal.get(Calendar.YEAR))  + "," + 
-								Integer.valueOf(cal.get(Calendar.MONTH)) + "," + 
-								Integer.valueOf(cal.get(Calendar.DATE))+ "\n";
+		String date_string = 	Integer.valueOf(cal.get(Calendar.DATE)) + "-"  +
+								Integer.valueOf(cal.get(Calendar.MONTH)) + "-" + 
+								Integer.valueOf(cal.get(Calendar.YEAR)) + "\n";
 		
 		return date_string;
 	}

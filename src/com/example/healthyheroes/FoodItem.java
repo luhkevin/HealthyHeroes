@@ -54,9 +54,13 @@ public class FoodItem {
 	 */
 	public String getFileString(){
 		return	name + "," + 
-				String.valueOf(price) + "," + 
-				String.valueOf(quantity) + "," + 
-				String.valueOf(number_sold);
+				"Price: " + "," + 
+				"Quantity: " + "," + 
+				"Number Sold: " + String.valueOf(number_sold);
+//		return	name + "," + 
+//				String.valueOf(price) + "," + 
+//				String.valueOf(quantity) + "," + 
+//				String.valueOf(number_sold);
 	}
 	
 	// METHODS ONLY USED FOR PRODUCTS

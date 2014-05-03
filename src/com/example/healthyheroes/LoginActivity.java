@@ -27,6 +27,7 @@ public class LoginActivity extends Activity {
 			EditText cashview = (EditText) findViewById(R.id.cashbox_value);
 			cashview.setText(String.valueOf(cashbox_value));
 		}
+
 	}
 
 	@Override

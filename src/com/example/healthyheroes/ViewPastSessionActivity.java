@@ -7,11 +7,16 @@ import java.io.IOException;
 import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class ViewPastSessionActivity extends Activity {
@@ -36,17 +41,29 @@ String[] SavedFiles;			// THIS IS THE LIST OF FILES
       //btnSave.setOnClickListener(new Button.OnClickListener(){
       SavedFiles = getApplicationContext().fileList();
   }
-
+  
   public void onClick(View arg0) {
 	  // TODO Auto-generated method stub
   }
 
   // This method displays a list of saved files
-  void ShowSavedFiles(){
-   SavedFiles = getApplicationContext().fileList();
-   ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, 
+  private void ShowSavedFiles() {
+	  SavedFiles = getApplicationContext().fileList();
+	  ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, 
 		   android.R.layout.simple_list_item_1, SavedFiles);
-   listSavedFiles.setAdapter(adapter);
+
+	  OnItemClickListener listener = new OnItemClickListener() {
+
+		@Override
+		public void onItemClick(AdapterView<?> parent, View view, int pos,
+				long id) {
+			TextView tv = (TextView) parent.getChildAt(pos);
+			String text = tv.getText().toString();
+			Log.v("CLICKED ON ITEM", text);
+		}
+	  };
+
+	  listSavedFiles.setAdapter(adapter);
+	  listSavedFiles.setOnItemClickListener(listener);
   }
-  
 }

@@ -3,7 +3,8 @@
     android:layout_width="wrap_content"
     android:layout_height="match_parent"
     android:gravity="center_horizontal"
-    android:orientation="horizontal" >
+    android:orientation="horizontal" 
+    android:background="#808080">
 
     <ScrollView
         android:id="@+id/scrollingproducts"

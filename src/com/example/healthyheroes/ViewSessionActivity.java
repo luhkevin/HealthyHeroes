@@ -82,6 +82,10 @@ public class ViewSessionActivity extends Activity {
     			leftoverProducts.add(s);
     		}
     	}
+    	if(leftoverProducts.isEmpty()) {
+    		leftoverProducts.add("You sold everything!");
+    	}
+    	
     	ListView list = (ListView) this.findViewById(R.id.leftoverProducts);
     	ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, leftoverProducts);
     	list.setAdapter(adapter);

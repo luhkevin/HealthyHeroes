@@ -83,7 +83,7 @@ public class ViewSessionActivity extends Activity {
     		}
     	}
     	ListView list = (ListView) this.findViewById(R.id.leftoverProducts);
-    	ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.id.leftover_product_row, leftoverProducts);
+    	ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, leftoverProducts);
     	list.setAdapter(adapter);
     	
     	TextView bestSeller = (TextView) this.findViewById(R.id.bestSeller);

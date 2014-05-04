@@ -187,7 +187,8 @@ public class Session {
 		Log.v("Session", "writeSessionToFile() -- writting session to file.");
 		FileOutputStream outputStream;
 		String timestamp = this.getTime(); 
-		finalfilename = filename + "_" + timestamp + ".log";
+		//finalfilename = filename + "_" + timestamp + ".log";
+		finalfilename = school + "_" + timestamp + ".log";
 		try {
 		  outputStream = ctx.openFileOutput(finalfilename, Context.MODE_PRIVATE);
 		  Log.v("saving to file", finalfilename);

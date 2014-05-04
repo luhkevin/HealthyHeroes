@@ -45,6 +45,7 @@ public class PastSessionsActivity extends Activity {
 		RelativeLayout rView = new RelativeLayout(this);
 	    TextView myText = new TextView(this);
 	    myText.setText(logfileText);
+	    myText.setTextSize(20);
 	    rView.addView(myText);
 	    setContentView(rView);
 	}

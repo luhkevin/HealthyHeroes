@@ -1,7 +1,6 @@
 package com.example.healthyheroes;
 
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -78,6 +77,14 @@ private List<String> SavedFiles;			// THIS IS THE LIST OF FILES
 
 	  listSavedFiles.setAdapter(adapter);
 	  listSavedFiles.setOnItemClickListener(listener);
-	  listSavedFiles.setOnItemLongClickListener(longlistener);
+	  //listSavedFiles.setOnItemLongClickListener(longlistener);
   }
+  
+  /** Called when [Back] button is clicked */
+	public void onReturnToHome(View v) {
+		Log.v("ViewPastSession","onReturnToHome() -- Back button pressed.");
+		Intent i = new Intent(this, HomeActivity.class);
+		startActivity(i);
+		this.finish();
+	}
 }

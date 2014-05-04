@@ -52,15 +52,11 @@ public class FoodItem {
 	 * The string will be of the form:
 	 * 		type, name, price, quantity, [number_sold]
 	 */
-	public String getFileString(){
-		return	name + "," + 
-				"Price: " + "," + 
-				"Quantity: " + "," + 
-				"Number Sold: " + String.valueOf(number_sold);
-//		return	name + "," + 
-//				String.valueOf(price) + "," + 
-//				String.valueOf(quantity) + "," + 
-//				String.valueOf(number_sold);
+	public String getFileString() {
+		return	name + "\n" + 
+				"Price: " + String.valueOf(price) + "\n" +
+				"Quantity: " +  String.valueOf(quantity) + "\n" +  
+				"Number Sold: " + String.valueOf(number_sold) + "\n";
 	}
 	
 	// METHODS ONLY USED FOR PRODUCTS

@@ -14,7 +14,7 @@
     <string name="cashbox_value">Cashbox Starting Amount</string>
     <string name="login_continue_button">Continue to Ingredients</string>
     <string name="login_back_button">Back to Home</string>
-    <string name="add_participant_button">Add This Seller!</string>
+    <string name="add_participant_button"> Add Seller! </string>
     
     <string name="ingredient_name">Ingredient Name</string>
     <string name="ingredient_price">Ingredient Cost</string>

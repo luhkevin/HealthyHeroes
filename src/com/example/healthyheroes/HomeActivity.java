@@ -90,6 +90,12 @@ public class HomeActivity extends Activity {
     	current_session.addProduct(item_name, price, quantity); 
     }
     
+    /** Adds school to the session */
+    public static void addSchool(String school_name){
+    	Log.v("HomeActivity", "addSchool() -- "+school_name+" was added.");
+    	current_session.addSchool(school_name);
+    }
+    
     /** Adjusts the cashbox, and items sold in the session */
     public static void purchaseProduct(String item_name){
     	Log.v("HomeActivity", "purchaseProduct() -- "+item_name+" was purchased.");

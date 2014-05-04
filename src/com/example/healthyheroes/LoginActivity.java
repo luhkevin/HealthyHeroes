@@ -13,6 +13,7 @@ public class LoginActivity extends Activity {
 	private String nameField = null;
 	private boolean added = false;
 	private double cashbox_value;
+	private String school;
 	
 	/** Called when Application is started */
 	@Override
@@ -22,10 +23,16 @@ public class LoginActivity extends Activity {
 		Intent i = this.getIntent();
 		added = i.getBooleanExtra("sellersAdded", false);
 		cashbox_value = i.getDoubleExtra("cashBox", -1);
+		school = i.getStringExtra("school");
 		
 		if (cashbox_value != -1) {
 			EditText cashview = (EditText) findViewById(R.id.cashbox_value);
 			cashview.setText(String.valueOf(cashbox_value));
+		}
+		
+		if (school != null){
+			EditText schoolview = (EditText) findViewById(R.id.school);
+			schoolview.setText(school);
 		}
 
 	}
@@ -69,7 +76,6 @@ public class LoginActivity extends Activity {
 		Toast.makeText(this, "Seller added!", Toast.LENGTH_SHORT).show();
 		
 		name_view.setText("");		
-		name_view.setHint("Who else is selling?");
 		name_view.requestFocus(); //put cursor on name_view
 	}
 	
@@ -80,9 +86,15 @@ public class LoginActivity extends Activity {
     	// Grabbing the View elements
     	EditText name_view 		= (EditText) findViewById(R.id.participant_name);
 		EditText cashbox_view 	= (EditText) findViewById(R.id.cashbox_value);
+		EditText school_view 	= (EditText) findViewById(R.id.school);
 		
 		if(cashbox_view.getText().toString().equals("")){
 			Toast.makeText(this, "Check the cashbox!", Toast.LENGTH_SHORT).show();
+			return;
+		}
+		
+		if(school_view.getText().toString().equals("")){
+			Toast.makeText(this, "Don't forget to put in your school.", Toast.LENGTH_SHORT).show();
 			return;
 		}
 		
@@ -95,9 +107,11 @@ public class LoginActivity extends Activity {
 		}
 		
 		cashbox_value 	= Double.parseDouble(cashbox_view.getText().toString());
-	
+		school			= school_view.getText().toString();
+		
 		// Storing the values
 		HomeActivity.setInitialCashBalance(cashbox_value);
+		HomeActivity.addSchool(school);
     	
     	// Saving the currentSession
     	// HomeActivity.saveSession();
@@ -105,6 +119,8 @@ public class LoginActivity extends Activity {
     	// Starting the new Activity
     	Intent i = new Intent(this, IngredientActivity.class);
     	i.putExtra("cashBox", cashbox_value);
+    	i.putExtra("school", school);
+    	i.putExtra("sellersAdded", true);
     	startActivity(i);
     	this.finish();
     }

@@ -47,6 +47,10 @@
             android:name="com.example.healthyheroes.ViewPastSessionActivity"
             android:label="@string/title_activity_view_past_session" >
         </activity>
+        <activity
+            android:name="com.example.healthyheroes.PastSessionsActivity"
+            android:label="@string/title_past_sessions">
+        </activity>
     </application>
 
 </manifest>

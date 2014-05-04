@@ -105,17 +105,16 @@ public class ViewSessionActivity extends Activity {
 	}
 	
 	public void onBackButton(View v) {
-		//TODO write me
 		Intent i = new Intent(this, SellingActivity.class);
 		i.putExtra("REVENUE", revenue);
 		startActivity(i);
-		this.finish(); //TODO uncomment when method written
+		this.finish();
 	}
 	
 	public void onFinishButton(View v) {
 		HomeActivity.saveSession(this);
 		Intent i = new Intent(this, HomeActivity.class);
     	startActivity(i);	
-		this.finish(); //TODO uncomment when method written
+		this.finish();
 	}
 }

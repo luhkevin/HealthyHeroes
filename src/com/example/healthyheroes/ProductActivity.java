@@ -103,6 +103,7 @@ public class ProductActivity extends Activity {
 		quantity_view.setText("");
 		
 		name_view.requestFocus(); //set cursor to name_view
+		Toast.makeText(this, "Product Saved!", Toast.LENGTH_SHORT).show();
     }
 
     /** Called when [Finish] button is clicked */

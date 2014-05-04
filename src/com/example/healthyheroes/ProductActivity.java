@@ -1,5 +1,7 @@
 package com.example.healthyheroes;
 
+import java.util.HashMap;
+
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -112,11 +114,50 @@ public class ProductActivity extends Activity {
 			Toast.makeText(this, "You didn't enter all of the Product information!", Toast.LENGTH_SHORT).show();
 			return;
     	}
+    	
+    	// Used to calculate whether a potential profit can be made
+    	int ingredientCost = 0;
+    	int potentialProfit = 0;
+    	
+    	HashMap<String, FoodItem> ingredientMap = HomeActivity.getCurrentSession().getIngredients();
+    	for (FoodItem ingredient : ingredientMap.values()) {
+    		ingredientCost += (ingredient.getQuantity() * ingredient.getPrice());
+    	}
+    	
+    	HashMap<String, FoodItem> productMap = HomeActivity.getCurrentSession().getProducts();
+    	for (FoodItem product : productMap.values()) {
+    		potentialProfit += (product.getQuantity() * product.getPrice());
+    	}
 
+    	if (potentialProfit - ingredientCost > 0) {
+    		Intent i = new Intent(this, SellingActivity.class); //goto SellingActivity
+    		startActivityForResult(i, SellingActivity_ID);
+    		this.finish();
+		} else {
+			// Display pop-up warning
+			new AlertDialog.Builder(this)
+	        .setIcon(android.R.drawable.ic_dialog_alert)
+	        .setTitle("Are you sure you want to start selling?")
+	        .setMessage("You won't be able to earn a profit! Press no to add more products.")
+	        .setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {
+	            @Override
+	            public void onClick(DialogInterface dialog, int which) {
+	                //Stop the activity
+	                ProductActivity.this.continueToSelling();    
+	            }
+	        })
+	        .setNegativeButton(R.string.no, null)
+	        .show();
+		}
+    }
+    
+    private void continueToSelling() {
+    // Starting the new Activity
     	Intent i = new Intent(this, SellingActivity.class); //goto SellingActivity
     	startActivityForResult(i, SellingActivity_ID);
     	this.finish();
     }
+
 
     //duplicate code ... will want to refactor product/ingredient into same interface later if have the time
     private boolean isInvalidView(EditText view) {

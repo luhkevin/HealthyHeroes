@@ -152,7 +152,7 @@ public class Session {
 		products.put(item_name,  new FoodItem(item_name, price, quantity, number_sold));
 		
 		Log.v("Session", "addProduct() -- " + item_name + " was added.");
-		for (String product: products.keySet()){
+		for (String product: products.keySet()) {
 			Log.v("Session", "PRODUCT: " + product);
 		}
 	}
@@ -188,6 +188,7 @@ public class Session {
 		  Log.v("file content", this.getFileString());
 		  outputStream.write(this.getFileString().getBytes());
 		  outputStream.close();
+		  Log.v("SESSION SAVED", "saved");
 		} catch (Exception e) {
 		  e.printStackTrace();
 		}
@@ -214,7 +215,7 @@ public class Session {
 		output_string.append("Initial Cash: " + String.valueOf(initial_cash) + "\n");
 		output_string.append("Final Cash: " + String.valueOf(cashbox) + "\n");
 		output_string.append("Participants: ");
-		for (String participant : participants){
+		for (String participant : participants) {
 			output_string.append(participant + "\n");
 		}
 		
@@ -239,9 +240,9 @@ public class Session {
 		cal.setTime(date);
 
 		// generating date string
-		String date_string = 	Integer.valueOf(cal.get(Calendar.DATE)) + "-"  +
+		String date_string = 	Integer.valueOf(cal.get(Calendar.YEAR))  + "-" + 
 								Integer.valueOf(cal.get(Calendar.MONTH)) + "-" + 
-								Integer.valueOf(cal.get(Calendar.YEAR)) + "\n";
+								Integer.valueOf(cal.get(Calendar.DATE))+ "\n";
 		
 		return date_string;
 	}

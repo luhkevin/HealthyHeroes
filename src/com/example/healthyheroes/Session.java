@@ -25,6 +25,7 @@ public class Session {
 	private String						filename;	
 	private String 						finalfilename;
 	
+	private String 						school;
 	private ArrayList<String> 			participants;
 //	private ArrayList<Customer>			customers; //TODO: implement customers 
 	private double 						initial_cash;
@@ -107,7 +108,12 @@ public class Session {
 	//TODO: implement addCustomer()
 	/** Adds a customer to the session */
 	
-
+	
+	/** Adds the school to the session */
+	public void addSchool(String school_name){
+		school = school_name;
+	}
+	
 	/** Adds a participant to the session */
 	public void addParticipant(String name_participant){
 		participants.add(name_participant);

@@ -4,53 +4,87 @@
     android:background="#A3E3DD"
     android:orientation="vertical" >
 
-    <EditText
-        android:id="@+id/cashbox_value"
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:hint="Starting cash"
-        android:inputType="numberDecimal"
+        android:text="Welcome to Healthy Heroes !!"
+        android:textSize="48sp" />
+
+    <EditText
+        android:id="@+id/school"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:hint="What is the name of this school?"
         android:textSize="36sp" />
 
-    <RelativeLayout
-        android:id="@+id/login"
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:gravity="center_horizontal" >
+        android:orientation="horizontal" >
 
-    <EditText
-        android:id="@+id/participant_name"
-        android:layout_width="366dp"
+        <EditText
+            android:id="@+id/participant_name"
+            android:layout_width="366dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:hint="Who is selling today?"
+            android:singleLine="true"
+            android:textSize="36sp" />
+
+        <Button
+            android:id="@+id/add_participant_button"
+            android:layout_width="145dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="#0099FF"
+            android:onClick="onAddButton"
+            android:text="@string/add_participant_button"
+            android:textSize="12pt" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="What's your name?"
-        android:singleLine="true"
-        android:textSize="24sp" >
+        android:layout_gravity="center"
+        android:orientation="horizontal" >
 
-    </EditText>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="$"
+            android:textSize="36sp" />
 
-    </RelativeLayout>
+        <EditText
+            android:id="@+id/cashbox_value"
+            android:layout_width="115dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="0.00"
+            android:inputType="numberDecimal"
+            android:textSize="36sp" />
 
-
-    <Button
-        android:id="@+id/add_participant_button"
-        android:layout_width="300dp"
-        android:layout_height="75dp"
-        android:layout_gravity="center|top"
-        android:layout_marginBottom="50dp"
-        android:layout_marginTop="35dp"
-        android:layout_weight="1"
-        android:background="#0099FF"
-        android:onClick="onAddButton"
-        android:text="@string/add_participant_button"
-        android:textSize="12pt" />
+        <TextView
+            android:id="@+id/cashbox_check"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="(Check your cashbox!)"
+            android:textColor="#808080"
+            android:textSize="30sp" />
+    </LinearLayout>
 
     <!-- BOTTOM BUTTONS -->
 
+    <!-- <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="100dp"
+        android:layout_weight="0.94" /> -->
+
     <LinearLayout
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="fill_parent"
         android:orientation="horizontal" >
 
         <Button
@@ -59,6 +93,7 @@
             android:layout_height="75dp"
             android:layout_margin="10dp"
             android:layout_weight="1"
+            android:layout_gravity="bottom"
             android:background="#0099FF"
             android:onClick="onBackButton"
             android:text="@string/login_back_button"
@@ -70,6 +105,7 @@
             android:layout_height="75dp"
             android:layout_margin="10dp"
             android:layout_weight="1"
+            android:layout_gravity="bottom"
             android:background="#0099FF"
             android:onClick="onFinishButton"
             android:text="@string/login_continue_button"

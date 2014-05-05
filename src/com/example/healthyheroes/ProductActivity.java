@@ -29,6 +29,7 @@ public class ProductActivity extends Activity {
 		setContentView(R.layout.activity_product);
 		Intent i = this.getIntent();
 		cashbox = i.getDoubleExtra("cashbox", 0);
+		Log.v("CASHBOX RECEIVED FROM SELLING: ", String.valueOf(cashbox));
 	}
 
 	@Override
@@ -158,6 +159,7 @@ public class ProductActivity extends Activity {
     	Intent i = new Intent(this, SellingActivity.class); //goto SellingActivity
     	startActivityForResult(i, SellingActivity_ID);
     	i.putExtra("cashbox", cashbox);
+    	Log.v("CASHBOX SENT TO SELLING", String.valueOf(cashbox));
     	this.finish();
     }
 

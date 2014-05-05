@@ -38,6 +38,7 @@ public class SellingActivity extends Activity {
         Intent i = this.getIntent();
         totalRevenue = i.getDoubleExtra("REVENUE", 0);
         tempCashBox = i.getDoubleExtra("cashbox", -1);
+        Log.v("CASHBOX FROM PRODUCT ACTIVITY", String.valueOf(tempCashBox));
         setContentView(R.layout.activity_selling);
         init();
     }
@@ -118,6 +119,7 @@ public class SellingActivity extends Activity {
 		// Starting the new Activity
     	Intent i = new Intent(this, ProductActivity.class);
     	i.putExtra("cashbox", Double.parseDouble(cashBox.getText().toString()));
+    	Log.v("CASHBOX SENT TO PRODUCTS:", cashBox.getText().toString());
     	startActivity(i);
     	this.finish();
     }
@@ -196,6 +198,5 @@ public class SellingActivity extends Activity {
     public double getCustomerTotal() {
     	return Double.parseDouble(customerTotal.getText().toString().substring(1));
     }
-    
     
 }

@@ -52,12 +52,12 @@
         <activity
             android:name="com.example.healthyheroes.ViewPastSessionActivity"
             android:label="@string/title_activity_view_past_session" 
-            android:screenOrientation="landscape" >
+            android:screenOrientation="portrait" >
         </activity>
         <activity
             android:name="com.example.healthyheroes.PastSessionsActivity"
             android:label="@string/title_past_sessions"
-            android:screenOrientation="landscape" >
+            android:screenOrientation="portrait" >
         </activity>
     </application>
 

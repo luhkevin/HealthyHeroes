@@ -20,6 +20,9 @@ import android.widget.TextView;
 public class SellingActivity extends Activity {
 	public static final int ViewSessionActivity_ID = 1;
 
+	//In case we are returning from product screen
+	private double tempCashBox;
+
 	private TextView cashBox;
 	private TextView customerTotal;
 	private ListView list;
@@ -34,6 +37,7 @@ public class SellingActivity extends Activity {
         super.onCreate(savedInstanceState);
         Intent i = this.getIntent();
         totalRevenue = i.getDoubleExtra("REVENUE", 0);
+        tempCashBox = i.getDoubleExtra("cashbox", -1);
         setContentView(R.layout.activity_selling);
         init();
     }
@@ -47,7 +51,11 @@ public class SellingActivity extends Activity {
 	
     private void init() {
     	cashBox = (TextView) this.findViewById(R.id.moneyTotal);
-    	cashBox.setText("$" + String.format("%.2f", HomeActivity.getCurrentCashBalance()));
+    	if(tempCashBox == -1) {
+    		cashBox.setText("$" + String.format("%.2f", HomeActivity.getCurrentCashBalance()));
+    	} else {
+    		cashBox.setText("$" + String.format("%.2f", tempCashBox));
+    	}
     	
     	customerTotal = (TextView) this.findViewById(R.id.customerTotal);
     	customerTotal.setText("$" + String.format("%.2f", 0.0));
@@ -109,6 +117,7 @@ public class SellingActivity extends Activity {
 
 		// Starting the new Activity
     	Intent i = new Intent(this, ProductActivity.class);
+    	i.putExtra("cashbox", Double.parseDouble(cashBox.getText().toString()));
     	startActivity(i);
     	this.finish();
     }

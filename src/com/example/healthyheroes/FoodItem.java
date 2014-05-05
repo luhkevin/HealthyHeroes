@@ -56,7 +56,7 @@ public class FoodItem {
 		return	name + "\n" + 
 				"Price: " + String.valueOf(price) + "\n" +
 				"Quantity: " +  String.valueOf(quantity) + "\n" +  
-				"Number Sold: " + String.valueOf(number_sold) + "\n";
+				"Total Sold: " + String.valueOf(total_sold) + "\n";
 	}
 	
 	// METHODS ONLY USED FOR PRODUCTS

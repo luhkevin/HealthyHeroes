@@ -20,13 +20,15 @@ public class ProductActivity extends Activity {
 	private String name = null;
 	private double price = -1;
 	private int quantity = -1;
+	private double cashbox = 0;
 	
 	/** Called when Application is started */
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_product);
-//		Intent i = this.getIntent();
+		Intent i = this.getIntent();
+		cashbox = i.getDoubleExtra("cashbox", 0);
 	}
 
 	@Override
@@ -155,6 +157,7 @@ public class ProductActivity extends Activity {
     // Starting the new Activity
     	Intent i = new Intent(this, SellingActivity.class); //goto SellingActivity
     	startActivityForResult(i, SellingActivity_ID);
+    	i.putExtra("cashbox", cashbox);
     	this.finish();
     }
 

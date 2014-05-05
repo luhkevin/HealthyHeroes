@@ -233,11 +233,13 @@ public class Session {
 		output_string.append("\n");
 		
 		output_string.append("Ingredients: ");
+		output_string.append("\n");
 		for (FoodItem ingredient : ingredients.values()) {
 			output_string.append(ingredient.getFileString() + "\n");
 		}
 		
 		output_string.append("Products: ");
+		output_string.append("\n");
 		for (FoodItem product : products.values()) {
 			output_string.append(product.getFileString() + "\n");
 		}

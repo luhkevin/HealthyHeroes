@@ -222,8 +222,13 @@ public class Session {
 		output_string.append("Initial Cash: " + String.valueOf(initial_cash) + "\n");
 		output_string.append("Final Cash: " + String.valueOf(cashbox) + "\n");
 		output_string.append("Participants: ");
-		for (String participant : participants) {
-			output_string.append(participant + "\n");
+		
+		for(int i = 0; i < participants.size(); i++) {
+			if(i != (participants.size() - 1)) {
+				output_string.append(participants.get(i) + ", ");
+			} else {
+				output_string.append(participants.get(i));
+			}
 		}
 		
 		output_string.append("Ingredients: ");
@@ -231,7 +236,7 @@ public class Session {
 			output_string.append(ingredient.getFileString() + "\n");
 		}
 		
-		output_string.append("Prodcuts: ");
+		output_string.append("Products: ");
 		for (FoodItem product : products.values()) {
 			output_string.append(product.getFileString() + "\n");
 		}

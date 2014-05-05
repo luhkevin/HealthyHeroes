@@ -16,48 +16,56 @@
         <activity
             android:name="com.example.healthyheroes.HomeActivity"
             android:label="@string/app_name" 
-            android:screenOrientation="landscape" >
+            android:screenOrientation="landscape" 
+            android:configChanges="keyboardHidden|orientation|screenSize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity
             android:name="com.example.healthyheroes.LoginActivity"
             android:label="@string/title_activity_login" 
-            android:screenOrientation="landscape"  >
+            android:screenOrientation="landscape"  
+            android:configChanges="keyboardHidden|orientation|screenSize" >
         </activity>
         <activity
             android:name="com.example.healthyheroes.IngredientActivity"
             android:label="@string/title_activity_ingredient" 
-            android:screenOrientation="landscape" >
+            android:screenOrientation="landscape" 
+            android:configChanges="keyboardHidden|orientation|screenSize">
         </activity>
         <activity
             android:name="com.example.healthyheroes.ProductActivity"
             android:label="@string/title_activity_product" 
-            android:screenOrientation="landscape" >
+            android:screenOrientation="landscape" 
+            android:configChanges="keyboardHidden|orientation|screenSize">
         </activity>
 
         <activity
             android:name="com.example.healthyheroes.SellingActivity"
             android:label="@string/title_activity_selling" 
-            android:screenOrientation="portrait"  >
+            android:screenOrientation="portrait"  
+            android:configChanges="keyboardHidden|orientation|screenSize">
         </activity>
         <activity
             android:name="com.example.healthyheroes.ViewSessionActivity"
             android:label="@string/title_activity_view_session" 
-            android:screenOrientation="landscape" >
+            android:screenOrientation="landscape" 
+            android:configChanges="keyboardHidden|orientation|screenSize">
         </activity>
         <activity
             android:name="com.example.healthyheroes.ViewPastSessionActivity"
             android:label="@string/title_activity_view_past_session" 
-            android:screenOrientation="portrait" >
+            android:screenOrientation="portrait" 
+            android:configChanges="keyboardHidden|orientation|screenSize">
         </activity>
         <activity
             android:name="com.example.healthyheroes.PastSessionsActivity"
             android:label="@string/title_past_sessions"
-            android:screenOrientation="portrait" >
+            android:screenOrientation="portrait" 
+            android:configChanges="keyboardHidden|orientation|screenSize">
         </activity>
     </application>
 

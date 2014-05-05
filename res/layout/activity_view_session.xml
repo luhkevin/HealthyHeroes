@@ -28,7 +28,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/soldproductslabel"
-        android:text="Session Total Ingredient Cost: $"
+        android:text="Session Total Ingredient Cost: "
         android:textSize="32sp" />
     
 
@@ -66,7 +66,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/revenueLabel"
-        android:text="Your profit: $"
+        android:text="Your profit: "
         android:textSize="32sp" />
 
     <TextView

@@ -2,6 +2,7 @@ package com.example.healthyheroes;
 
 
 
+import java.text.NumberFormat;
 import java.util.ArrayList;
 
 import android.app.Activity;
@@ -61,11 +62,11 @@ public class ViewSessionActivity extends Activity {
     	{
     		ingredientCostNumber += (food.getPrice() * food.getQuantity());
     	}
-    	ingredientCost.setText(String.valueOf(ingredientCostNumber));
+    	ingredientCost.setText(NumberFormat.getCurrencyInstance().format(ingredientCostNumber));
     	
     	this.revenue = Double.parseDouble(revenue);
     	profit = (TextView) this.findViewById(R.id.profit);
-    	profit.setText(String.valueOf(
+    	profit.setText(NumberFormat.getCurrencyInstance().format(
     			(this.revenue - ingredientCostNumber)));
     	
     	postSellingMessage = (TextView) this.findViewById(R.id.postSellingMessage);

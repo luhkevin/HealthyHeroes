@@ -134,6 +134,7 @@ public class ProductActivity extends Activity {
 
     	if (potentialProfit - ingredientCost > 0) {
     		Intent i = new Intent(this, SellingActivity.class); //goto SellingActivity
+        	i.putExtra("cashbox", cashbox);
     		startActivityForResult(i, SellingActivity_ID);
     		this.finish();
 		} else {

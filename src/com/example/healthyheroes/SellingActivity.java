@@ -53,7 +53,8 @@ public class SellingActivity extends Activity {
     private void init() {
     	cashBox = (TextView) this.findViewById(R.id.moneyTotal);
     	if(tempCashBox == -1) {
-    		cashBox.setText("$" + String.format("%.2f", HomeActivity.getCurrentCashBalance()));
+    		tempCashBox = HomeActivity.getCurrentCashBalance();
+    		cashBox.setText("$" + String.format("%.2f", tempCashBox));
     	} else {
     		cashBox.setText("$" + String.format("%.2f", tempCashBox));
     	}
@@ -104,7 +105,7 @@ public class SellingActivity extends Activity {
             public void onClick(DialogInterface dialog, int which) {
 
                 //Stop the activity
-                SellingActivity.this.backToProducts();    
+                backToProducts();    
             }
 
         })
@@ -113,13 +114,14 @@ public class SellingActivity extends Activity {
     }
     
     private void backToProducts() {
+    	Log.v("CASHBOX", "ENTERED BACK TO PRODUCTS");
 		// Saving the currentSession
     	// HomeActivity.saveSession();
 
 		// Starting the new Activity
     	Intent i = new Intent(this, ProductActivity.class);
-    	i.putExtra("cashbox", Double.parseDouble(cashBox.getText().toString()));
-    	Log.v("CASHBOX SENT TO PRODUCTS:", cashBox.getText().toString());
+    	i.putExtra("cashbox", tempCashBox);
+    	//Log.v("CASHBOX SENT TO PRODUCTS:", cashBox.getText().toString());
     	startActivity(i);
     	this.finish();
     }
@@ -159,6 +161,7 @@ public class SellingActivity extends Activity {
     	this.setCashBox(cashBox + custTotal);
     	this.setCustomerTotal(0.0);
     	this.foodAdapt.resetFoodValues();
+    	tempCashBox = custTotal + cashBox;
     	
     	for (int i = 0; i < list.getChildCount(); i++) {
     		View rowView = list.getChildAt(i);

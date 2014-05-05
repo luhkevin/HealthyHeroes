@@ -102,6 +102,10 @@ public class HomeActivity extends Activity {
     	current_session.purchaseProduct(item_name);
     }
     
+    public static void updateCashbox(double cash) {
+    	current_session.setCashbox(cash);
+    }
+    
     public static Session getCurrentSession(){
     	return current_session;
     }

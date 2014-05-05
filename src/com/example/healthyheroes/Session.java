@@ -130,6 +130,9 @@ public class Session {
 		cashbox = initial_cash;
 	}
 	
+	public void setCashbox(double cash) {
+		cashbox = cash;
+	}
 	public double getCurrentCash(){
 		return cashbox;
 	}

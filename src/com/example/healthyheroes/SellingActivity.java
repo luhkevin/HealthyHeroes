@@ -88,6 +88,7 @@ public class SellingActivity extends Activity {
 	}
     
     public void onFinishButton(View v) {
+    	
     	finishSession();
     }
     
@@ -131,6 +132,7 @@ public class SellingActivity extends Activity {
     	// HomeActivity.saveSession();
 		
 		// Starting the new Activity
+    	HomeActivity.updateCashbox(tempCashBox);
     	Intent i = new Intent(this, ViewSessionActivity.class);
     	i.putExtra("REVENUE_ID", String.valueOf(totalRevenue));
     	startActivityForResult(i, ViewSessionActivity_ID);

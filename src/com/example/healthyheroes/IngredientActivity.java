@@ -100,6 +100,7 @@ public class IngredientActivity extends Activity {
     	
     	// Starting the new Activity
     	Intent i = new Intent(this, ProductActivity.class);
+    	i.putExtra("cashbox", cashbox);
     	startActivityForResult(i, ProductActivity_ID);
     	this.finish();
     }

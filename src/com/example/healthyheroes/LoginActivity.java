@@ -118,7 +118,7 @@ public class LoginActivity extends Activity {
     	
     	// Starting the new Activity
     	Intent i = new Intent(this, IngredientActivity.class);
-    	i.putExtra("cashBox", cashbox_value);
+    	i.putExtra("cashbox", cashbox_value);
     	i.putExtra("school", school);
     	i.putExtra("sellersAdded", true);
     	startActivity(i);

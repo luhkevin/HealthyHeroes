@@ -16,7 +16,7 @@
         <activity
             android:name="com.example.healthyheroes.HomeActivity"
             android:label="@string/app_name" 
-            android:screenOrientation="landscape">
+            android:screenOrientation="landscape" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -25,32 +25,39 @@
         </activity>
         <activity
             android:name="com.example.healthyheroes.LoginActivity"
-            android:label="@string/title_activity_login" >
+            android:label="@string/title_activity_login" 
+            android:screenOrientation="landscape"  >
         </activity>
         <activity
             android:name="com.example.healthyheroes.IngredientActivity"
-            android:label="@string/title_activity_ingredient" >
+            android:label="@string/title_activity_ingredient" 
+            android:screenOrientation="landscape" >
         </activity>
         <activity
             android:name="com.example.healthyheroes.ProductActivity"
-            android:label="@string/title_activity_product" >
+            android:label="@string/title_activity_product" 
+            android:screenOrientation="landscape" >
         </activity>
 
         <activity
             android:name="com.example.healthyheroes.SellingActivity"
-            android:label="@string/title_activity_selling" >
+            android:label="@string/title_activity_selling" 
+            android:screenOrientation="portrait"  >
         </activity>
         <activity
             android:name="com.example.healthyheroes.ViewSessionActivity"
-            android:label="@string/title_activity_view_session" >
+            android:label="@string/title_activity_view_session" 
+            android:screenOrientation="landscape" >
         </activity>
         <activity
             android:name="com.example.healthyheroes.ViewPastSessionActivity"
-            android:label="@string/title_activity_view_past_session" >
+            android:label="@string/title_activity_view_past_session" 
+            android:screenOrientation="landscape" >
         </activity>
         <activity
             android:name="com.example.healthyheroes.PastSessionsActivity"
-            android:label="@string/title_past_sessions">
+            android:label="@string/title_past_sessions"
+            android:screenOrientation="landscape" >
         </activity>
     </application>
 

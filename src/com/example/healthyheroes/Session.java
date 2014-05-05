@@ -230,6 +230,7 @@ public class Session {
 				output_string.append(participants.get(i));
 			}
 		}
+		output_string.append("\n");
 		
 		output_string.append("Ingredients: ");
 		for (FoodItem ingredient : ingredients.values()) {

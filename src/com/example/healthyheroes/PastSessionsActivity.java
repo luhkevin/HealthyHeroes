@@ -3,11 +3,13 @@ package com.example.healthyheroes;
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.RelativeLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 public class PastSessionsActivity extends Activity {
@@ -42,11 +44,13 @@ public class PastSessionsActivity extends Activity {
 		  e.printStackTrace();
 		}	
 		
-		RelativeLayout rView = new RelativeLayout(this);
+		//RelativeLayout rView = new RelativeLayout(this);
+		ScrollView sv = new ScrollView(this);
 	    TextView myText = new TextView(this);
 	    myText.setText(logfileText);
 	    myText.setTextSize(20);
-	    rView.addView(myText);
-	    setContentView(rView);
+	    //rView.addView(myText);
+	    sv.addView(myText);
+	    setContentView(sv);
 	}
 }

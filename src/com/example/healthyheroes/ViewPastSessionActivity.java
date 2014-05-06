@@ -36,10 +36,6 @@ private List<String> SavedFiles;			// THIS IS THE LIST OF FILES
       SavedFiles = Arrays.asList(getApplicationContext().fileList());
   }
   
-  public void onClick(View arg0) {
-	  // TODO Auto-generated method stub
-  }
-
   // This method displays a list of saved files
   private void ShowSavedFiles() {
 	  SavedFiles = Arrays.asList(getApplicationContext().fileList());

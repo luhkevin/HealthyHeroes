@@ -68,7 +68,6 @@ public class FoodItemAdapter extends ArrayAdapter<FoodItem> {
 					double current = sa.getCustomerTotal();
 					sa.setCustomerTotal(current - food.getPrice());
 				}
-				//TODO input sanitation i.e. no negative #'s and none past limit sold.
 			}
 		}); 
 		
@@ -89,7 +88,6 @@ public class FoodItemAdapter extends ArrayAdapter<FoodItem> {
 					sa.setCustomerTotal(current + food.getPrice());
 				}
 				
-				//TODO input sanitation
 			}
 		}); 
 

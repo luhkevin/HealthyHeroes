@@ -118,9 +118,8 @@ public class HomeActivity extends Activity {
     	Log.v("HomeActivity", "saveSession() -- DONE saving session.");
     }
     
-    /** Loads a session from a file */
-    public static void loadSession(String filename){
-    	Log.v("HomeActivity", "loadSession() -- session is being loaded.");
-    	//TODO: Implement
-    }
+//    /** Loads a session from a file */
+//    public static void loadSession(String filename){
+//    	Log.v("HomeActivity", "loadSession() -- session is being loaded.");
+//    }
 }

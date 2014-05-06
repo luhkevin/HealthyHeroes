@@ -88,7 +88,6 @@ public class ProductActivity extends Activity {
 			return;
 		}
 		// Grabbing the values
-		//TODO: Some VALIDATION for the fields
 		name 	 = name_view.getText().toString();
 		price 	 = Double.parseDouble(price_view.getText().toString());	
 		quantity = Integer.parseInt(quantity_view.getText().toString());

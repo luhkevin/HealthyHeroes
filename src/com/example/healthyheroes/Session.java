@@ -27,7 +27,6 @@ public class Session {
 	
 	private String 						school;
 	private ArrayList<String> 			participants;
-//	private ArrayList<Customer>			customers; //TODO: implement customers 
 	private double 						initial_cash;
 	private double 	  					cashbox;
 	private HashMap<String, FoodItem> 	ingredients;
@@ -46,7 +45,7 @@ public class Session {
 	public Session(){
 		Log.v("Session", "new Session created with empty constructor.");
 		this.date 		  = new Date();
-		this.filename 	  = "healthyheroes";	//TODO: File format
+		this.filename 	  = "healthyheroes";	
 		
 		this.participants = new ArrayList<String>();
 		this.initial_cash = -1;
@@ -57,7 +56,6 @@ public class Session {
 	
 	/** Constructor for loading from file */
 	public Session(String filename){
-		//TODO: Finish Implementing
 		
 		Log.v("Session", "new Session created with filename constructor.");
 			
@@ -97,17 +95,11 @@ public class Session {
 						Integer.parseInt(line[3]),		// quantity
 						Integer.parseInt(line[4]));		// number_sold
 				break;
-			case CUSTOMER:
-				// TODO: IMPLEMENT CUSTOMER
 			default:
 				Log.e("Session", line + " could not be parsed.");
 			}
 		}
 	}
-	
-	//TODO: implement addCustomer()
-	/** Adds a customer to the session */
-	
 	
 	/** Adds the school to the session */
 	public void addSchool(String school_name){
@@ -247,8 +239,6 @@ public class Session {
 			output_string.append(product.getFileString() + "\n");
 		}
 
-		//TODO: UPDATE when customer list is implemented
-		
 		return output_string.toString();
 	}
 	

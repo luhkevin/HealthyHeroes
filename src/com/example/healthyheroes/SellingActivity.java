@@ -74,17 +74,9 @@ public class SellingActivity extends Activity {
 		newCustomer = (Button) this.findViewById(R.id.newCustomerButton);
 		finishCustomer = (Button) this.findViewById(R.id.finishButton);
 		
-		//TODO initalize colors
 		newCustomer.setBackgroundColor(Color.GREEN);
 		finishCustomer.setBackgroundColor(Color.RED);
 		
-//    	for (int i = 0; i < list.getChildCount(); i++) {
-//    		View rowView = list.getChildAt(i);
-//    		FoodItemHolder holder = (FoodItemHolder) rowView.getTag();
-//    		holder.numberSold.setText("0");
-//    		holder.enabled = false;
-//    		rowView.setBackgroundColor(Color.GRAY);
-//    	} 
 	}
     
     public void onFinishButton(View v) {

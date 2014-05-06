@@ -57,7 +57,6 @@ public class IngredientActivity extends Activity {
 		EditText quantity_view 	= (EditText) findViewById(R.id.ingredient_quantity); 
 		
 		// Grabbing the values
-		// TODO: Some VALIDATION for the fields
 		if(isEmptyTextView(name_view) || isEmptyTextView(price_view) || isEmptyTextView(quantity_view)) {
 			Toast.makeText(this, "Name, price, or quantity not entered", Toast.LENGTH_SHORT).show();
 			return;
